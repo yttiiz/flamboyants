@@ -1,8 +1,8 @@
 {
-  "title": "Villa Jacqueline",
-  "description": "Site de réservation d'appartements",
+  "title": "Les Flamboyants",
+  "description": "Site de réservation d'appartements sur la ville de Sainte-Anne en Guadeloupe",
   "openGraph": {
-    "title": "Villa Jacqueline",
+    "title": "Les Flamboyants",
     "type": "website",
     "url": "http://127.0.0.1",
     "image": {
