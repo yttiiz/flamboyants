@@ -1,0 +1,15 @@
+{
+  "title": "Villa Jacqueline",
+  "description": "Site de réservation d'appartements",
+  "openGraph": {
+    "title": "Villa Jacqueline",
+    "type": "website",
+    "url": "http://127.0.0.1",
+    "image": {
+      "url": "http://127.0.0.1/yz_website.jpeg",
+      "type": "image/jpeg",
+      "width": "720",
+      "height": "480"
+    }
+  }
+}

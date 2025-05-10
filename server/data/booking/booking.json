@@ -1,0 +1,18 @@
+{
+  "title": "Vos réservations",
+  "card": {
+    "createdAtTitle": "Réservation effectuée le :",
+    "periodTitle": "Pour la période du :",
+    "details": {
+      "type": "Type :",
+      "area": "Superficie :",
+      "rooms": "Nombre de pièces :"
+    },
+    "amount": "Montant total",
+    "cancelBookingForm": {
+      "action": "/cancel-booking",
+      "method": "DELETE",
+      "btnText": "Annuler ma réservation"
+    }
+  }
+}

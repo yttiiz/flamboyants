@@ -1,0 +1,59 @@
+{
+  "title": "Modifier vos informations",
+  "action": "/profil",
+  "method": "PUT",
+  "changePhoto": "changer votre photo",
+  "content": [
+    {
+      "type": "text",
+      "label": "Prénom",
+      "placeholder": "Votre prénom...",
+      "name": "firstname",
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Nom",
+      "placeholder": "Votre nom...",
+      "name": "lastname",
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Profession",
+      "placeholder": "Votre profession...",
+      "name": "job",
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "placeholder": "Votre email...",
+      "name": "email",
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "email"
+    },
+    {
+      "type": "date",
+      "label": "Date de naissance",
+      "name": "birth"
+    },
+    {
+      "type": "password",
+      "label": "Changer votre mot de passe",
+      "placeholder": "Votre mot de passe...",
+      "name": "password",
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "current-password"
+    },
+    {
+      "type": "submit",
+      "value": "Mettre à jour"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Bienvenue à la Villa Jacqueline",
+    "paragraph": "Passez des vacances de rêves, et profitez de vacances au soleil à petit prix !",
+    "imgSrc": "/img/hero/hero_banner.jpg",
+    "imgAlt": "plage de Bois-Jolan"
+  },
+  "appartment": {
+    "title": "Découvrez l'ensemble de nos offres",
+    "paragraph": "Que vous soyez seul, en famille, aventurier ou casanier, vous trouvez le logement qui correspond à vos attentes."
+  },
+  "visit": {
+    "title": "Les endroits à visiter"
+  }
+}

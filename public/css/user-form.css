@@ -1,0 +1,311 @@
+#data-user-form,
+#data-profil-form {
+  & section form label span:has(> div) {
+    position: relative;
+
+    & > input {
+      width: 100%;
+    }
+  }
+
+  & section form input {
+    height: calc(var(--base-size) * 3);
+  }
+
+  & section form input:not([type="submit"]) {
+    width: 100%;
+  }
+
+  & section form input[type="submit"] {
+    align-self: end;
+    background: var(--primary-color);
+  }
+
+  & section form input[type="password"] {
+    padding-right: 4rem;
+  }
+
+  & section form input[name="file-text"] {
+    padding-right: calc(var(--base-size) * 7.25);
+  }
+}
+
+#data-user-form {
+  & form {
+    border: var(--border-black-25-percent);
+    border-radius: var(--base-size);
+  }
+
+  & form[data-style="user-login"] {
+    margin: 0 auto;
+    width: clamp(
+      calc(var(--base-size) * 18.75),
+      100%,
+      calc(var(--base-size) * 25)
+    );
+  }
+
+  & form,
+  & form > div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  & form h3,
+  & form > div {
+    padding: calc(var(--base-size) * 2);
+  }
+
+  & form h3 {
+    text-align: center;
+    border-bottom: var(--border-black-25-percent);
+  }
+
+  & form > div {
+    gap: calc(var(--base-size) * 1.8);
+  }
+
+  & form > span {
+    padding: calc(var(--base-size) * 2);
+    padding-top: 0;
+    font-weight: 500;
+    color: var(--danger);
+  }
+
+  & form > span.none {
+    display: none;
+  }
+
+  & form + p {
+    text-align: center;
+  }
+}
+
+#data-profil-form {
+  & .loading-text {
+    color: #ddd;
+  }
+
+  & section form {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--base-size) * 2);
+
+    & > div,
+    & .user-photo {
+      display: inherit;
+    }
+
+    & > div {
+      position: relative;
+      gap: inherit;
+    }
+
+    & .user-photo {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--base-size);
+    }
+
+    & .user-photo figure {
+      width: calc(var(--base-size) * 12.5);
+    }
+
+    & .user-photo img {
+      border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    & .user-photo img.loading-image {
+      background: linear-gradient(to right, #eee 0%, #ddd 20%, #eee 40%);
+      animation: placeholderAnimate 5s infinite linear forwards;
+    }
+
+    & .user-photo input {
+      display: none;
+    }
+
+    & .user-photo button {
+      width: max-content;
+      height: max-content;
+      padding: var(--btn-padding);
+      font-size: var(--base-size);
+      font-weight: 400;
+      color: var(--light);
+      background: var(--secondary-color);
+      border-radius: var(--btn-border-radius);
+    }
+
+    & .user-photo > div.show-file {
+      position: absolute;
+      display: block;
+      left: 0;
+      bottom: calc(var(--base-size) * -2.125);
+    }
+
+    & .user-photo > div.show-file b {
+      font-weight: 400;
+    }
+
+    & .user-photo > div.none {
+      display: none;
+    }
+
+    & .user-infos {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 1.2rem;
+      column-gap: 2rem;
+    }
+  }
+
+  & .delete-account {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--base-size) * 0.85);
+
+    & button {
+      background: var(--danger);
+      align-self: start;
+    }
+  }
+
+  & .error-msg {
+    display: flex;
+    gap: calc(var(--base-size) * 0.5);
+    margin-top: 0;
+    padding: var(--base-size);
+    background: var(--danger-10-percent);
+    border: 0.1rem solid var(--danger-40-percent);
+    border-radius: var(--btn-border-radius);
+  }
+
+  & .error-msg svg {
+    width: calc(var(--base-size) * 1.5);
+    height: auto;
+    fill: var(--danger-40-percent);
+  }
+
+  & .error-msg.none {
+    display: none;
+  }
+
+  & dialog {
+    & > div > form {
+      padding-top: var(--base-size);
+      display: inherit;
+      gap: inherit;
+      border-top: var(--border-black-25-percent);
+    }
+
+    & > div > form input[type="submit"] {
+      background: var(--danger);
+      align-self: start;
+    }
+
+    & > div > form button {
+      font-size: var(--base-size);
+      font-weight: 400;
+    }
+  }
+
+  .show-message-to-user {
+    padding-top: var(--base-size);
+    border-top: var(--border-black-25-percent);
+
+    & > a {
+      display: inline-block;
+      color: var(--light);
+      font-size: var(--base-size);
+      font-weight: 400;
+      padding: var(--btn-padding);
+      border-radius: var(--btn-border-radius);
+      background: var(--primary-color);
+    }
+  }
+
+  & dialog > div > form.none,
+  .show-message-to-user.none {
+    display: none;
+  }
+}
+
+#eye-password,
+.search-photo {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3%;
+}
+
+#eye-password {
+  & > span {
+    cursor: pointer;
+  }
+
+  & > span.none {
+    display: none;
+  }
+
+  & > span svg {
+    fill: var(--primary-color);
+    width: 2rem;
+    height: auto;
+  }
+}
+
+.search-photo {
+  & button {
+    padding: calc(var(--base-size) * 0.25) calc(var(--base-size) * 0.5);
+    border-radius: var(--btn-border-radius);
+    font-size: var(--base-size);
+    font-weight: 400;
+    color: var(--light);
+    background: var(--secondary-color);
+  }
+
+  & input {
+    display: none;
+  }
+}
+
+@keyframes placeholderAnimate {
+  0% {
+    background-position: -600px 0;
+  }
+  100% {
+    background-position: 600px 0;
+  }
+}
+
+/*=================================================| BREAKPOINTS |=================================================*/
+
+@media screen and (max-width: 950px) {
+  #data-profil-form section form {
+    & > div {
+      flex-direction: column;
+    }
+
+    & .user-infos,
+    & input[type="submit"] {
+      max-width: 40rem;
+    }
+
+    & .user-infos {
+      margin: auto;
+      grid-template-columns: 1fr;
+    }
+
+    & input[type="submit"] {
+      width: 100%;
+      align-self: center;
+    }
+
+    & .user-photo > div.show-file {
+      position: unset;
+    }
+  }
+}

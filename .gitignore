@@ -1,0 +1,13 @@
+deno.lock
+.env
+.env.production
+.env.local
+server/log/*
+server/backup/*
+server/data/credentials/*
+public/img/*
+server/data/fixtures
+
+#Do not ignore this file.
+!public/img/favicon.svg
+!public/img/icons

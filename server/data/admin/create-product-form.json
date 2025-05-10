@@ -1,0 +1,89 @@
+{
+  "action": "/admin-create-product",
+  "method": "POST",
+  "content": [
+    {
+      "type": "text",
+      "label": "Nom",
+      "placeholder": "Nom...",
+      "name": "name",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "select",
+      "label": "Type",
+      "name": "type",
+      "required": true,
+      "items": [
+        "studio",
+        "F1",
+        "F2",
+        "F3",
+        "super F2"
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Superficie (en m2)",
+      "placeholder": "25...",
+      "name": "area",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 3
+    },
+    {
+      "type": "select",
+      "label": "Pièces",
+      "name": "rooms",
+      "required": true,
+      "items": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Prix (€)",
+      "placeholder": "49,99 €...",
+      "name": "price",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 5
+    },
+    {
+      "type": "textarea",
+      "label": "Description",
+      "placeholder": "Description...",
+      "name": "description",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 250
+    },
+    {
+      "type": "text",
+      "label": "Vignette de l'appartement",
+      "placeholder": "Ajouter une image...",
+      "name": "thumbnail-file",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 120
+    },
+    {
+      "type": "text",
+      "label": "Autres images de l'appartement",
+      "placeholder": "Ajouter une image...",
+      "name": "pictures-file",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 120
+    },
+    {
+      "type": "submit",
+      "value": "Ajouter"
+    }
+  ]
+}

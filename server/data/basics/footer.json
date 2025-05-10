@@ -1,0 +1,37 @@
+{
+  "basicItems": [
+    {
+      "link": "/",
+      "text": "Accueil",
+      "className": "footer-home"
+    },
+    {
+      "link": "/contact",
+      "text": "Contactez-nous",
+      "className": "footer-contact"
+    },
+    {
+      "link": "/legal",
+      "text": "Mentions légales",
+      "className": "footer-legal"
+    }
+  ],
+  "relatedItems": [
+    {
+      "link": "#",
+      "text": "Découverte de l'histoire",
+      "clasName": "footer-"
+    },
+    {
+      "link": "#",
+      "text": "En avant",
+      "clasName": "footer-"
+    },
+    {
+      "link": "#",
+      "text": "Garde à vous !",
+      "clasName": "footer-"
+    }
+  ],
+  "copyrights": "Tous droits réservés © Villa Jacqueline"
+}

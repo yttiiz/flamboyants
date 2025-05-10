@@ -1,0 +1,50 @@
+{
+  "title": "Vous souhaitez nous contacter ?",
+  "paragraph": "Besoin d'avoir plus d'informations ? Quelque chose ne vous semble pas clair ? Envoyez-nous un e-mail.",
+  "subtitle": "Ecrivez-nous !",
+  "action": "/contact",
+  "method": "POST",
+  "content": [
+    {
+      "type": "text",
+      "label": "Prénom",
+      "placeholder": "Votre prénom...",
+      "name": "firstname",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Nom",
+      "placeholder": "Votre nom...",
+      "name": "lastname",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "placeholder": "Votre email...",
+      "name": "email",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "email"
+    },
+    {
+      "type": "textarea",
+      "label": "Message",
+      "placeholder": "Votre message...",
+      "name": "message",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 250
+    },
+    {
+      "type": "submit",
+      "value": "Envoyer"
+    }
+  ]
+}

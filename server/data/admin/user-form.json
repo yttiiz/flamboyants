@@ -1,0 +1,75 @@
+{
+  "action": "",
+  "method": "PUT",
+  "content": [
+    {
+      "type": "radio",
+      "label": "Supprimer la photo",
+      "items": [
+        {
+          "name": "deletePicture",
+          "value": "oui",
+          "required": true
+        },
+        {
+          "name": "deletePicture",
+          "value": "non",
+          "required": true
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "label": "Role",
+      "name": "role",
+      "items": [
+        "user",
+        "admin"
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Prénom",
+      "placeholder": "prénom...",
+      "name": "firstname",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Nom",
+      "placeholder": "nom...",
+      "name": "lastname",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Profession",
+      "placeholder": "profession...",
+      "name": "job",
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "placeholder": "email...",
+      "name": "email",
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "email"
+    },
+    {
+      "type": "date",
+      "label": "Date de naissance",
+      "name": "birth"
+    },
+    {
+      "type": "submit",
+      "value": "Mettre à jour"
+    }
+  ]
+}

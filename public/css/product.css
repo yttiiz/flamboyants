@@ -1,0 +1,361 @@
+#data-product {
+  .product,
+  .product > div {
+    gap: calc(var(--base-size) * 1.8);
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--base-size) * 1.8);
+
+    /*=====| picture |=====*/
+
+    & > figure,
+    & > figure img {
+      aspect-ratio: 16 / 9;
+    }
+
+    & > figure {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--base-size);
+      cursor: pointer;
+    }
+
+    & > figure .figure-img-container {
+      display: flex;
+      height: 100%;
+      transition: transform var(--smooth);
+    }
+
+    & > figure > .figcaption-shadow,
+    & > figure figcaption {
+      position: absolute;
+      bottom: 0;
+    }
+
+    & > figure > .figcaption-shadow {
+      display: block;
+      height: 35%;
+      z-index: 1;
+      background: linear-gradient(transparent, rgb(var(--black-rvb) / 0.8));
+    }
+
+    & > figure > .figcaption-shadow,
+    & > figure figcaption {
+      width: inherit;
+    }
+
+    & > figure img {
+      width: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+
+    & > figure figcaption {
+      display: flex;
+      justify-content: space-between;
+      user-select: none;
+      padding: var(--base-size) calc(var(--base-size) * 1.25);
+      z-index: 2;
+    }
+
+    & > figure figcaption span {
+      color: var(--light);
+      height: max-content;
+      align-self: flex-end;
+    }
+
+    & > figure figcaption span:last-of-type {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    & > figure figcaption svg {
+      width: calc(var(--base-size) * 1.5);
+      height: auto;
+      fill: var(--secondary-color);
+    }
+    & > figure figcaption strong {
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    & ul,
+    & dl,
+    & #reviews > p {
+      width: 50%;
+    }
+
+    /*=====| description |=====*/
+
+    & > div {
+      position: relative;
+      display: inherit;
+      flex-direction: inherit;
+    }
+
+    & > div h3 {
+      padding-bottom: var(--base-size);
+      margin-bottom: var(--base-size);
+      border-bottom: var(--border-black-25-percent);
+    }
+
+    & .description li::marker {
+      font-size: calc(var(--base-size) * 0.625);
+    }
+
+    & .description li:not(:last-of-type) {
+      margin-bottom: calc(var(--base-size) * 0.5);
+    }
+
+    & .description li b {
+      font-weight: 400;
+    }
+
+    & .description li sup {
+      line-height: 1;
+    }
+
+    /*=====| reviews |=====*/
+
+    & #reviews dt {
+      font-weight: 600;
+      margin-bottom: calc(var(--base-size) * 0.5);
+    }
+
+    & #reviews dd {
+      padding-left: calc(var(--base-size) * 0.5);
+    }
+    & #reviews dd:not(:last-of-type) {
+      margin-bottom: calc(var(--base-size) * 2);
+    }
+
+    & #reviews dd p:first-of-type {
+      font-weight: 400;
+    }
+
+    & #reviews dd p:last-of-type {
+      margin-bottom: calc(var(--base-size) * 0.25);
+    }
+
+    & #reviews dd div,
+    & #reviews ul {
+      gap: calc(var(--base-size) * 0.5);
+    }
+
+    & #reviews dd div {
+      display: flex;
+    }
+
+    & #reviews ul {
+      width: max-content;
+      list-style: none;
+      display: flex;
+    }
+
+    & #reviews li {
+      width: calc(var(--base-size) * 1.5);
+    }
+
+    & #reviews li svg {
+      fill: rgb(var(--black-rvb) / 0.15);
+      width: 100%;
+      height: auto;
+    }
+
+    & #reviews li.ranking svg {
+      fill: var(--secondary-color);
+    }
+
+    /*=====| review-form |=====*/
+
+    & .review-form .login-register {
+      margin-top: var(--base-size);
+    }
+
+    & .review-form form > label {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--base-size) * 0.5);
+      margin-bottom: var(--base-size);
+    }
+
+    & .review-form form > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--base-size);
+    }
+
+    & .review-form form > div label {
+      position: relative;
+      display: inherit;
+      gap: calc(var(--base-size) * 0.5);
+      cursor: pointer;
+      align-items: center;
+    }
+
+    & .review-form form > div span:first-of-type {
+      display: inherit;
+      justify-content: center;
+      align-items: inherit;
+      width: calc(var(--base-size) * 2);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 0.1rem solid rgb(var(--black-rvb) / 0.1);
+      background: var(--white);
+      transition: background var(--smooth);
+    }
+
+    & .review-form form > div label:hover span:first-of-type,
+    & .review-form form > div label span:first-of-type.selected {
+      background: var(--light);
+      font-weight: 600;
+    }
+
+    & .review-form form > div input[type="radio"] {
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: calc(var(--base-size) * 0.625);
+    }
+
+    & .review-form label textarea {
+      width: 50%;
+      height: calc(var(--base-size) * 10);
+      padding: var(--base-size);
+    }
+
+    & .review-form input[type="submit"] {
+      display: block;
+      margin-top: var(--base-size);
+      background: var(--primary-color);
+      width: max-content;
+    }
+
+    & .review-form form + p {
+      margin-top: var(--base-size);
+    }
+
+    /*=====| booking |=====*/
+
+    & .booking {
+      position: absolute;
+      min-width: calc(var(--base-size) * 20);
+      right: calc(var(--base-size) * 2);
+      background: var(--white);
+      border: var(--border-black-25-percent);
+      border-radius: var(--base-size);
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+    }
+
+    & .booking > div:first-of-type,
+    & .booking > div:first-of-type > span:first-of-type {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .booking > div {
+      padding: calc(var(--base-size) * 2);
+    }
+
+    & .booking > div:first-of-type {
+      gap: var(--base-size);
+    }
+
+    & .booking > div:first-of-type > span:first-of-type {
+      align-items: center;
+      padding-bottom: calc(var(--base-size) * 0.75);
+      border-bottom: var(--border-black-25-percent);
+    }
+
+    & .booking > div:first-of-type > span:first-of-type strong {
+      color: var(--danger);
+      font-family: "Roboto", sans-serif;
+      font-size: calc(var(--base-size) * 2);
+      font-weight: 700;
+    }
+
+    & .booking span[data-available] {
+      display: inherit;
+      gap: calc(var(--base-size) * 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .booking span[data-available] span {
+      width: calc(var(--base-size) * 0.85);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+    }
+
+    & .booking span[data-available] strong {
+      font-weight: 600;
+    }
+
+    & .booking span[data-available="true"] span {
+      background: linear-gradient(green, rgb(1, 94, 1));
+    }
+
+    & .booking span[data-available="false"] span {
+      background: linear-gradient(red, rgb(216, 3, 3));
+    }
+
+    & .booking > div:last-of-type {
+      background: rgb(var(--black-rvb) / 0.1);
+    }
+
+    & .booking > div:last-of-type h3 {
+      text-align: center;
+      margin-bottom: var(--base-size);
+    }
+
+    & .booking form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--base-size);
+    }
+
+    & .booking form input[type="submit"] {
+      margin-top: calc(var(--base-size) * 0.5);
+      background: var(--secondary-color);
+    }
+  }
+
+  /*=====| BREAKPOINT |=====*/
+
+  @media screen and (max-width: 950px) {
+    .product {
+      gap: unset;
+
+      & > figure {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      & ul,
+      & dl,
+      & #reviews > p {
+        width: 100%;
+      }
+
+      & .booking {
+        width: 100%;
+        position: unset;
+        background: unset;
+        min-width: unset;
+        box-shadow: unset;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      & .review-form label textarea {
+        width: 100%;
+      }
+    }
+  }
+}

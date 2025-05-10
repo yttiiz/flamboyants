@@ -1,0 +1,44 @@
+{
+  "action": "",
+  "method": "PUT",
+  "content": [
+    {
+      "type": "text",
+      "label": "Nom complet de l'utilisateur",
+      "name": "userName",
+      "disabled": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Id de l'utilisateur",
+      "name": "userId",
+      "disabled": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Date de réservation",
+      "name": "createdAt",
+      "disabled": true
+    },
+    {
+      "type": "date",
+      "label": "Début de séjour",
+      "name": "startingDate",
+      "required": true
+    },
+    {
+      "type": "date",
+      "label": "Fin de séjour",
+      "name": "endingDate",
+      "required": true
+    },
+    {
+      "type": "submit",
+      "value": "Mettre à jour"
+    }
+  ]
+}

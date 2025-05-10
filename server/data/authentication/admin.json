@@ -1,0 +1,31 @@
+{
+  "title": "Connexion à votre compte administrateur",
+  "action": "/admin",
+  "method": "POST",
+  "content": [
+    {
+      "type": "email",
+      "label": "Email",
+      "placeholder": "Votre email...",
+      "name": "email",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "email"
+    },
+    {
+      "type": "password",
+      "label": "Mot de passe",
+      "placeholder": "Votre mot de passe...",
+      "name": "password",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "current-password"
+    },
+    {
+      "type": "submit",
+      "value": "Envoyer"
+    }
+  ]
+}

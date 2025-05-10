@@ -1,0 +1,43 @@
+{
+  "imports": {
+    "@/": "./",
+    "@components": "./server/components/mod.ts",
+    "@controllers": "./server/controllers/mod.ts",
+    "@data": "./server/data/",
+    "@deps": "./server/dependencies/deps.ts",
+    "@middlewares": "./server/middlewares/mod.ts",
+    "@mongo": "./server/mongo/mod.ts",
+    "@router": "./server/router/router.ts",
+    "@dynamic-routes": "./server/router/mod.ts",
+    "@utils": "./server/utils/mod.ts",
+    "@auth": "./server/auth/mod.ts",
+    "@services": "./server/services/mod.ts"
+  },
+  "lock": false,
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "proseWrap": "preserve",
+    "include": ["server/", "public/", "tests/"],
+    "exclude": ["README.md"]
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["no-unused-vars"]
+    }
+  },
+  "tasks": {
+    "load": "deno cache server/dependencies/deps.ts",
+    "cache:reload": "deno cache --reload ./**/*.ts",
+    "load-local-db": "sudo systemctl start mongod.service",
+    "fmt": "deno fmt",
+    "lint-fmt": "deno lint && deno fmt --check",
+    "start": "deno run -A --env-file=.env.production --watch main.ts",
+    "dev": "deno task load-local-db && deno run -A --env-file=.env.local --watch main.ts",
+    "test": "deno test --no-check -A ./tests/*.test.ts",
+    "check-bc": "deno task fmt && deno task test"
+  }
+}

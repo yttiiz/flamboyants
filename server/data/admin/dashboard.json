@@ -1,0 +1,23 @@
+{
+  "title": "Tableau de bord",
+  "analytics": {
+    "title": "Analyse des données",
+    "className": "analytics-details",
+    "isAccordeon": false
+  },
+  "users": {
+    "title": "Utilisateurs",
+    "className": "users-details",
+    "isAccordeon": true
+  },
+  "products": {
+    "title": "Appartements",
+    "className": "products-details",
+    "isAccordeon": true
+  },
+  "bookings": {
+    "title": "Réservations",
+    "className": "bookings-details",
+    "isAccordeon": true
+  }
+}

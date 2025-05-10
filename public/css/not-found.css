@@ -1,0 +1,10 @@
+#data-not-found {
+  & section div a {
+    display: block;
+    width: max-content;
+    padding: var(--btn-padding);
+    border-radius: var(--btn-border-radius);
+    color: var(--light);
+    background: var(--primary-color);
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "title": "Enregistrer votre compte",
+  "action": "/register",
+  "method": "POST",
+  "content": [
+    {
+      "type": "text",
+      "label": "Prénom",
+      "placeholder": "Votre prénom...",
+      "name": "firstname",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Nom",
+      "placeholder": "Votre nom...",
+      "name": "lastname",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "text",
+      "label": "Profession",
+      "placeholder": "Votre profession...",
+      "name": "job",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "placeholder": "Votre email...",
+      "name": "email",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "email"
+    },
+    {
+      "type": "password",
+      "label": "Mot de passe",
+      "placeholder": "Votre mot de passe...",
+      "name": "password",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 40,
+      "autocomplete": "current-password"
+    },
+    {
+      "type": "date",
+      "label": "Date de naissance",
+      "name": "birth",
+      "required": true
+    },
+    {
+      "type": "text",
+      "label": "Photo de profil",
+      "placeholder": "Choisissez votre image...",
+      "name": "file-text",
+      "required": false,
+      "minLength": 2,
+      "maxLength": 120
+    },
+    {
+      "type": "file",
+      "name": "photo",
+      "accept": ".png, .jpg, .webp, .jpeg"
+    },
+    {
+      "type": "submit",
+      "value": "Envoyer"
+    }
+  ]
+}

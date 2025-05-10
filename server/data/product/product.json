@@ -1,0 +1,99 @@
+{
+  "images": {
+    "legend": "Cliquez sur l'image pour en découvrir d'autres."
+  },
+  "description": {
+    "title": "Description de l'appartement",
+    "infos": {
+      "type": "Type",
+      "area": "Superficie",
+      "rooms": "Nombre de pièces"
+    }
+  },
+  "booking": {
+    "title": "Choisissez votre créneau",
+    "action": "/booking",
+    "method": "POST",
+    "content": [
+      {
+        "type": "date",
+        "label": "début de séjour",
+        "name": "starting-date",
+        "required": true
+      },
+      {
+        "type": "date",
+        "label": "fin de séjour",
+        "name": "ending-date",
+        "required": true
+      },
+      {
+        "type": "submit",
+        "value": "Validez vos dates"
+      }
+    ]
+  },
+  "reviewsAndRate": {
+    "title": "Qu'en pensent ceux qui y ont séjourné ?",
+    "empty": "Il n'y a pas encore d'avis pour le moment. N'hésitez pas à donner le vôtre"
+  },
+  "reviewForm": {
+    "title": "Donnez votre avis !",
+    "action": "/review-form",
+    "method": "POST",
+    "content": [
+      {
+        "type": "textarea",
+        "label": "Dites-nous tout !",
+        "minLength": 2,
+        "maxLength": 200,
+        "placeholder": "Votre avis...",
+        "name": "review",
+        "required": true
+      },
+      {
+        "type": "radio",
+        "label": "5 - excellent",
+        "name": "rate",
+        "value": "5",
+        "required": true
+      },
+      {
+        "type": "radio",
+        "label": "4 - bien",
+        "name": "rate",
+        "value": "4",
+        "required": true
+      },
+      {
+        "type": "radio",
+        "label": "3 - passable",
+        "name": "rate",
+        "value": "3",
+        "required": true
+      },
+      {
+        "type": "radio",
+        "label": "2 - très moyen",
+        "name": "rate",
+        "value": "2",
+        "required": true
+      },
+      {
+        "type": "radio",
+        "label": "1 - pas terrible",
+        "name": "rate",
+        "value": "1",
+        "required": true
+      },
+      {
+        "type": "submit",
+        "value": "soumettre"
+      }
+    ]
+  },
+  "conditions": {
+    "title": "Conditions à respecter",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}
