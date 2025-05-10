@@ -2,14 +2,14 @@
 
 :root {
   /*=====| Colors |===== */
-  --primary-color: #001c69;
-  --secondary-color: #e09f3e;
-  --tertiary-color: #0094c6;
+  --primary-color: #226F54;
+  --secondary-color: #F4F0BB;
+  --tertiary-color: #87C38F;
   --admin-color: #e7f7ff;
   --vanilla: #fff3b0;
   --danger: #9e2a2b;
   --dark: #1e1d1d;
-  --grey-dark: #525151;
+  --grey-dark: #7d7c83;
   --light: #ebebeb;
   --white: #ffffff;
 
@@ -25,7 +25,7 @@
   /*=====| Sizes |===== */
   --base-size: clamp(1.4rem, 2vw, 1.6rem);
   --btn-border-radius: 0.5rem;
-  --btn-padding: calc(var(--base-size) * 0.625) calc(var(--base-size) * 0.875);
+  --btn-padding: calc(var(--base-size) * 0.35) calc(var(--base-size) * 0.875);
   --burger-height: calc(var(--base-size) * 1.5);
   --container-width: clamp(30rem, 90%, 96rem);
   --basic-dialog-width: clamp(30rem, 90%, calc(var(--base-size) * 31.25));
@@ -526,10 +526,6 @@ main .container {
 
 section {
   padding: calc(var(--base-size) * 2) 0;
-}
-
-section:not(:last-of-type) {
-  border-bottom: var(--border-black-25-percent);
 }
 
 section p[data-msg-infos="success"],

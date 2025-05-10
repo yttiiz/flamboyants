@@ -230,12 +230,15 @@
 
     & > div > div:last-of-type > p {
       display: -webkit-box;
+      color: var(--grey-dark);
+      font-weight: 400;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
     & > div > div:last-of-type > div {
+      align-items: center;
       justify-content: space-between;
     }
 
@@ -269,7 +272,7 @@
     & .social-btns button > svg {
       width: 100%;
       height: auto;
-      fill: var(--secondary-color);
+      fill: var(--primary-color);
       transition: transform var(--smooth);
     }
 
@@ -281,13 +284,14 @@
     & .show-product {
       padding: var(--btn-padding);
       border-radius: var(--btn-border-radius);
-      background: var(--secondary-color);
+      background: var(--primary-color);
       transition: filter var(--smooth), color var(--smooth);
+      height: max-content;
+      color: var(--light);
     }
 
     & .show-product:hover {
       filter: contrast(1.5);
-      color: var(--grey-dark);
     }
   }
 
@@ -356,6 +360,8 @@
 
     & > li p {
       display: -webkit-box;
+      color: var(--grey-dark);
+      font-weight: 400;
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
       overflow: hidden;
