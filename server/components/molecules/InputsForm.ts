@@ -35,7 +35,7 @@ export const InputsForm: ComponentType<
       if (type !== "submit" && type !== "radio" && name !== "photo") {
         return `
           <label>
-            <span>${label}</span>
+            <span>${required ? `${label}*` : label}</span>
             ${type === "select"
             ? (
               // SELECT FIELD

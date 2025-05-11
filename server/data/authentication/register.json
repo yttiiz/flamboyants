@@ -22,15 +22,6 @@
       "maxLength": 40
     },
     {
-      "type": "text",
-      "label": "Profession",
-      "placeholder": "Votre profession...",
-      "name": "job",
-      "required": true,
-      "minLength": 2,
-      "maxLength": 40
-    },
-    {
       "type": "email",
       "label": "Email",
       "placeholder": "Votre email...",
@@ -49,12 +40,6 @@
       "minLength": 2,
       "maxLength": 40,
       "autocomplete": "current-password"
-    },
-    {
-      "type": "date",
-      "label": "Date de naissance",
-      "name": "birth",
-      "required": true
     },
     {
       "type": "text",
