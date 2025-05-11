@@ -176,12 +176,11 @@ export class Mongo {
     password,
     host,
     env,
+    db,
   }: CreateClusterParamerType) {
     Mongo.clusterUrl = env === "local"
-      ? "mongodb://localhost:27017/main"
-      : `mongodb+srv://${username}:${password}@${host}/main?authMechanism=SCRAM-SHA-1`;
-
-    console.log(Mongo.clusterUrl);
+      ? `mongodb://localhost:27017/${db}`
+      : `mongodb+srv://${username}:${password}@${host}/${db}?authMechanism=SCRAM-SHA-1`;
 
     // Init "main" Database.
     Mongo.db = await Mongo.client.connect(Mongo.clusterUrl);

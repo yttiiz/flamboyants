@@ -9,6 +9,7 @@ export type CreateClusterParamerType = {
   username: string;
   password: string;
   host: string;
+  db: string;
   env: string;
 };
 

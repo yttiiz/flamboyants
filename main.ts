@@ -21,6 +21,7 @@ Object.keys(env)
 const {
   PORT,
   HOST: hostname,
+  DATABASE_NAME: db,
   DATABASE_HOST: host,
   DATABASE_USERNAME: username,
   DATABASE_PASSWORD: password,
@@ -29,13 +30,12 @@ const {
   DOMAIN_AUTHORIZED: origin,
 } = Deno.env.toObject();
 
-console.log(APP_ENV);
-
 const clusterUrl = await Mongo.createClusterUrl({
   username,
   password,
   host,
   env: APP_ENV,
+  db,
 });
 
 // Set session store.
