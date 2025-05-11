@@ -9,6 +9,7 @@ type ParameterType = {
   paragraph: string;
   imgSrc: string;
   imgAlt: string;
+  link: string;
 };
 
 export const HeroBanner: ComponentType<
@@ -21,14 +22,19 @@ export const HeroBanner: ComponentType<
     paragraph,
     imgSrc,
     imgAlt,
+    link,
   }: ParameterType) => (
-    `<figure class="hero-banner">
-      <img src="${imgSrc}" alt="${imgAlt}" />
-      <figcaption>
-        <h1>${title}</h1>
-        <p>${paragraph}</p>
-      </figcaption>
-      <div></div>
-    </figure>`
+    `<div class="hero-banner">
+      <div>
+        <div>
+          <h1>${title}</h1>
+          <p>${paragraph}</p>
+          <a href="#products">${link}</a> 
+        </div>
+        <figure>
+          <img src="${imgSrc}" alt="${imgAlt}" />
+        </figure>
+      </div>
+    </div>`
   ),
 };

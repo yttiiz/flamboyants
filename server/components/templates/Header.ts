@@ -37,7 +37,7 @@ export const Header: ComponentType<
   ) => {
     return `
     <header data-header="site">
-      <div class="container">
+      <div class="header-container">
         <div>
           ${isConnexionFailed || isAdminInterface
             ? ""

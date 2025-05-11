@@ -21,6 +21,7 @@
   --danger-40-percent: rgb(158 42 43 / 0.4);
   --shadow: rgb(var(--black-rvb) / 0.85);
   --box-shadow: 0 0 15px rgb(var(--black-rvb) / 0.1);
+  --box-shadow-dark: 0 0 15px rgb(var(--black-rvb) / 0.35);
 
   /*=====| Sizes |===== */
   --base-size: clamp(1.4rem, 2vw, 1.6rem);
@@ -145,9 +146,14 @@ noscript {
   transform: translate(-50%, -50%);
 }
 
-.container {
+.container,
+.header-container {
   margin: auto;
   width: var(--container-width);
+}
+
+.container {
+  padding: calc(var(--base-size) * 2) 0;
 }
 
 /*=================================================| DIALOG |=================================================*/
@@ -522,10 +528,6 @@ footer > div {
 main .container {
   display: flex;
   flex-direction: column;
-}
-
-section {
-  padding: calc(var(--base-size) * 2) 0;
 }
 
 section p[data-msg-infos="success"],

@@ -1,38 +1,74 @@
 #data-home {
   & .hero-banner {
-    margin: auto;
-    position: relative;
-    max-width: 96rem;
-    border-radius: var(--base-size);
-    overflow: hidden;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 7rem);
+    background-color: #c5b99e;
+    background-image: radial-gradient(circle farthest-corner at top left, rgb(36, 186, 181) 0%, rgba(225, 243, 97,0) 50%),
+        radial-gradient(circle farthest-side at top right, rgba(181, 176, 177,1) 0%, rgba(181, 176, 177,0) 10%),
+    radial-gradient(circle farthest-corner at bottom right, rgb(21, 113, 55) 0%, rgba(204, 104, 119, 0) 33%),
+        radial-gradient(circle farthest-corner at top right, rgba(155, 221, 240,1) 0%, rgba(155, 221, 240,0) 50%),
+      radial-gradient(ellipse at bottom center, rgb(63, 84, 177) 0%, rgba(254, 43, 0, 0) 80%);
+    
     & * {
       color: var(--light);
     }
+    
+    & > div {
+      display: grid;
+      margin: auto;
+      max-width: calc(var(--base-size) * 80);
+      grid-template-columns: 1fr 1fr;
+      gap: var(--base-size);
+    }
 
-    & > img {
+    & h1 {
+      font-size: calc(var(--base-size) * 4);
+      line-height: calc(var(--base-size) * 4.5);
+    }
+
+    & h1 strong {
+      font-weight: inherit;
+      color: var(--primary-color);
+    }
+
+    & p {
+      margin-bottom: calc(var(--base-size) * 1.5);
+    }
+
+    & a {
+      font-size: calc(var(--base-size) * 1.25);
+      font-weight: 500;
+      display: inline-block;
+      padding: var(--btn-padding);
+      background: var(--primary-color);
+      border-radius: var(--btn-border-radius);
+    }
+
+    & > div > figure {
+      position: relative;
+    }
+    
+    & > div > figure::after {
+      content: "";
+      position: absolute;
+      bottom: calc(var(--base-size) * -3);
+      background: url("/img/hero/hero_banner.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      opacity: .75;
+      filter: blur(calc(var(--base-size) * 2));
+    }
+    
+    & > div > figure img {
+      position: inherit;
+      z-index: 1;
       width: 100%;
       object-fit: cover;
       object-position: 50% 50%;
       aspect-ratio: 16 / 9;
-    }
-
-    & > figcaption,
-    & > div {
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-    }
-
-    & > figcaption {
-      z-index: 2;
-      padding: calc(var(--base-size) * 2);
-    }
-
-    & > div {
-      z-index: 1;
-      height: 30%;
-      background: linear-gradient(transparent, rgb(var(--black-rvb) / 0.7));
     }
   }
 
@@ -447,16 +483,19 @@
 
 /*=================================================| BREAKPOINTS |=================================================*/
 
-@media screen and (max-width: 550px) {
-  #data-home {
-    & .hero-banner > div {
-      height: 100%;
-    }
-  }
-}
-
 @media screen and (max-width: 1080px) {
   #data-home {
+    & .hero-banner > div {
+      max-width: var(--container-width);
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    & .hero-banner > div > div {
+      position: relative;
+      z-index: 1;
+    }
+
     & .products header > div:last-of-type {
       position: relative;
 
@@ -486,16 +525,9 @@
   }
 }
 
-@media screen and (max-width: 960px) {
-  #data-home {
-    & section:has(> figure) {
-      padding: unset;
-    }
-
-    & .hero-banner {
-      max-width: 100%;
-      border-radius: unset;
-    }
+@media screen and (max-width: 1780px) {
+  .hero-banner {
+    padding: 0 calc(var(--base-size) * 2);
   }
 }
 

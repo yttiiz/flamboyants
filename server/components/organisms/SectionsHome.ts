@@ -24,9 +24,10 @@ export const SectionsHome: ComponentType<
 				paragraph: hero.paragraph,
 				imgSrc: hero.imgSrc,
 				imgAlt: hero.imgAlt,
+        link: hero.link,
 			})}
     </section>
-    <section>
+    <section id="products">
       <div class="container">
         <div>
           <h1>${appartment.title}</h1>

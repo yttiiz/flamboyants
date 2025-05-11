@@ -1,9 +1,10 @@
 {
   "hero": {
-    "title": "Bienvenue aux Flamboyants",
-    "paragraph": "Passez des vacances de rêves, et profitez de vacances au soleil à petit prix !",
+    "title": "Bienvenue aux <strong>Flamboyants</strong>",
+    "paragraph": "Nous proposons une gamme de studios confortables et équipés pour répondre à vos besoins, comme celui de profiter de vos vacances.",
     "imgSrc": "/img/hero/hero_banner.jpg",
-    "imgAlt": "plage de Bois-Jolan"
+    "imgAlt": "plage de Bois-Jolan",
+    "link": "Laissez-vous entrainer !"
   },
   "appartment": {
     "title": "Découvrez l'ensemble de nos offres",

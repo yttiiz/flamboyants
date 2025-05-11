@@ -124,6 +124,7 @@ export type HomePageDataType = {
   hero: TitleAndDescriptionType & {
     imgSrc: string;
     imgAlt: string;
+    link: string;
   };
   appartment: TitleAndDescriptionType;
   visit: {
