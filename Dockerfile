@@ -1,5 +1,5 @@
 # Dockerfile
-FROM denoland/deno:1.41.0
+FROM denoland/deno:latest
 EXPOSE 3000
 
 WORKDIR /app

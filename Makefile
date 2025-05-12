@@ -1,7 +1,7 @@
 #bind container host to network
 HOST=--network host
-CONTAINER=RVJ
-IMAGE=rvj-img
+CONTAINER=flamboyants
+IMAGE=flamboyants-img
 LAUNCH=docker run --name $(CONTAINER) -d -p 3000:3000 $(HOST) -v $(shell pwd):/app $(IMAGE) deno task start
 
 init:
