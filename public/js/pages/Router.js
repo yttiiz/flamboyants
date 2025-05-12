@@ -93,6 +93,10 @@ export class Router {
       //============[ PRODUCT ]============//
       default:
         if (this.route.includes("product")) {
+          
+          // prevent home section -> #products to handle form.
+          if (this.route.includes("#")) break;
+
           const { ProductFormPage } = await import("./Form/ProductForm.js");
 
           this.#productForm = new ProductFormPage();

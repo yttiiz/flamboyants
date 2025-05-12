@@ -24,7 +24,13 @@ export const ProductCard: ComponentType<
     return `
       <li>
         <div>
-          <header>
+          ${
+            PicturesSlider.html({
+              id: product._id.toString(),
+              pictures: product.pictures,
+            })
+          }
+          <div class="main-details">
             <div>
               <figure>
                 <img
@@ -42,13 +48,7 @@ export const ProductCard: ComponentType<
                 <strong>${Helper.formatPrice(product.details.price)}</strong>/nuit
               </span>
             </div>
-          </header>
-          ${
-            PicturesSlider.html({
-              id: product._id.toString(),
-              pictures: product.pictures,
-            })
-          }
+          </div>
           <div>
             <p>${product.description}</p>
             <div>
