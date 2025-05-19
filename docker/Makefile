@@ -1,5 +1,6 @@
 COMPOSE=docker compose
 API_CONTAINER=api
+BAKE=COMPOSE_BAKE=true # Use once with 'up' command
 
 # Production
 up:
