@@ -1,0 +1,14 @@
+services:
+  app:
+    env_file: .env
+    image: flamboyants
+    container_name: les_flamboyants
+    build:
+      context: ${APP_PATH}
+      dockerfile: ${APP_PATH}/docker/Dockerfile
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ${APP_PATH}:/app
+    network_mode: host
+    command: deno task start
