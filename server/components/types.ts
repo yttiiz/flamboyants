@@ -67,9 +67,7 @@ export type ComponentType<
     | "Body" = "Body",
   U extends
     | string
-    | (<A extends (...args: any) => any>(
-      arg: Parameters<A>,
-    ) => string | Promise<string>) = string,
+    | ((arg: any) => string | Promise<string>) = string,
 > = {
   name: T;
   html: U;
