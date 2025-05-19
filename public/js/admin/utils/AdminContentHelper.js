@@ -126,23 +126,18 @@ export class AdminContentHelper extends DefaultFormHelper {
       <div>
         <p>Prénom : <strong>${users[key].firstname}</strong></p>
         <p>Nom : <strong>${users[key].lastname}</strong></p>
-        <p>Age : <strong>${getAge(users[key].birth)} ans</strong></p>
-        <p>Profession : <strong>${users[key].job}</strong></p>
+        <p>Email : <strong>${users[key].email}</strong></p>
+        <p>Role : <strong>${users[key].role}</strong></p>
+        <p>Id : <strong>${users[key]._id}</strong></p>
       </div>`;
-
+        
       userPrivatePart.innerHTML = `
-        <div>
-          <p>Id : <strong>${users[key]._id}</strong></p>
-          <p>Email : <strong>${users[key].email}</strong></p>
-          <p>Role : <strong>${users[key].role}</strong></p>
-        </div>
-        ${
-        AdminContentHelper.#getEditOrDeletePart({
+        ${AdminContentHelper.#getEditOrDeletePart({
           id: users[key]._id,
           itemName: `${users[key].firstname}_${users[key].lastname}`,
           dataType: "user",
-        })
-      }`;
+          className: "edit-delete"
+        })}`;
 
       users[key].role === "admin" ? userContainer.classList.add("admin") : null;
 
@@ -742,6 +737,7 @@ export class AdminContentHelper extends DefaultFormHelper {
    * dataType: string;
    * itemName: string;
    * itemDetails: string;
+   * className: string | undefined;
    * removeEditBtn: boolean
    * }}
    */
@@ -750,10 +746,11 @@ export class AdminContentHelper extends DefaultFormHelper {
     dataType,
     itemName,
     itemDetails,
+    className,
     removeEditBtn = false,
   }) => {
     return `
-    <div>
+    <div${className ? ` class="${className}"` : ""}>
       ${
       removeEditBtn ? "" : (
         `<button

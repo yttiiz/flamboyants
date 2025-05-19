@@ -438,18 +438,22 @@
 
     & > div:last-of-type {
       justify-content: space-between;
-      align-items: flex-end;
       background: rgb(var(--black-rvb) / 0.025);
-      border-top: 0.1rem solid rgb(var(--black-rvb) / 0.1);
     }
 
     & > div:last-of-type > div:last-of-type {
       gap: calc(var(--base-size) * 0.75);
       flex-direction: column;
     }
-
+    
     & > div:last-of-type > div:first-of-type p {
       -webkit-line-clamp: 3;
+    }
+    
+    & > div:last-of-type > div.edit-delete {
+      flex-direction: row;
+      display: flex;
+      gap: calc(var(--base-size) * 0.75);
     }
 
     & > div:last-of-type button {
@@ -578,7 +582,7 @@
       width: max-content;
       font-size: var(--base-size);
       font-weight: 500;
-      color: var(--white);
+      color: var(--primary-color);
       padding: var(--btn-padding);
       border-radius: var(--btn-border-radius);
       background: var(--secondary-color);
@@ -666,10 +670,6 @@
   .bookings-details {
     & > ul > li > div {
       flex-direction: column;
-    }
-
-    & > ul > li > div:last-of-type {
-      align-items: unset;
     }
 
     & > ul > li div:first-of-type > div {
