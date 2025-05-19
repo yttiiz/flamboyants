@@ -581,7 +581,14 @@ h4 {
 #data-home section .container > ul,
 #data-user-form section form[data-style="user-register"] > div {
   display: grid;
+}
+
+#data-home section .container > ul {
   grid-template-columns: 1fr 1fr;
+}
+
+#data-user-form section form[data-style="user-register"] > div {
+  grid-template-columns: 1fr;
 }
 
 main .container,

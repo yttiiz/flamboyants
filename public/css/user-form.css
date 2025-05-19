@@ -1,5 +1,14 @@
 #data-user-form,
 #data-profil-form {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+
+  & h1 {
+    text-align: center;
+  }
+
   & section form label span:has(> div) {
     position: relative;
 
@@ -36,7 +45,8 @@
     border-radius: var(--base-size);
   }
 
-  & form[data-style="user-login"] {
+  & form[data-style="user-login"],
+  & form[data-style="user-register"] {
     margin: 0 auto;
     width: clamp(
       calc(var(--base-size) * 18.75),
