@@ -326,6 +326,12 @@
     }
   }
 
+  .conditions {
+    & p {
+      font-weight: 300;
+    }
+  }
+
   /*=====| BREAKPOINT |=====*/
 
   @media screen and (max-width: 950px) {

@@ -131,7 +131,7 @@ b {
 }
 
 p {
-  line-height: calc(var(--base-size) * 1.5);
+  line-height: calc(var(--base-size) * 1.75);
 }
 
 svg,

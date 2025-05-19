@@ -94,6 +94,6 @@
   },
   "conditions": {
     "title": "Conditions à respecter",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    "content": "<b>Nettoyage</b> : Assurez-vous de quitter le logement dans le même état que vous l'avez trouvée, c'est-à-dire propre et en bon état.<br /><b>Utilisation des équipements</b> : Utilisez les équipements de l'appartement (salle de bain, cuisine, etc.) de manière raisonnable et respectueuse."
   }
 }
