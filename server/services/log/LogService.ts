@@ -129,7 +129,7 @@ export class LogService {
 
     let picPath: string;
 
-    const { lastname, firstname, email, birth, password, job, photo } =
+    const { lastname, firstname, email, password, photo } =
       dataParsed.data as FormDataAppType;
 
     photo
@@ -147,9 +147,7 @@ export class LogService {
         firstname,
         lastname,
         email,
-        birth: new Date(birth),
         role: "user",
-        job,
         hash,
         photo: picPath,
       },
