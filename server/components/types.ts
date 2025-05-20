@@ -181,10 +181,25 @@ export type HeaderDataType = {
 };
 
 export type FooterDataType = {
-  basicItems: ItemDataType[];
-  relatedItems: ItemDataType[];
+  details: {
+    companyName: string;
+    phone: string;
+    address: {
+      line: string;
+      zip: string;
+      city: string;
+      country: string;
+    }
+  };
+  company: FooterItemDataType;
+  legalsInformations: FooterItemDataType;
   copyrights: string;
 };
+
+export type FooterItemDataType = {
+  title: string;
+  items: ItemDataType[];
+}
 
 export type DialogDataType = {
   dataset?: string;

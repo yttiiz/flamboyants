@@ -644,7 +644,34 @@ footer {
   & > div,
   & > div > div {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
+  }
+
+  & .footer-details {
+    display: grid;
+    gap: 1rem;
+
+    & > svg {
+      width: 6rem;
+      height: auto;
+      fill: var(--white);
+    }
+
+    & > div {
+      display: inherit;
+    }
+
+    & a {
+      width: max-content;
+      padding: .5rem 1rem;
+      border-radius: var(--btn-border-radius);
+      border: 1px solid var(--white);
+    }
+  }
+
+  & h3 {
+    margin-bottom: 1rem;
+    color: var(--tertiary-color);
   }
 
   & > div {
@@ -696,6 +723,12 @@ footer {
   #data-user-form section form,
   #data-user-form section form[data-style="user-register"] > div {
     grid-template-columns: 1fr;
+  }
+
+  footer {
+    & > div > div:first-of-type {
+      flex-direction: column;
+    }
   }
 }
 

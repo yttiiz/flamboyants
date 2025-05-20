@@ -1,37 +1,43 @@
 {
-  "basicItems": [
-    {
-      "link": "/",
-      "text": "Accueil",
-      "className": "footer-home"
+  "details": {
+    "companyName": "Les Flamboyants",
+    "address": {
+      "line": "16, Rue Georges Troupé",
+      "zip": "97180",
+      "city": "Sainte-Anne",
+      "country": "Guadeloupe"
     },
-    {
-      "link": "/contact",
-      "text": "Contactez-nous",
-      "className": "footer-contact"
-    },
-    {
-      "link": "/legal",
-      "text": "Mentions légales",
-      "className": "footer-legal"
-    }
-  ],
-  "relatedItems": [
-    {
-      "link": "#",
-      "text": "Découverte de l'histoire",
-      "clasName": "footer-"
-    },
-    {
-      "link": "#",
-      "text": "En avant",
-      "clasName": "footer-"
-    },
-    {
-      "link": "#",
-      "text": "Garde à vous !",
-      "clasName": "footer-"
-    }
-  ],
+    "phone": "+590 690 00 7569"
+  },
+  "company": {
+    "title": "Entreprise",
+    "items": [
+      {
+        "link": "/",
+        "text": "Accueil",
+        "className": "footer-home"
+      },
+      {
+        "link": "/contact",
+        "text": "Contactez-nous",
+        "className": "footer-contact"
+      }
+    ]
+  },
+  "legalsInformations": {
+    "title": "Informations légales",
+    "items": [
+      {
+        "link": "/legal",
+        "text": "Mentions légales",
+        "className": "footer-legal"
+      },
+      {
+        "link": "/privacy",
+        "text": "Politique de confidentialité",
+        "clasName": "footer-privacy"
+      }
+    ]
+  },
   "copyrights": "Tous droits réservés © Les Flamboyants"
 }

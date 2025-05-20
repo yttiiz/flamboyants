@@ -1,15 +1,17 @@
 // deno-fmt-ignore-file
 import { Helper } from "@utils";
-import type {
-  ComponentType,
-  FooterDataType,
-  TemplateNameType
+import {
+Logo,
+  type ComponentType,
+  type FooterDataType,
+  type TemplateNameType
 } from "../mod.ts";
 import { SessionAndDataType } from "@controllers";
 
 const {
-  basicItems,
-  relatedItems,
+  details,
+  company,
+  legalsInformations,
   copyrights,
 } = await Helper.convertJsonToObject<FooterDataType>(
   "/server/data/basics/footer.json",
@@ -33,26 +35,42 @@ export const Footer: ComponentType<
           (
             `
             <div>
-              <ul>
-              ${
-                basicItems
-                  .map((item) => (
-                    `<li>
-                      <a href="${item.link}" class="${item.className}">${item.text}</a>
-                    </li>`)
-                  ).join("")
-              }
-              </ul>
-              <ul>
-              ${
-                relatedItems
-                  .map((item) => (
-                    `<li>
-                      <a href="${item.link}" class="${item.className}">${item.text}</a>
-                    </li>`)
-                  ).join("")
-              }
-              </ul>
+              <div class="footer-details">
+                ${Logo.html}
+               <h2>${details.companyName}</h2> 
+                <div>
+                  <span>${details.address.line}</span>
+                  <span>${details.address.zip} ${details.address.city}</span>
+                  <span>${details.address.country}</span>
+                </div>
+                <a href="tel:${details.phone}">${details.phone}</a>
+              </div>
+              <div>
+                <h3>${company.title}</h3>
+                <ul>
+                ${
+                  company.items
+                    .map((item) => (
+                      `<li>
+                        <a href="${item.link}" class="${item.className}">${item.text}</a>
+                      </li>`)
+                    ).join("")
+                }
+                </ul>
+              </div>
+              <div>
+                <h3>${legalsInformations.title}</h3>
+                <ul>
+                ${
+                  legalsInformations.items
+                    .map((item) => (
+                      `<li>
+                        <a href="${item.link}" class="${item.className}">${item.text}</a>
+                      </li>`)
+                    ).join("")
+                }
+                </ul>
+              </div>
             </div>
             `
           )
