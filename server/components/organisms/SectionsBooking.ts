@@ -49,14 +49,6 @@ export const SectionsBooking: ComponentType<
         </div>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <div>
-          <h1>Lorem ipsum dolor</h1>
-          <p>Lorem ipsum dolor.</p>
-        </div>
-      </div>
-    </section>
     ${Dialog.html({})}`;
   }
 }
