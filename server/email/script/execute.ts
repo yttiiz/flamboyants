@@ -5,12 +5,10 @@ export async function createEmailTemplate(
   emailHtmlPath: string,
 ) {
   // 1. Retreive "email.json".
-  const baseEmailJson = await Helper.convertJsonToObject<
-    { toUser: EmailContentType; toMaintainer: EmailContentType }
-  >(emailJsonPath);
+  const baseEmailJson = await Helper.convertJsonToObject<EmailContentType>(emailJsonPath);
 
   // 2. Replace previous "messageHtml" property content by "{{ emailHmtlContent }} mark."
-  baseEmailJson.toUser.messageHtml = "{{ emailHtmlContent }}";
+  baseEmailJson.messageHtml = "{{ emailHtmlContent }}";
 
   // 3. Rewrite "email.json".
   const baseEmailJsonClean = JSON.stringify(baseEmailJson);
