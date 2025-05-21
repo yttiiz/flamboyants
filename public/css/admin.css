@@ -445,11 +445,11 @@
       gap: calc(var(--base-size) * 0.75);
       flex-direction: column;
     }
-    
+
     & > div:last-of-type > div:first-of-type p {
       -webkit-line-clamp: 3;
     }
-    
+
     & > div:last-of-type > div.edit-delete {
       flex-direction: row;
       display: flex;

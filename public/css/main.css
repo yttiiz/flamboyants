@@ -2,9 +2,9 @@
 
 :root {
   /*=====| Colors |===== */
-  --primary-color: #226F54;
-  --secondary-color: #F4F0BB;
-  --tertiary-color: #87C38F;
+  --primary-color: #226f54;
+  --secondary-color: #f4f0bb;
+  --tertiary-color: #87c38f;
   --admin-color: #e7f7ff;
   --vanilla: #fff3b0;
   --danger: #9e2a2b;
@@ -663,7 +663,7 @@ footer {
 
     & a {
       width: max-content;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       border-radius: var(--btn-border-radius);
       border: 1px solid var(--white);
     }

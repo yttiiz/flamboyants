@@ -189,7 +189,7 @@ export type FooterDataType = {
       zip: string;
       city: string;
       country: string;
-    }
+    };
   };
   company: FooterItemDataType;
   legalsInformations: FooterItemDataType;
@@ -199,7 +199,7 @@ export type FooterDataType = {
 export type FooterItemDataType = {
   title: string;
   items: ItemDataType[];
-}
+};
 
 export type DialogDataType = {
   dataset?: string;

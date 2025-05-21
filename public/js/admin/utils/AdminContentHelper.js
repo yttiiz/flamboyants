@@ -130,14 +130,16 @@ export class AdminContentHelper extends DefaultFormHelper {
         <p>Role : <strong>${users[key].role}</strong></p>
         <p>Id : <strong>${users[key]._id}</strong></p>
       </div>`;
-        
+
       userPrivatePart.innerHTML = `
-        ${AdminContentHelper.#getEditOrDeletePart({
+        ${
+        AdminContentHelper.#getEditOrDeletePart({
           id: users[key]._id,
           itemName: `${users[key].firstname}_${users[key].lastname}`,
           dataType: "user",
-          className: "edit-delete"
-        })}`;
+          className: "edit-delete",
+        })
+      }`;
 
       users[key].role === "admin" ? userContainer.classList.add("admin") : null;
 

@@ -129,8 +129,8 @@ export class LogService {
 
     let picPath: string;
 
-    const { lastname, firstname, email, password, photo } =
-      dataParsed.data as FormDataAppType;
+    const { lastname, firstname, email, password, photo } = dataParsed
+      .data as FormDataAppType;
 
     photo
       ? (picPath = await Helper.writeUserPicFile(
