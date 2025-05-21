@@ -7,7 +7,10 @@ new Router();
 const animationHelper = new AnimationHelper();
 
 // Home page
-if (location.href === location.origin + "/") {
+if (
+  location.href === location.origin + "/" ||
+  location.href.includes("/#")
+) {
   animationHelper.handleHomeSlider(".slider-product");
 }
 
