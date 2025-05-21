@@ -30,7 +30,7 @@ export class Mailer {
     switch (type) {
       case "booking": {
         info = await transporter.sendMail({
-          from: `${username} - <${email}>`,
+          from: `${username} <${email}>`,
           to,
           subject: "Réservation validée",
           text: Mailer.plainText(receiver),
@@ -44,19 +44,11 @@ export class Mailer {
         const registerData = await Helper.convertJsonToObject<EmailContentType>(
           "/server/data/email/register-email.json",
         );
-        let { messageHtml, messagePlainText } = registerData;
-
-        messageHtml = messageHtml.replace("{{ userFirstname }}", receiver);
-        messageHtml = messageHtml.replace("{{ userEmail }}", to);
-
-        messagePlainText = messagePlainText?.replace(
-          "{{ userFirstname }}",
-          receiver,
-        );
-        messagePlainText = messagePlainText?.replace("{{ userEmail }}", to);
+        const { messageHtml, messagePlainText } = Mailer
+          .getHtmlAndPlainTextMessage({ registerData, receiver, to });
 
         info = await transporter.sendMail({
-          from: `${username} - <${email}>`,
+          from: `${username} <${email}>`,
           to,
           subject: registerData.subject,
           text: messagePlainText ?? "",
@@ -84,7 +76,7 @@ export class Mailer {
     const transporter = Mailer.getTransporter(email, password);
 
     await transporter.sendMail({
-      from: `${brand} - <${email}>`,
+      from: `${brand} <${email}>`,
       to: email,
       subject: "Formulaire de contact",
       text:
@@ -120,6 +112,28 @@ export class Mailer {
       username,
       brand,
       password,
+    };
+  }
+
+  private static getHtmlAndPlainTextMessage(
+    { registerData: { messageHtml, messagePlainText }, receiver, to }: {
+      registerData: EmailContentType;
+      receiver: string;
+      to: string;
+    },
+  ) {
+    messageHtml = messageHtml.replace("{{ userFirstname }}", receiver);
+    messageHtml = messageHtml.replace("{{ userEmail }}", to);
+
+    messagePlainText = messagePlainText?.replace(
+      "{{ userFirstname }}",
+      receiver,
+    );
+    messagePlainText = messagePlainText?.replace("{{ userEmail }}", to);
+
+    return {
+      messageHtml,
+      messagePlainText,
     };
   }
 
