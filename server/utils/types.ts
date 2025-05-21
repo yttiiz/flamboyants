@@ -41,3 +41,9 @@ export type MailConfigType = {
   port: number;
   secure: boolean;
 };
+
+export type EmailContentType = {
+  subject: string;
+  messagePlainText?: string;
+  messageHtml: string;
+};
