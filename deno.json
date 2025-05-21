@@ -39,6 +39,7 @@
     "dev": "deno task load-local-db && deno run -A --env-file=.env.local --watch main.ts",
     "launch-container": "docker desktop start && cd docker && make up",
     "test": "deno test --no-check -A ./tests/*.test.ts",
-    "check-bc": "deno task fmt && deno task test"
+    "check-bc": "deno task fmt && deno task test",
+    "generate-email": "deno run -A server/email/script/execute.ts && deno task fmt"
   }
 }
