@@ -22,7 +22,7 @@
     "singleQuote": false,
     "proseWrap": "preserve",
     "include": ["server/", "public/", "tests/"],
-    "exclude": ["README.md"]
+    "exclude": ["README.md", "server/email/*"]
   },
   "lint": {
     "rules": {
