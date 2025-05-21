@@ -50,6 +50,15 @@ export class Helper {
     return JSON.parse(decoder.decode(file));
   }
 
+  public static async convertFileToString(
+    path: string,
+    decoder = new TextDecoder("utf-8"),
+  ): Promise<string> {
+    const file = await Deno.readFile(Deno.cwd() + path);
+
+    return decoder.decode(file);
+  }
+
   public static async writeLog(error: unknown) {
     if (error) {
       const { message } = error as { message: string };

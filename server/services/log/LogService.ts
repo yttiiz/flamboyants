@@ -1,4 +1,4 @@
-import { FormDataAppType, Helper, Validator } from "@utils";
+import { FormDataAppType, Helper, Mailer, Validator } from "@utils";
 import {
   AdminController,
   AuthController,
@@ -154,16 +154,32 @@ export class LogService {
       "users",
     );
 
-    userId === "connexion failed"
-      ? this.default.response(ctx, { errorMsg: this.default.errorMsg }, 502)
-      : this.default.response(
+    if (userId === "connexion failed") {
+      return this.default.response(
         ctx,
-        {
-          title: "Bienvenue " + firstname,
-          message:
-            `${firstname} ${lastname}, votre profil a été créé avec succès.`,
-        },
-        200,
+        { errorMsg: this.default.errorMsg },
+        502,
       );
+    }
+
+    this.default.response(
+      ctx,
+      {
+        title: "Bienvenue " + firstname,
+        message:
+          `${firstname} ${lastname}, votre profil a été créé avec succès.`,
+      },
+      200,
+    );
+
+    try {
+      await Mailer.send({
+        to: email,
+        receiver: firstname,
+        type: "register",
+      });
+    } catch (error) {
+      Helper.writeLog(error);
+    }
   };
 }

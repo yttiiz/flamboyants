@@ -1,6 +1,10 @@
 import { nodemailer } from "@deps";
 import { Helper } from "./mod.ts";
-import type { MailConfigType, SendParameterType } from "./mod.ts";
+import type {
+  EmailContentType,
+  MailConfigType,
+  SendParameterType,
+} from "./mod.ts";
 import { ContactSendEmailContentType } from "@controllers";
 
 export class Mailer {
@@ -18,16 +22,42 @@ export class Mailer {
     secure: true,
   };
 
-  public static async send({ to, receiver }: SendParameterType) {
+  public static async send({ to, receiver, type }: SendParameterType) {
     const { email, password, username } = Mailer.getClientMailDetails();
     const transporter = Mailer.getTransporter(email, password);
-    const info = await transporter.sendMail({
-      from: `${username} - <${email}>`,
-      to,
-      subject: "Réservation validée",
-      text: Mailer.plainText(receiver),
-      html: Mailer.html(receiver),
-    });
+    let info;
+
+    switch (type) {
+      case "booking": {
+        info = await transporter.sendMail({
+          from: `${username} <${email}>`,
+          to,
+          subject: "Réservation validée",
+          text: Mailer.plainText(receiver),
+          html: Mailer.html(receiver),
+        });
+
+        break;
+      }
+
+      case "register": {
+        const registerData = await Helper.convertJsonToObject<EmailContentType>(
+          "/server/data/email/register-email.json",
+        );
+        const { messageHtml, messagePlainText } = Mailer
+          .getHtmlAndPlainTextMessage({ registerData, receiver, to });
+
+        info = await transporter.sendMail({
+          from: `${username} <${email}>`,
+          to,
+          subject: registerData.subject,
+          text: messagePlainText ?? "",
+          html: messageHtml,
+        });
+
+        break;
+      }
+    }
 
     await Helper.writeEmailLog(
       `Email envoyé le ${
@@ -46,7 +76,7 @@ export class Mailer {
     const transporter = Mailer.getTransporter(email, password);
 
     await transporter.sendMail({
-      from: `${brand} - <${email}>`,
+      from: `${brand} <${email}>`,
       to: email,
       subject: "Formulaire de contact",
       text:
@@ -82,6 +112,28 @@ export class Mailer {
       username,
       brand,
       password,
+    };
+  }
+
+  private static getHtmlAndPlainTextMessage(
+    { registerData: { messageHtml, messagePlainText }, receiver, to }: {
+      registerData: EmailContentType;
+      receiver: string;
+      to: string;
+    },
+  ) {
+    messageHtml = messageHtml.replace("{{ userFirstname }}", receiver);
+    messageHtml = messageHtml.replace("{{ userEmail }}", to);
+
+    messagePlainText = messagePlainText?.replace(
+      "{{ userFirstname }}",
+      receiver,
+    );
+    messagePlainText = messagePlainText?.replace("{{ userEmail }}", to);
+
+    return {
+      messageHtml,
+      messagePlainText,
     };
   }
 

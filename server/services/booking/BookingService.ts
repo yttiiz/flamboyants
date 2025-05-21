@@ -186,6 +186,7 @@ export class BookingService {
             await Mailer.send({
               to: ctx.state.session.get("userEmail"),
               receiver: ctx.state.session.get("userFullname"),
+              type: "booking",
             });
           } catch (error) {
             Helper.writeLog(error);

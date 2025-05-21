@@ -34,10 +34,17 @@ export type FormDataAppType = {
 export type SendParameterType = {
   to: string;
   receiver: string;
+  type: "booking" | "register";
 };
 
 export type MailConfigType = {
   host: string;
   port: number;
   secure: boolean;
+};
+
+export type EmailContentType = {
+  subject: string;
+  messagePlainText?: string;
+  messageHtml: string;
 };
