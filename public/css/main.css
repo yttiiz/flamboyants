@@ -641,10 +641,14 @@ footer {
     color: var(--light);
   }
 
+  & > div {
+    gap: 4rem;
+  }
+
   & > div,
   & > div > div {
     display: flex;
-    gap: 4rem;
+    justify-content: space-between;
   }
 
   & .footer-details {
@@ -728,6 +732,8 @@ footer {
   footer {
     & > div > div:first-of-type {
       flex-direction: column;
+      justify-content: unset;
+      gap: 4rem;
     }
   }
 }
