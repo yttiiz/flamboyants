@@ -34,6 +34,7 @@ export type FormDataAppType = {
 export type SendParameterType = {
   to: string;
   receiver: string;
+  type: "booking" | "register";
 };
 
 export type MailConfigType = {

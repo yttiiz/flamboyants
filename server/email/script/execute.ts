@@ -31,3 +31,9 @@ export async function createEmailTemplate(
   // 6. Rewrite "email.json" again.
   await Deno.writeTextFile(Deno.cwd() + emailJsonPath, emailJson);
 }
+
+// run this command in CLI : deno run -A /server/email/script/execute.ts
+createEmailTemplate(
+  "/server/data/email/register-email.json",
+  "/server/email/register_email.html"
+);
