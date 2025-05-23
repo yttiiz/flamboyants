@@ -96,7 +96,7 @@ export class LogService {
       }
     } catch (error) {
       Helper.writeLog(error);
-      this.default.response(ctx, { errorMsg: this.default.errorMsg }, 500);
+      this.default.response(ctx, { errorMsg: this.default.errorMsg }, 502);
     }
   };
 

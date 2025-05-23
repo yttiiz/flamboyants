@@ -92,7 +92,7 @@ export class ProductService {
         const body = await this.default.createHtmlFile(ctx, {
           id: "data-home",
           css: "home",
-          data: this.default.errorMsg,
+          data: this.default.errorMsg + "502",
         });
 
         this.default.response(ctx, body, 200);

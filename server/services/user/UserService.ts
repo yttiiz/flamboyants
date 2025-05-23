@@ -22,7 +22,7 @@ export class UserService {
 
   public get = async <T extends string>(ctx: RouterContextAppType<T>) => {
     if (!ctx.state.session) {
-      this.default.response(ctx, { errorMsg: this.default.errorMsg }, 302, "/");
+      this.default.response(ctx, { errorMsg: this.default.errorMsg + "502" }, 302, "/");
     } else if (ctx.state.session.has("userFirstname")) {
       const body = await this.default.createHtmlFile(ctx, {
         id: "data-profil-form",

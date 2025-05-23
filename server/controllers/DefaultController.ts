@@ -20,7 +20,7 @@ import type {
 } from "./mod.ts";
 
 export class DefaultController {
-	private ERROR_CODE = "Code erreur : 502";
+	private ERROR_CODE = "Code erreur : ";
 	private isConnexionToDBFailed = (data: unknown) =>
 		typeof data === "string" && data.includes(this.ERROR_CODE);
 
