@@ -20,7 +20,7 @@ export const FormAdmin: ComponentType<
   ) => {
     return `
     <div>
-      <h1>${title}</h1>
+      <h1 class="admin-login-title">${title}</h1>
     </div>
     <div>
       <form

@@ -502,7 +502,7 @@ header[data-header="site"] {
     top: 50%;
     left: calc(var(--base-size) * 1.25);
     transform: translateY(-50%);
-    background: var(--secondary-color);
+    background: var(--primary-color);
   }
 }
 
