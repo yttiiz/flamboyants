@@ -112,7 +112,7 @@ export class UserFormHelper extends DefaultFormHelper {
    */
   static showErrorMsg = async (response, pathname) => {
     const status = response.status;
-    const id = pathname === "/profil" ? "profil" : "users";
+    const id = pathname === "/profil" ? "profil" : "user";
     const { errorMsg } = await response.json();
 
     UserFormHelper.#paragraphToShowInfo({
