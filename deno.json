@@ -35,7 +35,7 @@
     "load-local-db": "sudo systemctl start mongod.service",
     "fmt": "deno fmt",
     "lint-fmt": "deno lint && deno fmt --check",
-    "start": "deno run -A --env-file=.env.production --watch main.ts",
+    "start": "deno -A --watch main.ts",
     "dev": "deno task load-local-db && deno run -A --env-file=.env.local --watch main.ts",
     "launch-container": "docker desktop start && cd docker && make up",
     "launch-server-container": "cd docker && make up",
