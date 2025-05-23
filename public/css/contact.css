@@ -36,6 +36,7 @@
 
     & .user-infos input[type="submit"] {
       background: var(--primary-color);
+      height: calc(var(--base-size) * 3);
     }
   }
 }
