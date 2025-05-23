@@ -114,7 +114,7 @@ export class ProductFormPage extends PageBuilder {
 
     formData.append("id", productId);
 
-    const res = await fetch(e.target.action, {
+    const res = await fetch(location.origin + e.target.action, {
       method: "POST",
       body: formData,
       headers: {

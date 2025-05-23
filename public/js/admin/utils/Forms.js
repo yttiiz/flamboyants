@@ -45,7 +45,7 @@ export class Forms {
     const method = isDeleteForm ? "DELETE" : (isCreateForm ? "POST" : "PUT");
 
     try {
-      const res = await fetch(e.target.action, {
+      const res = await fetch(location.origin + e.target.action, {
         method,
         body: formData,
         headers: {

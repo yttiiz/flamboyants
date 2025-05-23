@@ -155,7 +155,7 @@ export class UserFormPage extends PageBuilder {
       ? (isDeleteForm ? "DELETE" : "PUT")
       : null;
 
-    const res = await fetch(e.target.action, {
+    const res = await fetch(location.origin + e.target.action, {
       method: method ?? "POST",
       body: formData,
       headers: {
@@ -173,7 +173,7 @@ export class UserFormPage extends PageBuilder {
       if (res.redirected) {
         globalThis.location.href = res.url;
       } else {
-        switch (e.target.action) {
+        switch (location.origin + e.target.action) {
           case location.origin + "/login":
             UserFormHelper.showLoginError(res);
             break;
