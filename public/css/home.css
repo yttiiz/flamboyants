@@ -84,7 +84,7 @@ header[data-header="site"] {
       content: "";
       position: absolute;
       bottom: calc(var(--base-size) * -3);
-      background: url("/img/hero/hero_banner.jpg");
+      background: url("/img/hero/hero_banner.webp");
       background-size: cover;
       width: 100%;
       height: 100%;

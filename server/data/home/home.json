@@ -2,7 +2,7 @@
   "hero": {
     "title": "Bienvenue aux <strong>Flamboyants</strong>",
     "paragraph": "Nous proposons une gamme de studios confortables et équipés pour répondre à vos besoins, comme celui de profiter de vos vacances.",
-    "imgSrc": "/img/hero/hero_banner.jpg",
+    "imgSrc": "/img/hero/hero_banner.webp",
     "imgAlt": "plage de Bois-Jolan",
     "link": "Laissez-vous entrainer !"
   },

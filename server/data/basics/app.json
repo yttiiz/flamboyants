@@ -6,7 +6,7 @@
     "type": "website",
     "url": "http://127.0.0.1",
     "image": {
-      "url": "http://127.0.0.1/yz_website.jpeg",
+      "url": "http://127.0.0.1/img/logos/les_flamboyants_logo.png",
       "type": "image/jpeg",
       "width": "720",
       "height": "480"
