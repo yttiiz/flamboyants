@@ -565,6 +565,12 @@ header[data-header="site"] {
   }
 }
 
+@media screen and (max-height: 740px) {
+  .hero-banner > div > figure {
+    display: none;
+  }
+}
+
 @keyframes placeholderAnimate {
   0% {
     background-position: -600px 0;
