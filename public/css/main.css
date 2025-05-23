@@ -318,7 +318,8 @@ header[data-header="site"] {
       color: var(--light);
     }
 
-    & a > svg {
+    & a > svg,
+    & > span svg {
       fill: var(--light);
     }
   }
