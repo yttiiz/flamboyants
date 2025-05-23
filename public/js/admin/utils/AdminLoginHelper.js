@@ -11,7 +11,7 @@ export class AdminLoginHelper extends DefaultFormHelper {
 
     const formData = AdminLoginHelper.setFormData(e.target);
 
-    const res = await fetch(location.origin + e.target.action, {
+    const res = await fetch(e.target.action, {
       method: "POST",
       body: formData,
       headers: {

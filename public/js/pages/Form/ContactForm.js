@@ -37,7 +37,7 @@ export class ContactFormPage extends PageBuilder {
     const labels = e.target.querySelectorAll(".user-infos label");
 
     try {
-      const res = await fetch(location.origin + e.target.action, {
+      const res = await fetch(e.target.action, {
         method: "POST",
         body: formData,
         headers: {

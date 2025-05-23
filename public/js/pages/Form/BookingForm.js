@@ -54,7 +54,7 @@ export class BookingFormPage extends PageBuilder {
     formData.append("bookingEnd", bookingEnd);
     formData.append("bookingCreatedAt", bookingCreatedAt);
 
-    const res = await fetch(location.origin + e.target.action, {
+    const res = await fetch(e.target.action, {
       method: "DELETE",
       body: formData,
       headers: {
