@@ -129,11 +129,11 @@
 
     & form > div button {
       display: inherit;
-      color: var(--white);
+      color: var(--primary-color);
       font-size: var(--base-size);
       font-weight: 500;
       padding: var(--btn-padding);
-      background: var(--secondary-color);
+      border: 1px solid var(--primary-color);
       border-radius: var(--btn-border-radius);
     }
 
