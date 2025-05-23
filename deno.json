@@ -36,11 +36,11 @@
     "fmt": "deno fmt",
     "lint-fmt": "deno lint && deno fmt --check",
     "start": "deno -A --watch main.ts",
-    "dev": "deno task load-local-db && deno run -A --env-file=.env.local --watch main.ts",
+    "dev": "deno task load-local-db && deno -A --env-file=.env.local --watch main.ts",
     "launch-container": "docker desktop start && cd docker && make up",
     "launch-server-container": "cd docker && make up",
     "test": "deno test --no-check -A ./tests/*.test.ts",
     "check-bc": "deno task fmt && deno task test",
-    "generate-email": "deno run -A server/email/script/execute.ts && deno task fmt"
+    "generate-email": "deno -A server/email/script/execute.ts && deno task fmt"
   }
 }
