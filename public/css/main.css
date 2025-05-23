@@ -28,9 +28,9 @@
   --btn-border-radius: 0.5rem;
   --btn-padding: calc(var(--base-size) * 0.35) calc(var(--base-size) * 0.875);
   --burger-height: calc(var(--base-size) * 1.5);
-  --container-width: clamp(30rem, 90%, 96rem);
-  --basic-dialog-width: clamp(30rem, 90%, calc(var(--base-size) * 31.25));
-  --large-dialog-width: clamp(30rem, 90%, calc(var(--base-size) * 56.25));
+  --container-width: clamp(30rem, 85%, 96rem);
+  --basic-dialog-width: clamp(30rem, 85%, calc(var(--base-size) * 31.25));
+  --large-dialog-width: clamp(30rem, 85%, calc(var(--base-size) * 56.25));
 
   /*=====| Transitions |===== */
   --smooth: 0.3s ease;
@@ -318,7 +318,8 @@ header[data-header="site"] {
       color: var(--light);
     }
 
-    & a > svg {
+    & a > svg,
+    & > span svg {
       fill: var(--light);
     }
   }
@@ -501,7 +502,7 @@ header[data-header="site"] {
     top: 50%;
     left: calc(var(--base-size) * 1.25);
     transform: translateY(-50%);
-    background: var(--secondary-color);
+    background: var(--primary-color);
   }
 }
 
