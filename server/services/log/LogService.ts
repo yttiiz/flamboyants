@@ -13,6 +13,7 @@ import type { FormDataType } from "@components";
 export class LogService {
   default;
   isAdmin;
+  isRunningInDenoDeploy = !!(Deno.env.get("IS_DENO_DEPLOY"));
 
   constructor(defaultController: AuthController | AdminController) {
     this.default = defaultController;
@@ -58,7 +59,11 @@ export class LogService {
           return this.default.response(ctx, "", 401);
         }
 
-        const isPasswordOk = await Auth.comparePassword(password, user.hash);
+        const isPasswordOk = await Auth.comparePassword(
+          password,
+          user.hash,
+          this.isRunningInDenoDeploy,
+        );
 
         // Handle session and/or redirection.
         if (isPasswordOk) {
@@ -140,7 +145,10 @@ export class LogService {
       ))
       : (picPath = this.default.defaultImg);
 
-    const hash = await Auth.hashPassword(password as string);
+    const hash = await Auth.hashPassword(
+      password as string,
+      this.isRunningInDenoDeploy,
+    );
 
     const userId = await Mongo.insertIntoDB(
       {
