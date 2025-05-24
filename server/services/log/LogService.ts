@@ -29,6 +29,9 @@ export class LogService {
     const session: SessionType = ctx.state.session;
     const formData = await ctx.request.body.formData();
 
+    console.log("email :", formData.get("email"));
+    console.log("password :", formData.get("password"));
+    
     const dataParsed = Validator.dataParser(formData, dataModel);
 
     if (!dataParsed.isOk) {
