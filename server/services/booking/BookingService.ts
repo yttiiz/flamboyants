@@ -118,7 +118,7 @@ export class BookingService {
           this.default.response(ctx, body, 200);
         }
       } catch (error) {
-        Helper.writeLog(error);
+        console.log(error);
       }
     } else {
       this.default.response(ctx, "", 302, "/");
@@ -189,7 +189,7 @@ export class BookingService {
               type: "booking",
             });
           } catch (error) {
-            Helper.writeLog(error);
+            console.log(error);
           }
         }
 
@@ -296,7 +296,7 @@ export class BookingService {
         200,
       );
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 

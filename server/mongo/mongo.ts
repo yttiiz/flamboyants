@@ -7,6 +7,7 @@ import {
   SelectFromDBType,
   UpdateItemIntoDBParameterType,
 } from "./types.ts";
+import console from "node:console";
 
 /**
  * The app MongoDB Manager.
@@ -140,7 +141,7 @@ export class Mongo {
       const db = await Mongo.client.connect(url);
       return new MongoStore(db, "sessions");
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   }
 

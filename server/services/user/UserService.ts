@@ -217,7 +217,7 @@ export class UserService {
         200,
       );
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 

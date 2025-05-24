@@ -64,8 +64,8 @@ export class ApiController {
           const data = await getUserProfilService(ctx);
 
           this.response(ctx, data, 200);
-        } catch (error) {
-          this.writeErrorLogAndSetResponse(ctx, error);
+        } catch (_) {
+          this.setResponse(ctx);
         }
       },
     );
@@ -90,8 +90,8 @@ export class ApiController {
           const { data, status } =
             await fetchDataFromGuadeloupeIslandsWebsiteService();
           this.response(ctx, data, status);
-        } catch (error) {
-          this.writeErrorLogAndSetResponse(ctx, error);
+        } catch (_) {
+          this.setResponse(ctx);
         }
       },
     );
@@ -106,8 +106,8 @@ export class ApiController {
             "/server/data/profil/profil.json",
           );
           this.response(ctx, JSON.stringify(content), 200);
-        } catch (error) {
-          this.writeErrorLogAndSetResponse(ctx, error);
+        } catch (_) {
+          this.setResponse(ctx);
         }
       },
     );
@@ -147,17 +147,15 @@ export class ApiController {
 
           this.response(ctx, JSON.stringify(data), 200);
         }
-      } catch (error) {
-        this.writeErrorLogAndSetResponse(ctx, error);
+      } catch (_) {
+        this.setResponse(ctx);
       }
     });
   }
 
-  private writeErrorLogAndSetResponse<T extends string>(
+  private setResponse<T extends string>(
     ctx: RouterContextAppType<T>,
-    error: unknown,
   ) {
-    this.helper.writeLog(error);
     this.response(
       ctx,
       JSON.stringify({

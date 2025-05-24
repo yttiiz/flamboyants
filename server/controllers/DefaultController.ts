@@ -141,7 +141,6 @@ export class DefaultController {
 
 			return defaultLinks;
 		} catch (error) {
-			Helper.writeLog(error);
 			return defaultLinks;
 		}
 	}

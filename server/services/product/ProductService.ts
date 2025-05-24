@@ -122,7 +122,7 @@ export class ProductService {
         this.default.response(ctx, body, 200);
       }
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 
@@ -284,7 +284,7 @@ export class ProductService {
         );
       }
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 
@@ -382,7 +382,7 @@ export class ProductService {
         200,
       );
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 

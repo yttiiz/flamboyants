@@ -29,9 +29,6 @@ export class LogService {
     const session: SessionType = ctx.state.session;
     const formData = await ctx.request.body.formData();
 
-    console.log("email :", formData.get("email"));
-    console.log("password :", formData.get("password"));
-
     const dataParsed = Validator.dataParser(formData, dataModel);
 
     if (!dataParsed.isOk) {
@@ -98,7 +95,6 @@ export class LogService {
         }
       }
     } catch (error) {
-      Helper.writeLog(error);
       this.default.response(ctx, { errorMsg: this.default.errorMsg }, 502);
     }
   };
@@ -182,7 +178,7 @@ export class LogService {
         type: "register",
       });
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 }

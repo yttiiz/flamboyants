@@ -51,7 +51,7 @@ export class AdminService {
 
       this.default.response(ctx, body, 200);
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 

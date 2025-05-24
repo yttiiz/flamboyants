@@ -5,6 +5,7 @@ import {
 } from "@controllers";
 import { Helper, Mailer, Validator } from "@utils";
 import { FormDataType } from "@components";
+import console from "node:console";
 
 export class ContactService {
   private default;
@@ -65,7 +66,7 @@ export class ContactService {
         200,
       );
     } catch (error) {
-      Helper.writeLog(error);
+      console.log(error);
     }
   };
 }

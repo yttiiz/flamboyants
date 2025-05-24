@@ -58,12 +58,6 @@ export class Mailer {
         break;
       }
     }
-
-    await Helper.writeEmailLog(
-      `Email envoyé le ${
-        Helper.displayDate({ style: "normal" })
-      }. Id : ${info.messageId},`,
-    );
   }
 
   public static async receive({
