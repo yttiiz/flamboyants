@@ -158,10 +158,6 @@ export class UserFormPage extends PageBuilder {
     const res = await fetch(e.target.action, {
       method: method ?? "POST",
       body: formData,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-      mode: "cors",
     });
 
     if (location.pathname !== "/profil") {
