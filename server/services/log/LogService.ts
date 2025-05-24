@@ -31,7 +31,7 @@ export class LogService {
 
     console.log("email :", formData.get("email"));
     console.log("password :", formData.get("password"));
-    
+
     const dataParsed = Validator.dataParser(formData, dataModel);
 
     if (!dataParsed.isOk) {
