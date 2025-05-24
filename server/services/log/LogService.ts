@@ -95,6 +95,7 @@ export class LogService {
         }
       }
     } catch (error) {
+      console.log("error :", error);
       this.default.response(ctx, { errorMsg: this.default.errorMsg }, 502);
     }
   };
