@@ -75,7 +75,7 @@ export const Footer: ComponentType<
             `
           )
         }
-        <div>
+        <div class="copyrights">
           <span>${copyrights} ${new Date().getFullYear()}</span>
         </div>
       </div>

@@ -696,7 +696,7 @@ footer {
     opacity: 0.7;
   }
 
-  & > div > div:last-of-type {
+  & .copyrights {
     font-size: calc(var(--base-size) * 0.85);
     justify-content: center;
 
@@ -731,7 +731,7 @@ footer {
   }
 
   footer {
-    & > div > div:first-of-type {
+    & > div > div:first-of-type:not(.copyrights) {
       flex-direction: column;
       justify-content: unset;
       gap: 4rem;
