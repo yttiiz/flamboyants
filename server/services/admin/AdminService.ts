@@ -22,23 +22,26 @@ export class AdminService {
     try {
       const session: SessionType = ctx.state.session;
       const isUserConnected = session.has("userId");
-      const userEmail = session.get("userEmail");
-      const user = await Mongo.selectFromDB(
-        "users",
-        userEmail,
-        "email",
-      );
 
-      if ("message" in user) {
-        return this.default.response(ctx, "", 302, "/");
-      } else if (isUserConnected && user.role !== "admin") {
-        return this.default.response(ctx, "", 302, "/");
-      }
+      if (isUserConnected) {
+        const userEmail = session.get("userEmail");
+        const user = await Mongo.selectFromDB(
+          "users",
+          userEmail,
+          "email",
+        );
 
-      const users = Mongo.connectionTo("users");
+        if ("message" in user) {
+          return this.default.response(ctx, "", 302, "/");
+        } else if (isUserConnected && user.role !== "admin") {
+          return this.default.response(ctx, "", 302, "/");
+        }
 
-      if ("message" in users) {
-        return this.default.response(ctx, "", 302, "/");
+        const users = Mongo.connectionTo("users");
+
+        if ("message" in users) {
+          return this.default.response(ctx, "", 302, "/");
+        }
       }
 
       const body = await this.default.createHtmlFile(ctx, {
