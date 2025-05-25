@@ -105,10 +105,8 @@ export class UserFormPage extends PageBuilder {
     const userInfosInputs = document.querySelectorAll(".user-infos input");
 
     // Set user photo
-    if (!data.photo.includes("default.png")) {
-      userImg.src = data.photo;
-      userImg.alt = `photo de ${data.firstname} ${data.lastname}`;
-    }
+    userImg.src = data.photo;
+    userImg.alt = `photo de ${data.firstname} ${data.lastname}`;
 
     // Set inputs
     for (const input of userInfosInputs) {

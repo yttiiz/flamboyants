@@ -296,6 +296,11 @@
 
 @media screen and (max-width: 950px) {
   #data-profil-form section form {
+
+    & .loading-text {
+      text-align: center;
+    }
+    
     & > div {
       flex-direction: column;
     }
