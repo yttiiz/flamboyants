@@ -216,7 +216,7 @@ export class BookingService {
 
               if (!res.ok) {
                 console.log("status :", res.statusText);
-                console.log("response :", res.json());
+                console.log("response :", await res.json());
               }
             } else {
               await Mailer.send({
@@ -226,7 +226,7 @@ export class BookingService {
               });
             }
           } catch (error) {
-            console.log(error);
+            console.log("error :", error);
           }
         }
 
