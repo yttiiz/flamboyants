@@ -118,6 +118,7 @@ export class LogService {
   public registerHandler = async <T extends PathAppType>(
     ctx: RouterContextAppType<T>,
   ) => {
+    const { IS_DENO_DEPLOY } = Deno.env.toObject();
     const dataModel = await Helper.convertJsonToObject<FormDataType>(
       `/server/data/authentication${ctx.request.url.pathname}.json`,
     );
@@ -181,11 +182,28 @@ export class LogService {
     );
 
     try {
-      await Mailer.send({
-        to: email,
-        receiver: firstname,
-        type: "register",
-      });
+      if (IS_DENO_DEPLOY) {
+        const { MAILER_API_KEY, MAILER_REGISTER_URL } = Deno.env
+          .toObject();
+        const res = await fetch(
+          `${MAILER_REGISTER_URL}?apiKey=${MAILER_API_KEY}`,
+          {
+            method: "POST",
+            body: JSON.stringify({ email, firstname }),
+          },
+        );
+
+        if (!res.ok) {
+          console.log("status :", res.statusText);
+          console.log("response :", await res.json());
+        }
+      } else {
+        await Mailer.send({
+          to: email,
+          receiver: firstname,
+          type: "register",
+        });
+      }
     } catch (error) {
       console.log(error);
     }
