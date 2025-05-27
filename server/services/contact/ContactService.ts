@@ -25,6 +25,8 @@ export class ContactService {
   };
 
   public post = async <T extends string>(ctx: RouterContextAppType<T>) => {
+    const { IS_DENO_DEPLOY } = Deno.env.toObject();
+    
     try {
       const formData = await ctx.request.body.formData();
       const dataModel = await Helper.convertJsonToObject<FormDataType>(
@@ -54,10 +56,25 @@ export class ContactService {
         message,
       };
 
-      try {
+      if (IS_DENO_DEPLOY) {
+        const { MAILER_API_KEY, MAILER_CONTACT_URL } = Deno.env
+          .toObject();
+
+        const res = await fetch(
+          `${MAILER_CONTACT_URL}?apiKey=${MAILER_API_KEY}`,
+          {
+            method: "POST",
+            body: JSON.stringify({ email, firstname, lastname, message }),
+          },
+        );
+
+        if (!res.ok) {
+          console.log("status :", res.statusText);
+          console.log("response :", await res.json());
+        }
+
+      } else {
         Mailer.receive({ content });
-      } catch (error) {
-        console.log("error :", error);
       }
 
       this.default.response(
