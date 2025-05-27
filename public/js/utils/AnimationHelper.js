@@ -109,12 +109,14 @@ export class AnimationHelper {
       key = 0,
     ) => {
       for (const landmark of landmarks.children) {
+        const circle = landmark.querySelector("span");
+
         if (index === key) {
-          landmark.classList.add("active");
+          circle.classList.add("active");
         }
 
-        if (index !== key && landmark.classList.contains("active")) {
-          landmark.classList.remove("active");
+        if (index !== key && circle.classList.contains("active")) {
+          circle.classList.remove("active");
         }
         key++;
       }
@@ -133,9 +135,17 @@ export class AnimationHelper {
         nextBtn.classList.add("hidden");
       } else {
         for (let i = 0; i < sliderLength; i++) {
-          landmarks.appendChild(document.createElement("span"));
+          const circle = document.createElement("span");
+          const landmark = document.createElement("li");
 
-          i === 0 ? landmarks.children[i].classList.add("active") : null;
+          landmark.appendChild(circle);
+          landmarks.appendChild(landmark);
+
+          i === 0
+            ? landmarks.children[i].querySelector("span").classList.add(
+              "active",
+            )
+            : null;
         }
 
         prevBtn.addEventListener("click", () => {

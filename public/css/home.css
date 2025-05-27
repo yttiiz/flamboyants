@@ -276,7 +276,7 @@ header[data-header="site"] {
       background: var(--light);
     }
 
-    & .slider-product-nav-landmarks span:not(:first-child) {
+    & .slider-product-nav-landmarks li:not(:first-child) {
       margin-left: calc(var(--base-size) * 0.45);
     }
 
