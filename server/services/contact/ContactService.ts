@@ -54,7 +54,11 @@ export class ContactService {
         message,
       };
 
-      Mailer.receive({ content });
+      try {
+        Mailer.receive({ content });
+      } catch (error) {
+        console.log("error :", error);
+      }
 
       this.default.response(
         ctx,

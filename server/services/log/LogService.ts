@@ -205,7 +205,7 @@ export class LogService {
         });
       }
     } catch (error) {
-      console.log(error);
+      console.log("error :", error);
     }
   };
 }
