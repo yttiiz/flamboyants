@@ -679,6 +679,11 @@ footer {
     color: var(--tertiary-color);
   }
 
+  .footer-items-list {
+    display: grid;
+    gap: calc(var(--base-size) * .5);
+  }
+
   & > div {
     flex-direction: column;
   }

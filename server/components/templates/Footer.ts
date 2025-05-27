@@ -47,7 +47,7 @@ export const Footer: ComponentType<
               </div>
               <div>
                 <h3>${company.title}</h3>
-                <ul>
+                <ul class="footer-items-list">
                 ${
                   company.items
                     .map((item) => (
@@ -60,7 +60,7 @@ export const Footer: ComponentType<
               </div>
               <div>
                 <h3>${legalsInformations.title}</h3>
-                <ul>
+                <ul class="footer-items-list">
                 ${
                   legalsInformations.items
                     .map((item) => (
