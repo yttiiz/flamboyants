@@ -164,15 +164,18 @@ header[data-header="site"] {
       align-items: center;
     }
 
-    & .main-details h3 {
+    & .main-details h2 {
+      font-size: calc(var(--base-size) * 1.5);
       max-width: calc(var(--base-size) * 13);
       display: -webkit-box;
+      font-weight: 400;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    & .main-details h4 {
+    & .main-details h3 {
+      font-size: calc(var(--base-size) * 1.25);
       line-height: 1.1;
     }
 

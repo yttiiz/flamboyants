@@ -41,8 +41,8 @@ export const ProductCard: ComponentType<
             </div>
             <div>
               <div>
-                <h3>Aka ${product.name}</h3>
-                <h4>${product.details.type}</h4>
+                <h2>Aka ${product.name}</h2>
+                <h3>${product.details.type}</h3>
               </div>
               <span>
                 <strong>${Helper.formatPrice(product.details.price)}</strong>/nuit
