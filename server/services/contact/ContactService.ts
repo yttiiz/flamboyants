@@ -26,7 +26,7 @@ export class ContactService {
 
   public post = async <T extends string>(ctx: RouterContextAppType<T>) => {
     const { IS_DENO_DEPLOY } = Deno.env.toObject();
-    
+
     try {
       const formData = await ctx.request.body.formData();
       const dataModel = await Helper.convertJsonToObject<FormDataType>(
@@ -72,7 +72,6 @@ export class ContactService {
           console.log("status :", res.statusText);
           console.log("response :", await res.json());
         }
-
       } else {
         Mailer.receive({ content });
       }
