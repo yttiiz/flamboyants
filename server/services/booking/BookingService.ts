@@ -128,6 +128,7 @@ export class BookingService {
   public postHandler = async <T extends string>(
     ctx: RouterContextAppType<T>,
   ) => {
+    const { IS_DENO_DEPLOY } = Deno.env.toObject();
     const formData = await ctx.request.body.formData();
     const { booking } = await Helper.convertJsonToObject<ProductDataType>(
       `/server/data/product/product.json`,
@@ -182,12 +183,48 @@ export class BookingService {
         );
 
         if (isInsertionOk) {
+          const email = ctx.state.session.get("userEmail");
+          const firstname = ctx.state.session.get("userFirstname");
+
           try {
-            await Mailer.send({
-              to: ctx.state.session.get("userEmail"),
-              receiver: ctx.state.session.get("userFullname"),
-              type: "booking",
-            });
+            if (IS_DENO_DEPLOY) {
+              const dates = {
+                starting: Helper.displayDate({
+                  date: new Date(startingDate),
+                  style: "normal",
+                }),
+                ending: Helper.displayDate({
+                  date: new Date(endingDate),
+                  style: "normal",
+                }),
+              };
+              const apartment = {
+                type: product.details.type,
+                name: product.name,
+              };
+
+              const { MAILER_API_KEY, MAILER_BOOKING_URL } = Deno.env
+                .toObject();
+
+              const res = await fetch(
+                `${MAILER_BOOKING_URL}?apiKey=${MAILER_API_KEY}`,
+                {
+                  method: "POST",
+                  body: JSON.stringify({ email, firstname, dates, apartment }),
+                },
+              );
+
+              if (!res.ok) {
+                console.log("status :", res.statusText);
+                console.log("response :", res.json());
+              }
+            } else {
+              await Mailer.send({
+                to: email,
+                receiver: ctx.state.session.get("userFullname"),
+                type: "booking",
+              });
+            }
           } catch (error) {
             console.log(error);
           }
