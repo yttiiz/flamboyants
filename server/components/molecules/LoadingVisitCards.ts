@@ -18,7 +18,7 @@ export const LoadingVisitCards: ComponentType<
       <li class="loader">
         <div></div>
         <div>
-          <h3>&nbsp;</h3>
+          <h2>&nbsp;</h2>
           <p>&nbsp;</p>
           <span>&nbsp;</span>
         </div>

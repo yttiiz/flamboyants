@@ -106,7 +106,7 @@ export class HomePage extends PageBuilder {
       /** @type {[HTMLDivElement, HTMLHeadingElement, HTMLParagraphElement, HTMLAnchorElement]} */
       const [content, subtitle, paragraph, link] = this.createHTMLElements(
         "div",
-        "h3",
+        "h2",
         "p",
         "a",
       );
