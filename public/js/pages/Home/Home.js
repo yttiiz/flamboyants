@@ -112,6 +112,7 @@ export class HomePage extends PageBuilder {
       );
 
       img.src = visits[key].image;
+      img.alt = visits[key].title;
       subtitle.textContent = visits[key].title;
       paragraph.textContent = visits[key].text;
       link.href = visits[key].href;
