@@ -17,7 +17,9 @@ export type PathAppType =
   | "/admin-logout"
   | "/profil"
   | "/admin"
-  | "/review-form";
+  | "/review-form"
+  | "/legal"
+  | "/privacy";
 
 export type IdsType =
   | "data-home"
@@ -27,7 +29,8 @@ export type IdsType =
   | "data-profil-form"
   | "data-not-found"
   | "data-contact"
-  | "data-booking";
+  | "data-booking"
+  | "data-legal";
 
 // Router
 export type RouterAppType = oak.Router<AppState>;

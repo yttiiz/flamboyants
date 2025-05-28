@@ -5,6 +5,7 @@ export * from "./ApiController.ts";
 export * from "./BookingController.ts";
 export * from "./DefaultController.ts";
 export * from "./HomeController.ts";
+export * from "./LegalsController.ts";
 export * from "./ProductController.ts";
 export * from "./ProfilController.ts";
 export * from "./NotFoundController.ts";

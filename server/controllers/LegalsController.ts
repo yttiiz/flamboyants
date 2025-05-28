@@ -1,0 +1,20 @@
+import { DefaultController } from "./DefaultController.ts";
+import { RouterAppType, RouterContextAppType } from "@controllers";
+
+export class LegalsController extends DefaultController {
+  constructor(router: RouterAppType) {
+    super(router);
+    this.getLegalRoute();
+  }
+
+  private getLegalRoute() {
+    this.router?.get("/legal", async (ctx: RouterContextAppType<"/legal">) => {
+      const body = await this.createHtmlFile(ctx, {
+        id: "data-legal",
+        css: "legal",
+      });
+
+      this.response(ctx, body, 200);
+    });
+  }
+}
