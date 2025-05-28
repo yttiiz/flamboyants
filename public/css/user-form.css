@@ -308,22 +308,22 @@ main {
       & > div {
         flex-direction: column;
       }
-  
+
       & .user-infos,
       & input[type="submit"] {
         max-width: 40rem;
       }
-  
+
       & .user-infos {
         margin: auto;
         grid-template-columns: 1fr;
       }
-  
+
       & input[type="submit"] {
         width: 100%;
         align-self: center;
       }
-  
+
       & .user-photo > div.show-file {
         position: unset;
       }

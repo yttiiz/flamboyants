@@ -12,21 +12,21 @@ header[data-header="site"] {
       color: var(--light);
     }
   }
-  
+
   & #user-session {
-     & a,
-     & div > span {
-       color: var(--light);
-     }
+    & a,
+    & div > span {
+      color: var(--light);
+    }
 
-     &  a.register {
-       background: var(--secondary-color);
-       color: var(--primary-color);
-     }
+    & a.register {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+    }
 
-     & .login-mobile svg path {
-       fill: var(--light);
-     }
+    & .login-mobile svg path {
+      fill: var(--light);
+    }
 
     & div > form button > svg path,
     & a > svg,
