@@ -8,14 +8,14 @@ const handleShowPassword = () => {
   const handler = (e) => {
     // handle eye icon
     e.currentTarget
-      .closest("div")
+      .closest("button")
       .querySelector(".none")
       .classList.remove("none");
 
     e.currentTarget.classList.add("none");
 
     // handle input type
-    const input = e.currentTarget.closest("div").previousElementSibling;
+    const input = e.currentTarget.closest("button").previousElementSibling;
 
     input["type"] === "password"
       ? (input["type"] = "text")
