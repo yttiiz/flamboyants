@@ -22,9 +22,16 @@
     display: none;
   }
 
-  & form label span:has(> div) {
-    position: relative;
+  & form[data-style="user-admin"] {
+    box-shadow: var(--box-shadow);
+  }
 
+  & form label span:has(> div),
+  & form label span:has(> button) {
+    position: relative;
+  }
+
+  & form label span:has(> div) {
     & > input {
       width: 100%;
     }
@@ -608,10 +615,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 3%;
 }
 
 #eye-password {
+  padding: calc(var(--base-size) * 0.625);
+  right: 0;
+
   & > span {
     cursor: pointer;
   }
@@ -628,6 +637,8 @@
 }
 
 .search-photo {
+  right: 3%;
+
   & button {
     padding: calc(var(--base-size) * 0.25) calc(var(--base-size) * 0.5);
     border-radius: var(--btn-border-radius);

@@ -1,3 +1,7 @@
+main {
+  min-height: calc(100dvh - 7rem);
+}
+
 #data-contact {
   & section {
     & form {
@@ -10,6 +14,7 @@
       border: var(--border-black-25-percent);
       border-radius: var(--base-size);
       margin-top: calc(var(--base-size) * 3);
+      box-shadow: var(--box-shadow);
     }
 
     & h3,
