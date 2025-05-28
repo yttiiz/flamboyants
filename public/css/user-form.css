@@ -1,3 +1,7 @@
+main {
+  min-height: calc(100dvh - 7rem);
+}
+
 #data-user-form,
 #data-profil-form {
   height: 100%;
@@ -295,32 +299,34 @@
 /*=================================================| BREAKPOINTS |=================================================*/
 
 @media screen and (max-width: 950px) {
-  #data-profil-form section form {
+  #data-profil-form section {
     & .loading-text {
       text-align: center;
     }
 
-    & > div {
-      flex-direction: column;
-    }
-
-    & .user-infos,
-    & input[type="submit"] {
-      max-width: 40rem;
-    }
-
-    & .user-infos {
-      margin: auto;
-      grid-template-columns: 1fr;
-    }
-
-    & input[type="submit"] {
-      width: 100%;
-      align-self: center;
-    }
-
-    & .user-photo > div.show-file {
-      position: unset;
+    & form {
+      & > div {
+        flex-direction: column;
+      }
+  
+      & .user-infos,
+      & input[type="submit"] {
+        max-width: 40rem;
+      }
+  
+      & .user-infos {
+        margin: auto;
+        grid-template-columns: 1fr;
+      }
+  
+      & input[type="submit"] {
+        width: 100%;
+        align-self: center;
+      }
+  
+      & .user-photo > div.show-file {
+        position: unset;
+      }
     }
   }
 }
