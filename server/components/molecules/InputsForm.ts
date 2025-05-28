@@ -86,20 +86,20 @@ export const InputsForm: ComponentType<
                       >
                       ${type === "password"
                         ? (
-                          `<div id="eye-password">
+                          `<button id="eye-password" type="button" aria-label="display or hide password">
                               <span>
                                 ${EyeShutSvg.html}
                               </span>
                               <span class="none">
                                 ${EyeOpenSvg.html}
                               </span>
-                            </div>`
+                            </button>`
                           )
                         : ""}
                       ${name && name.includes("file") 
                         ? (
                             `<div class="search-photo">
-                              <button type="button">Rechercher</button>
+                              <button type="button" aria-label="open file dialog">Rechercher</button>
                             </div>`
                           )
                         : ""

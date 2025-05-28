@@ -1,3 +1,7 @@
+main {
+  min-height: calc(100dvh - 7rem);
+}
+
 #data-user-form,
 #data-profil-form {
   height: 100%;
@@ -9,9 +13,12 @@
     text-align: center;
   }
 
-  & section form label span:has(> div) {
+  & section form label span:has(> div),
+  & section form label span:has(> button) {
     position: relative;
+  }
 
+  & section form label span:has(> button) {
     & > input {
       width: 100%;
     }
@@ -53,6 +60,7 @@
       100%,
       calc(var(--base-size) * 25)
     );
+    box-shadow: var(--box-shadow);
   }
 
   & form,
@@ -61,14 +69,16 @@
     grid-template-columns: 1fr;
   }
 
-  & form h3,
+  & form h2,
   & form > div {
     padding: calc(var(--base-size) * 2);
   }
 
-  & form h3 {
+  & form h2 {
     text-align: center;
+    font-size: calc(var(--base-size) * 1.5);
     border-bottom: var(--border-black-25-percent);
+    color: var(--dark);
   }
 
   & form > div {
@@ -249,10 +259,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 3%;
 }
 
 #eye-password {
+  padding: calc(var(--base-size) * 0.625);
+  right: 0;
+
   & > span {
     cursor: pointer;
   }
@@ -269,6 +281,8 @@
 }
 
 .search-photo {
+  right: 3%;
+
   & button {
     padding: calc(var(--base-size) * 0.25) calc(var(--base-size) * 0.5);
     border-radius: var(--btn-border-radius);
@@ -295,32 +309,34 @@
 /*=================================================| BREAKPOINTS |=================================================*/
 
 @media screen and (max-width: 950px) {
-  #data-profil-form section form {
+  #data-profil-form section {
     & .loading-text {
       text-align: center;
     }
 
-    & > div {
-      flex-direction: column;
-    }
+    & form {
+      & > div {
+        flex-direction: column;
+      }
 
-    & .user-infos,
-    & input[type="submit"] {
-      max-width: 40rem;
-    }
+      & .user-infos,
+      & input[type="submit"] {
+        max-width: 40rem;
+      }
 
-    & .user-infos {
-      margin: auto;
-      grid-template-columns: 1fr;
-    }
+      & .user-infos {
+        margin: auto;
+        grid-template-columns: 1fr;
+      }
 
-    & input[type="submit"] {
-      width: 100%;
-      align-self: center;
-    }
+      & input[type="submit"] {
+        width: 100%;
+        align-self: center;
+      }
 
-    & .user-photo > div.show-file {
-      position: unset;
+      & .user-photo > div.show-file {
+        position: unset;
+      }
     }
   }
 }

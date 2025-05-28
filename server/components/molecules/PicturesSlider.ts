@@ -37,10 +37,10 @@ export const PicturesSlider: ComponentType<
         .join("")
       }
       </a>
-      <button type="button" class="hidden">
+      <button type="button" class="hidden" aria-label="move slider left">
         <span></span>
       </button>
-      <button type="button">
+      <button type="button" aria-label="move slider right">
         <span></span>
       </button>
       <ul class="slider-product-nav-landmarks"></ul>

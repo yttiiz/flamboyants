@@ -45,7 +45,7 @@ export const Header: ComponentType<
             (
               `
               <div id="burger">
-                <button type="button">
+                <button type="button" aria-label="open navigation menu">
                   <span></span>
                   <span></span>
                   <span></span>

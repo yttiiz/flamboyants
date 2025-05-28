@@ -106,12 +106,13 @@ export class HomePage extends PageBuilder {
       /** @type {[HTMLDivElement, HTMLHeadingElement, HTMLParagraphElement, HTMLAnchorElement]} */
       const [content, subtitle, paragraph, link] = this.createHTMLElements(
         "div",
-        "h3",
+        "h2",
         "p",
         "a",
       );
 
       img.src = visits[key].image;
+      img.alt = visits[key].title;
       subtitle.textContent = visits[key].title;
       paragraph.textContent = visits[key].text;
       link.href = visits[key].href;

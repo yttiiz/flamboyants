@@ -4,16 +4,17 @@
   /*=====| Colors |===== */
   --primary-color: #226f54;
   --secondary-color: #f4f0bb;
-  --tertiary-color: #87c38f;
+  --tertiary-color: #926300;
   --admin-color: #e7f7ff;
   --vanilla: #fff3b0;
   --danger: #9e2a2b;
   --dark: #1e1d1d;
-  --grey-dark: #7d7c83;
+  --grey-dark: #59595d;
   --light: #ebebeb;
   --white: #ffffff;
 
   /*=====| Colors & opacity |===== */
+  --primary-rvb: 34 111 84;
   --black-rvb: 0 0 0;
   --white-rvb: 255 255 255;
   --border-black-25-percent: 0.1rem solid rgb(var(--black-rvb) / 0.25);
@@ -235,7 +236,7 @@ dialog::backdrop {
 /*=================================================| HEADER |=================================================*/
 
 header[data-header="site"] {
-  background: var(--primary-color);
+  border-bottom: 1px solid rgb(var(--primary-rvb) / 0.1);
 
   & > div {
     display: flex;
@@ -261,13 +262,13 @@ header[data-header="site"] {
     & > svg {
       width: calc(var(--base-size) * 1.875);
       height: auto;
-      fill: var(--light);
+      fill: var(--primary-color);
     }
 
     & > span {
       font-size: calc(var(--base-size) * 1.25);
       font-weight: 600;
-      color: var(--light);
+      color: var(--primary-color);
     }
   }
 
@@ -311,16 +312,16 @@ header[data-header="site"] {
     }
 
     & > form button > svg path {
-      fill: var(--light);
+      fill: var(--primary-color);
     }
 
     & > span {
-      color: var(--light);
+      color: var(--primary-color);
     }
 
     & a > svg,
     & > span svg {
-      fill: var(--light);
+      fill: var(--primary-color);
     }
   }
 
@@ -334,7 +335,7 @@ header[data-header="site"] {
   & a,
   & button[type="button"] {
     font-weight: 500;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     transition: filter var(--smooth);
   }
 
@@ -355,8 +356,8 @@ header[data-header="site"] {
 
   & a.register {
     padding: var(--btn-padding);
-    background: var(--secondary-color);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: var(--btn-border-radius);
   }
 
@@ -370,7 +371,7 @@ header[data-header="site"] {
     }
 
     & svg path {
-      fill: var(--secondary-color);
+      fill: var(--primary-color);
     }
 
     & dialog a:first-of-type {
@@ -395,7 +396,7 @@ header[data-header="site"] {
     padding: calc(var(--base-size) * 0.3125);
 
     & > span {
-      background: var(--light);
+      background: var(--primary-color);
       height: 0.1rem;
       width: 100%;
       transition: var(--smooth);
@@ -677,6 +678,11 @@ footer {
   & h3 {
     margin-bottom: 1rem;
     color: var(--tertiary-color);
+  }
+
+  .footer-items-list {
+    display: grid;
+    gap: calc(var(--base-size) * 0.5);
   }
 
   & > div {
