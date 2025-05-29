@@ -8,8 +8,6 @@
  * @property {string} firstname
  * @property {string} lastname
  * @property {string} email
- * @property {string} birth
- * @property {string} job
  * @property {string} photo
  * @property {string} role
  */

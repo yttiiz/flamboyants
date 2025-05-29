@@ -1,3 +1,7 @@
+main {
+  background: var(--light);
+}
+
 #data-admin {
   display: grid;
   width: 100%;
@@ -24,6 +28,7 @@
 
   & form[data-style="user-admin"] {
     box-shadow: var(--box-shadow);
+    background: var(--white);
   }
 
   & form label span:has(> div),
@@ -31,7 +36,7 @@
     position: relative;
   }
 
-  & form label span:has(> div) {
+  & form label span:has(> button) {
     & > input {
       width: 100%;
     }
@@ -39,7 +44,6 @@
 
   & section[data-admin] {
     height: inherit;
-    background: var(--light);
   }
 
   & section {
@@ -645,7 +649,7 @@
     font-size: var(--base-size);
     font-weight: 400;
     color: var(--light);
-    background: var(--secondary-color);
+    background: var(--tertiary-color);
   }
 
   & input {
