@@ -1,7 +1,7 @@
 // deno-fmt-ignore-file
 import { oak } from "@deps";
 import * as layout from "@components";
-import { Helper, Http } from "@utils";
+import { Http } from "@utils";
 import {
 	BookingUserInfoType,
 	Mongo,
@@ -235,6 +235,10 @@ export class DefaultController {
 			// Not found rendering.
 			case "data-not-found": {
 				return main.replace(strToReplace, layout.NotFound.html);
+			}
+
+			case "data-legal": {
+				return main.replace(strToReplace, layout.SectionsLegals.html());
 			}
 
 			default: {

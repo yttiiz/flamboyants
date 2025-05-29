@@ -8,9 +8,9 @@ import {
   BookingController,
   ContactController,
   HomeController,
+  LegalsController,
   ProductController,
   ProfilController,
-  LegalsController
 } from "@controllers";
 
 export const router = new oak.Router<AppState>();

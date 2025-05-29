@@ -7,6 +7,7 @@ export type OrganismNameType =
   | "SectionsProfilForm"
   | "SectionsBooking"
   | "SectionsProduct"
+  | "SectionsLegals"
   | "SectionsHome"
   | "SectionErrorHome"
   | "BookingCard"
@@ -210,6 +211,17 @@ export type FormDataType = FormAttributesType & {
   title: string;
   content: InputDataType[];
   changePhoto?: string;
+};
+
+export type LegalsDataType = {
+  title: string;
+  paragraphs: LegalTextContentType[];
+};
+
+export type LegalTextContentType = {
+  subtitle?: string;
+  textContent: string;
+  isHtml: boolean;
 };
 
 export type DashboardDetailsType = {
