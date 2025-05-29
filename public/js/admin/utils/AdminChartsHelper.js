@@ -32,7 +32,15 @@ export class AdminChartsHelper {
         chartCategories: usersCategories,
       } = AdminChartsHelper.#filter(users, (data, user) => {
         if (user.role === "user") {
-          data.chartData.push(getAge(user.birth));
+          let numberOfBooking = 0;
+
+          for (const key of Object.keys(bookings)) {
+            for (const booking of bookings[key]["bookings"]) {
+              if (booking.userId === user._id) numberOfBooking++;
+            }
+          }
+
+          data.chartData.push(numberOfBooking);
           data.chartCategories.push(user.firstname);
         }
       });
@@ -47,7 +55,7 @@ export class AdminChartsHelper {
 
       AdminChartsHelper.#buildChart({
         data: usersData,
-        name: "Utilisateurs",
+        name: "Réservations",
         title: "Utilisateurs",
         categories: usersCategories,
         element: usersCard,

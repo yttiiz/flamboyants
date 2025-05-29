@@ -201,9 +201,10 @@ export class AdminProfilHelper {
    * Create and set `eye-password` container.
    */
   static #createEyePasswordIcon = () => {
-    const eyeIcon = document.createElement("div");
+    const eyeIcon = document.createElement("button");
 
     eyeIcon.setAttribute("id", "eye-password");
+    eyeIcon.setAttribute("type", "button");
     eyeIcon.innerHTML = `
     <span>
       <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
