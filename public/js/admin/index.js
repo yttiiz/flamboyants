@@ -1,4 +1,4 @@
 import { AdminPage } from "./page/AdminPage.js";
 
 // Form handler
-new AdminPage().init();
+await new AdminPage().init();

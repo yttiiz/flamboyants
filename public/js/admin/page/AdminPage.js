@@ -1,13 +1,5 @@
-import {
-  AdminContentHelper,
-  AdminLoginHelper,
-  AdminProfilHelper,
-  FormBuilder,
-  Forms,
-} from "../utils/mod.js";
-
 export class AdminPage {
-  init = () => {
+  init = async () => {
     const section = document.querySelector("section");
     const dialogs = document.querySelectorAll("dialog");
 
@@ -20,11 +12,16 @@ export class AdminPage {
       }
 
       if ("products" in dialog.dataset) {
+        const { FormBuilder } = await import("../utils/FormBuilder.js");
         FormBuilder.insertPictureIn(dialog);
       }
     }
 
     if (section.dataset.admin === "connected") {
+      const { AdminProfilHelper, AdminContentHelper, Forms } = await import(
+        "../utils/mod.js"
+      );
+
       // Init profil dialog modal.
       AdminProfilHelper.init(document.querySelectorAll(
         '#user-session button[type="button"]',
@@ -33,6 +30,8 @@ export class AdminPage {
       AdminContentHelper.init(); // Init content page & modal.
       Forms.init(); // Handle forms submission.
     } else {
+      const { AdminLoginHelper } = await import("../utils/AdminLoginHelper.js");
+
       AdminLoginHelper.handleShowPassword();
 
       document.querySelector("form")
