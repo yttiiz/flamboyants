@@ -1,0 +1,25 @@
+#data-legal {
+  & h2 {
+    font-size: calc(var(--base-size) * 1.5);
+    line-height: calc(var(--base-size) * 2);
+    color: var(--grey-dark);
+    margin-bottom: calc(var(--base-size) * 0.35);
+  }
+
+  & p + h2 {
+    margin-top: var(--base-size);
+  }
+
+  & a {
+    text-decoration: underline;
+    color: var(--tertiary-color);
+  }
+
+  & strong {
+    font-weight: 500;
+  }
+
+  & .legal-details {
+    margin-top: var(--base-size);
+  }
+}

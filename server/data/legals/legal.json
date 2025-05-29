@@ -1,0 +1,59 @@
+{
+  "title": "Mentions légales",
+  "paragraphs": [
+    {
+      "subtitle": "Nom Société :",
+      "textContent": "les Flamboyants",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Forme :",
+      "textContent": "en cours d'établissement",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Représenté par :",
+      "textContent": "Kathy Talis",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Siège social :",
+      "textContent": "16 Rue Georges Troupé, 97180 Sainte-Anne",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Directeur de la publication :",
+      "textContent": "Kathy Talis",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Email :",
+      "textContent": "contact@lesflamboyants.gp",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Téléphone :",
+      "textContent": "+590 690 00 75 69",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Hébergement :",
+      "textContent": "<p>Deno Land Inc.<br />1111 6th Ave Ste 550<br />PMB 702973<br />San Diego CA, 92101<br />USA</p>",
+      "isHtml": true
+    },
+    {
+      "textContent": "L’Editeur, responsable du Site, se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes mentions légales.",
+      "isHtml": false
+    },
+    {
+      "subtitle": "Propriété intellectuelle :",
+      "textContent": "<p>Les marques et les logotypes figurant sur le site constituent des signes déposés par l’Editeur ou par des tiers/partenaires et protégés au titre du droit des marques. Toute reproduction, imitation ou usage, total ou partiel, de ces signes distinctifs sans l’autorisation expresse de l’Editeur et en violation des interdictions prévues aux articles L.713-2 et suivants du Code la propriété intellectuelle engage la responsabilité de leur auteur au titre d’actes de contrefaçon.</p><p>Les autres signes distinctifs, notamment les dénominations sociales, noms commerciaux, enseignes, noms de domaine reproduits sur le site sont la propriété de l’Editeur ou de tiers/partenaires, et toute reproduction sans autorisation expresse de l’Editeur est susceptible d’engager la responsabilité civile de son auteur sur le fondement de l’article 1240 du Code civil.</p><p>Il en est de même des éventuelles bases de données figurant sur le site Internet qui sont protégées par les dispositions de la loi du 11 juillet 1998 portant transposition dans le Code de la propriété intellectuelle (CPI) de la directive européenne du 11 mars 1996 relative à la protection juridique des bases de données.</p><p>Les liens hypertextes mis en place dans le cadre du site Internet en direction d’autres ressources présentes sur le réseau de l’Internet, et notamment vers ses partenaires ont fait l’objet d’une autorisation préalable expresse. Toute information accessible via un lien hypertexte n’est pas publiée par l’Editeur du présent site, celui-ci ne disposant d’aucun droit portant sur les contenus mis en ligne à travers lesdits liens.</p><p>Aucun lien hypertexte menant au Site ne peut être activé sans l’autorisation expresse et préalable de l’Editeur.</p><p>Les photographies reproduisant des produits proposés à la vente ne sont pas contractuelles.</p>",
+      "isHtml": true
+    },
+    {
+      "subtitle": "Responsabilité :",
+      "textContent": "<p>La responsabilité de l’Editeur ne peut être engagée en cas de défaillance, panne ou interruption empêchant l’accès au Site ou limitant son usage.</p><p>Le matériel de connexion et de navigation utilisée relève de la seule responsabilité de son utilisateur, lequel doit prendre toutes les mesures appropriées pour protéger son matériel, s’agissant notamment d’attaques virales.</p><p>L’Editeur décline toute responsabilité résultant d’une intrusion frauduleuse d’un tiers ayant entrainé une modification des informations présentées sur le Site.</p>",
+      "isHtml": true
+    }
+  ]
+}
