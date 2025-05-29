@@ -39,7 +39,7 @@ export class AdminChartsHelper {
               if (booking.userId === user._id) numberOfBooking++;
             }
           }
-          
+
           data.chartData.push(numberOfBooking);
           data.chartCategories.push(user.firstname);
         }
