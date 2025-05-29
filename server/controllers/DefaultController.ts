@@ -238,7 +238,7 @@ export class DefaultController {
 			}
 
 			case "data-legal": {
-				return main.replace(strToReplace, layout.SectionsLegals.html());
+				return main.replace(strToReplace, await layout.SectionsLegals.html(data as "legal" | "privacy"));
 			}
 
 			default: {

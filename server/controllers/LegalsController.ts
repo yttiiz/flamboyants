@@ -5,6 +5,7 @@ export class LegalsController extends DefaultController {
   constructor(router: RouterAppType) {
     super(router);
     this.getLegalRoute();
+    this.getPrivacyRoute();
   }
 
   private getLegalRoute() {
@@ -12,9 +13,27 @@ export class LegalsController extends DefaultController {
       const body = await this.createHtmlFile(ctx, {
         id: "data-legal",
         css: "legal",
+        title: "Mentions legales",
+        data: "legal",
       });
 
       this.response(ctx, body, 200);
     });
+  }
+
+  private getPrivacyRoute() {
+    this.router?.get(
+      "/privacy",
+      async (ctx: RouterContextAppType<"/privacy">) => {
+        const body = await this.createHtmlFile(ctx, {
+          id: "data-legal",
+          css: "legal",
+          title: "Mentions legales",
+          data: "privacy",
+        });
+
+        this.response(ctx, body, 200);
+      },
+    );
   }
 }
