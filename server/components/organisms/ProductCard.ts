@@ -45,7 +45,7 @@ export const ProductCard: ComponentType<
                 <h3>${product.details.type}</h3>
               </div>
               <span>
-                <strong>${Helper.formatPrice(product.details.price)}</strong>/nuit
+                <strong>${Helper.formatPrice(product.details.price)}</strong> / nuit
               </span>
             </div>
           </div>
