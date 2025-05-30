@@ -33,7 +33,7 @@ export const LogoutUserForm: ComponentType<
         ${greeting()} <a href=\"/profil\">{{ user-firstname }}</a>
       </span>
       <span data-profil-link>
-        <a href=\"/profil\">
+        <a href=\"/profil\" aria-label="Go to user profil">
         ${userPhoto.includes("default")
           ? UserSvg.html
           : `<img src="${userPhoto}" alt="${userFullname}" />`

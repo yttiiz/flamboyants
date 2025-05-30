@@ -23,7 +23,7 @@ export const BookingForm: ComponentType<
   }: ParameterType) => (
     `
     <div>
-      <h3>${form.title}</h3>
+      <h2>${form.title}</h2>
       <form
         action="${form.action}"
         method="${form.method}"
