@@ -244,9 +244,9 @@ export class AnimationHelper {
     const btn = document.querySelector("button[data-modal]");
     const modal = btn.nextElementSibling;
 
-    modal.querySelector("h2").textContent = "Espace de connexion";
+    modal.querySelector("h2").textContent = "Connexion";
     modal.querySelector("p").textContent =
-      "Connectez-vous à votre compte ou créez-en un !";
+      "Connectez-vous à votre compte ou créez-en un dès maintenant !";
 
     btn.addEventListener("click", () => modal.showModal());
     modal.querySelector("header button").addEventListener(

@@ -189,6 +189,10 @@ header[data-header="site"].with-bg {
     }
   }
 
+  & section#products {
+    padding-top: 7rem;
+  }
+
   & section ul > li,
   & section ul > li > div {
     display: flex;
