@@ -647,7 +647,7 @@ form[data-style] textarea {
 /*=================================================| FOOTER |=================================================*/
 
 footer {
-  background: var(--dark);
+  background: var(--primary-color);
 
   & * {
     color: var(--light);
@@ -687,7 +687,7 @@ footer {
 
   & h3 {
     margin-bottom: 1rem;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
   }
 
   .footer-items-list {
@@ -700,7 +700,7 @@ footer {
   }
 
   & > div > div li::marker {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: calc(var(--base-size) * 0.625);
   }
 
@@ -717,7 +717,7 @@ footer {
     justify-content: center;
 
     & * {
-      color: rgb(var(--white-rvb) / 0.5);
+      color: var(--white);
     }
   }
 }
