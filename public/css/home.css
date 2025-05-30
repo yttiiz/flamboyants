@@ -1,7 +1,9 @@
 header[data-header="site"] {
   background: unset;
   border-bottom: 1px solid rgb(var(--white-rvb) / 0.25);
-  z-index: 1;
+  box-shadow: none;
+  backdrop-filter: blur(var(--base-size));
+  -webkit-backdrop-filter: blur(var(--base-size));
 
   & #logo > a {
     & > svg {
@@ -234,6 +236,16 @@ header[data-header="site"] {
       position: relative;
     }
 
+    & > div > div:first-of-type::after {
+      content: "";
+      position: absolute;
+      height: 20%;
+      width: 100%;
+      bottom: 0;
+      background: linear-gradient(transparent, rgb(var(--black-rvb) / 0.5));
+      z-index: 1;
+    }
+
     & .slider-product,
     & .slider-product-nav-landmarks {
       display: flex;
@@ -301,6 +313,7 @@ header[data-header="site"] {
     }
 
     & .slider-product-nav-landmarks {
+      z-index: 5;
       bottom: 5%;
     }
 
