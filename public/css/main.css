@@ -9,7 +9,7 @@
   --vanilla: #fff3b0;
   --danger: #9e2a2b;
   --dark: #1e1d1d;
-  --grey-dark: #59595d;
+  --grey-dark: #64748b;
   --light: #ebebeb;
   --white: #ffffff;
 
@@ -133,6 +133,7 @@ b {
 
 p {
   line-height: calc(var(--base-size) * 1.75);
+  color: var(--grey-dark);
 }
 
 svg,
@@ -552,7 +553,7 @@ section p[data-msg-infos="error"] {
 h1,
 h2 {
   font-weight: 500;
-  color: var(--tertiary-color);
+  color: var(--dark);
 }
 
 h1 {

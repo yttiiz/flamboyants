@@ -36,6 +36,7 @@ main {
     position: relative;
   }
 
+  & form label span:has(> div),
   & form label span:has(> button) {
     & > input {
       width: 100%;

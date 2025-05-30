@@ -84,7 +84,7 @@
     & .card-content figcaption svg {
       width: 100%;
       height: auto;
-      fill: var(--secondary-color);
+      fill: var(--tertiary-color);
     }
 
     & .card-content figcaption li:not(:last-of-type) {
