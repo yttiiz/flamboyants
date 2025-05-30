@@ -4,14 +4,17 @@ header[data-header="site"] {
   box-shadow: none;
   backdrop-filter: blur(var(--base-size));
   -webkit-backdrop-filter: blur(var(--base-size));
+  transition: background var(--smooth);
 
   & #logo > a {
     & > svg {
       fill: var(--light);
+      transition: fill var(--smooth);
     }
 
     & > span {
       color: var(--light);
+      transition: color var(--smooth);
     }
   }
 
@@ -19,26 +22,72 @@ header[data-header="site"] {
     & a,
     & div > span {
       color: var(--light);
+      transition: color var(--smooth);
     }
 
     & a.register {
       background: var(--secondary-color);
       color: var(--primary-color);
+      transition: color var(--smooth);
     }
 
     & .login-mobile svg path {
       fill: var(--light);
+      transition: fill var(--smooth);
     }
 
     & div > form button > svg path,
     & a > svg,
     & > span svg {
       fill: var(--light);
+      transition: fill var(--smooth);
     }
   }
 
   & #burger > button > span {
     background: var(--light);
+    transition: background var(--smooth);
+  }
+}
+
+header[data-header="site"].with-bg {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+
+  & #logo > a {
+    & > svg {
+      fill: var(--primary-color);
+    }
+
+    & > span {
+      color: var(--primary-color);
+    }
+  }
+
+  & #user-session {
+    & .login a,
+    & div > span {
+      color: var(--primary-color);
+    }
+
+    & a.register {
+      background: var(--primary-color);
+      color: var(--secondary-color);
+    }
+
+    & .login-mobile svg path {
+      fill: var(--primary-color);
+    }
+
+    & div > form button > svg path,
+    & a > svg,
+    & > span svg {
+      fill: var(--primary-color);
+    }
+  }
+
+  & #burger > button > span {
+    background: var(--primary-color);
   }
 }
 

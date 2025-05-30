@@ -17,6 +17,7 @@ export class HomePage extends PageBuilder {
     });
 
     this.#renderVisits(visits);
+    this.#handleHeader();
     this.handleHomeLink();
   };
 
@@ -29,6 +30,29 @@ export class HomePage extends PageBuilder {
 
     logoLink.addEventListener("click", (e) => e.preventDefault());
     footerLink.addEventListener("click", (e) => e.preventDefault());
+  };
+
+  #handleHeader = () => {
+    const heroBanner = document.querySelector(".hero-banner");
+    const header = document.querySelector("header[data-header]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [section] = entries;
+
+        header.classList.toggle(
+          "with-bg",
+          !section.isIntersecting,
+        );
+      },
+      {
+        root: globalThis.document,
+        rootMargin: "0px",
+        threshold: 0.1,
+      },
+    );
+
+    observer.observe(heroBanner);
   };
 
   /**
