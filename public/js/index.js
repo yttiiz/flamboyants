@@ -12,6 +12,7 @@ if (
   location.href.includes("/#")
 ) {
   animationHelper.handleHomeSlider(".slider-product");
+  animationHelper.handleHeader();
 }
 
 // Product page
