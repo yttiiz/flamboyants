@@ -11,8 +11,8 @@ if (
   location.href === location.origin + "/" ||
   location.href.includes("/#")
 ) {
-  animationHelper.handleHomeSlider(".slider-product");
   animationHelper.handleHeader();
+  animationHelper.handleHomeSlider(".slider-product");
 }
 
 // Product page
