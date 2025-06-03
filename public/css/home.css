@@ -65,7 +65,7 @@ header[data-header="site"].with-bg {
   }
 
   & #user-session {
-    & .login a,
+    & a,
     & div > span {
       color: var(--primary-color);
     }

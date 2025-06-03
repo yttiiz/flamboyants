@@ -274,8 +274,7 @@
     }
 
     & .booking > div:first-of-type > span:first-of-type strong {
-      color: var(--danger);
-      font-family: "Roboto", sans-serif;
+      color: var(--tertiary-color);
       font-size: calc(var(--base-size) * 2);
       font-weight: 700;
     }
