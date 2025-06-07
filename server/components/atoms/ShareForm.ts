@@ -5,6 +5,6 @@ export const ShareForm: ComponentType<AtomNameType> = {
   html: `
     <div>
       <input type="text" value="" />
-      <button>Copier</button>
+      <button type="button">Copier</button>
     </div>`,
 };

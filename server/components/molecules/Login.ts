@@ -31,7 +31,7 @@ export const Login: ComponentType<MoleculeNameType> = {
   }
   </div>
   <div class="login-mobile">
-    <button type="button" data-modal="connexion">
+    <button type="button" data-modal="connexion" aria-label="open login dialog">
       ${UserSvg.html}
     </button>
     ${Dialog.html({ component: LoginRegister.html })}

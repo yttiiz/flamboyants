@@ -25,7 +25,7 @@ export const LogoutUserForm: ComponentType<
     return `
     <div>
       <form action="/logout" method="post">
-        <button type="submit" title="déconnexion">
+        <button type="submit" title="déconnexion" aria-label="logout">
           ${OnOffSvg.html}
         </button>
       </form>

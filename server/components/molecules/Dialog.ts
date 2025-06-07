@@ -18,7 +18,7 @@ export const Dialog: ComponentType<
     <dialog${dataset ? ` data-${dataset}` : ""}>
       <header>
         <h2></h2>
-        <button data-close>
+        <button data-close type="button">
           <span></span>
           <span></span>
         </button>
