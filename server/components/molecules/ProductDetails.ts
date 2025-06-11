@@ -31,7 +31,9 @@ export const ProductDetails: ComponentType<
           <b>${descriptionInfo[key as keyof typeof descriptionInfo]} :</b> 
           ${key === "area"
             ? `${product.details[key as keyof typeof product.details]}m²`
-            : product.details[key as keyof typeof product.details]
+            : (key === "persons"
+                ? (product.details[key as keyof typeof product.details]).toString().replace(",", " à ")
+                : product.details[key as keyof typeof product.details])
           }
         </li>`
       ))

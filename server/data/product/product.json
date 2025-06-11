@@ -7,7 +7,8 @@
     "infos": {
       "type": "Type",
       "area": "Superficie",
-      "rooms": "Nombre de pièces"
+      "rooms": "Nombre de pièces",
+      "persons": "Nombre de personnes"
     }
   },
   "booking": {

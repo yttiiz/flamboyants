@@ -117,6 +117,7 @@ export type ProductDescriptionType = {
   type: string;
   area: string;
   rooms: string;
+  persons: [number, number];
 };
 
 export type HomePageDataType = {
