@@ -6,3 +6,4 @@ server/log/*
 server/backup/*
 server/data/credentials/*
 server/data/fixtures
+server/router/reset.ts
