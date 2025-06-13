@@ -61,7 +61,7 @@ export class HomePage extends PageBuilder {
       button.addEventListener("click", (e) => {
         // Select 'li' (card) then 'h3'.
         const productName = e.currentTarget.closest("li")
-          .querySelector("h3").textContent;
+          .querySelector("h2").textContent;
 
         DefaultFormHelper.setHomeDialogContent(
           dialog,
