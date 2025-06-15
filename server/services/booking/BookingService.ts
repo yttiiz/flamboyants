@@ -184,7 +184,10 @@ export class BookingService {
 
         if (isInsertionOk) {
           const email = ctx.state.session.get("userEmail");
+          const fullname = ctx.state.session.get("userFullname");
           const firstname = ctx.state.session.get("userFirstname");
+          const numberOfDays = Handler.getDaysNumber(startingDate, endingDate);
+          const { price } = product.details;
 
           try {
             if (IS_DENO_DEPLOY) {
@@ -210,7 +213,15 @@ export class BookingService {
                 `${MAILER_BOOKING_URL}?apiKey=${MAILER_API_KEY}`,
                 {
                   method: "POST",
-                  body: JSON.stringify({ email, firstname, dates, apartment }),
+                  body: JSON.stringify({
+                    email,
+                    fullname,
+                    firstname,
+                    dates,
+                    apartment,
+                    price,
+                    numberOfDays,
+                  }),
                 },
               );
 
@@ -221,7 +232,7 @@ export class BookingService {
             } else {
               await Mailer.send({
                 to: email,
-                receiver: ctx.state.session.get("userFullname"),
+                receiver: fullname,
                 type: "booking",
               });
             }
