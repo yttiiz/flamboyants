@@ -40,7 +40,7 @@ export type RouterContextAppType<T extends string> = oak.RouterContext<T>;
 export type DataResponseType =
   | string
   | UserSchemaWithIDType
-  | Record<string, string | Record<string, string>>;
+  | Record<string, string | boolean | Record<string, string>>;
 
 // Session
 export type SessionType = {

@@ -370,7 +370,7 @@ export class BookingService {
       createdAt: +bookingCreatedAt,
     };
 
-    const isBookingDelete = await Mongo.removeItemFromDB(
+    const isBookingDeleted = await Mongo.removeItemFromDB(
       _id,
       bookingToDelete,
       "bookings",
@@ -381,8 +381,10 @@ export class BookingService {
       ctx,
       {
         message: `Votre réservation ${
-          isBookingDelete ? "a bien été" : "n'a pas pu être"
+          isBookingDeleted ? "a bien été" : "n'a pas pu être"
         } annulée`,
+        isBookingDeleted,
+        bookingId,
       },
       200,
     );
