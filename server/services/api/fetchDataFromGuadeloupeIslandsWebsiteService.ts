@@ -2,11 +2,9 @@ import { cheerio } from "@deps";
 
 const handleHtmlPage = ({
   html,
-  host,
   address,
 }: {
   html: string;
-  host: string;
   address: string;
 }) => {
   const data: Record<string, Record<string, string>> = {};
@@ -14,15 +12,18 @@ const handleHtmlPage = ({
 
   const $ = cheerio.load(html);
 
-  $(".push-tour", html).each(function () {
-    const $image = host +
-      $(this)
-        .children(".picture")
-        .children("picture")
-        .children("img")
-        .attr("src");
-    const $title = $(this).children(".text").children("h3").text();
-    const $text = $(this).children(".text").children("p").text();
+  $(".iris-card__wrapper", html).each(function () {
+    const $image = $(this)
+      .children(".iris-card__media")
+      .children(".iris-card__media__background")
+      .children("picture")
+      .children("img")
+      .attr("src");
+
+    const $title = $(this).children(".iris-card__content").children("h3")
+      .text();
+    const $text = $(this).children(".iris-card__content").children("div")
+      .children("p").text();
 
     if ($title && $image) {
       data[`${index + 1}`] = {
@@ -40,16 +41,13 @@ const handleHtmlPage = ({
 };
 
 export const fetchDataFromGuadeloupeIslandsWebsiteService = async () => {
-  const host = "https://www.lesilesdeguadeloupe.com",
-    address = host +
-      "/tourisme/fr-fr/circuits/randonneesguadeloupe-lesincontournables";
-
+  const address =
+    "https://www.lesilesdeguadeloupe.com/decouvrir/que-faire-en-guadeloupe/";
   const res = await fetch(address);
 
   if (res.ok && res.status === 200) {
     const data = handleHtmlPage({
       html: await res.text(),
-      host,
       address,
     });
 

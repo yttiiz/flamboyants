@@ -5,7 +5,7 @@ BAKE=COMPOSE_BAKE=true # Use once with 'up' command
 
 # Production
 up:
-	$(COMPOSE) -p $(PROJECT_NAME) up -d
+	$(BAKE) $(COMPOSE) -p $(PROJECT_NAME) up -d
 
 stop:
 	$(COMPOSE) -p $(PROJECT_NAME) stop
