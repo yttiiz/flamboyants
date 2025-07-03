@@ -48,7 +48,6 @@ main {
 
 #data-user-form {
   & form {
-    border: var(--border-black-25-percent);
     border-radius: var(--base-size);
   }
 
