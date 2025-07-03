@@ -192,7 +192,12 @@ header[data-header="site"].with-bg {
       object-position: 50% 50%;
       aspect-ratio: 16 / 9;
       border-radius: calc(var(--btn-border-radius) * 2);
-      background: linear-gradient(45deg, rgb(var(--white-rvb) / .25) -70%, transparent 50%, rgb(var(--white-rvb) / .25) 150%);
+      background: linear-gradient(
+        45deg,
+        rgb(var(--white-rvb) / 0.25) -70%,
+        transparent 50%,
+        rgb(var(--white-rvb) / 0.25) 150%
+      );
     }
   }
 
