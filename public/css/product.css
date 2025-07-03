@@ -247,7 +247,6 @@
       min-width: calc(var(--base-size) * 20);
       right: calc(var(--base-size) * 2);
       background: var(--white);
-      border: var(--border-black-25-percent);
       border-radius: var(--base-size);
       box-shadow: var(--box-shadow);
       overflow: hidden;
@@ -356,6 +355,7 @@
         background: unset;
         min-width: unset;
         box-shadow: unset;
+        border: var(--border-black-25-percent);
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
