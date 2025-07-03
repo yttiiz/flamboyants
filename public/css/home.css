@@ -176,7 +176,7 @@ header[data-header="site"].with-bg {
       content: "";
       position: absolute;
       bottom: calc(var(--base-size) * -3);
-      background: url("/img/hero/hero_banner.webp");
+      background: url("/img/hero/hero_banner.png");
       background-size: cover;
       width: 100%;
       height: 100%;
@@ -191,6 +191,8 @@ header[data-header="site"].with-bg {
       object-fit: cover;
       object-position: 50% 50%;
       aspect-ratio: 16 / 9;
+      border-radius: calc(var(--btn-border-radius) * 2);
+      background: linear-gradient(45deg, rgb(var(--white-rvb) / .25) -70%, transparent 50%, rgb(var(--white-rvb) / .25) 150%);
     }
   }
 
