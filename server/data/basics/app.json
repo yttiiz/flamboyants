@@ -4,10 +4,10 @@
   "openGraph": {
     "title": "Les Flamboyants",
     "type": "website",
-    "url": "http://127.0.0.1",
+    "url": "https://les-flamboyants-2025.deno.dev",
     "image": {
-      "url": "http://127.0.0.1/img/logos/les_flamboyants_logo.png",
-      "type": "image/jpeg",
+      "url": "https://les-flamboyants-2025.deno.dev/img/logos/les_flamboyants_logo.png",
+      "type": "image/png",
       "width": "720",
       "height": "480"
     }
