@@ -99,7 +99,7 @@
     & button:first-of-type {
       left: calc(var(--base-size) * 1.5);
     }
-    
+
     & button:last-of-type {
       right: calc(var(--base-size) * 1.5);
     }

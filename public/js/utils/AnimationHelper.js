@@ -39,7 +39,7 @@ export class AnimationHelper {
   handleProductSlider(sliderClassName) {
     if (document.querySelector(sliderClassName)) {
       const sliderContainer = document.querySelector(sliderClassName);
-      const slider = sliderContainer.querySelector("div[role=\"figure\"]");
+      const slider = sliderContainer.querySelector('div[role="figure"]');
       const [prevBtn, nextBtn] = sliderContainer.querySelectorAll("button");
 
       const sliderLength = slider.children.length;
@@ -63,7 +63,7 @@ export class AnimationHelper {
           this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
         } else {
           if (index <= 0) return;
-          
+
           index--;
           this.#moveSlider(slider, sliderLength, index);
           this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
@@ -74,49 +74,49 @@ export class AnimationHelper {
     }
   }
 
-      /**
-     * @param {{
-     *  prevBtn: HTMLButtonElement;
-     *  nextBtn: HTMLButtonElement;
-     *  sliderLength: number;
-     *  index: number;
-     * }}
-     */
-    #changeBtnsVisibility = ({
-      prevBtn,
-      nextBtn,
-      sliderLength,
-      index,
-    }) => {
-      const className = "hidden";
+  /**
+   * @param {{
+   *  prevBtn: HTMLButtonElement;
+   *  nextBtn: HTMLButtonElement;
+   *  sliderLength: number;
+   *  index: number;
+   * }}
+   */
+  #changeBtnsVisibility = ({
+    prevBtn,
+    nextBtn,
+    sliderLength,
+    index,
+  }) => {
+    const className = "hidden";
 
-      switch (index) {
-        case 0:
-          prevBtn.classList.add(className);
+    switch (index) {
+      case 0:
+        prevBtn.classList.add(className);
 
-          if (nextBtn.classList.contains(className)) {
-            nextBtn.classList.remove(className);
-          }
-          break;
+        if (nextBtn.classList.contains(className)) {
+          nextBtn.classList.remove(className);
+        }
+        break;
 
-        case sliderLength - 1:
-          nextBtn.classList.add(className);
+      case sliderLength - 1:
+        nextBtn.classList.add(className);
 
-          if (prevBtn.classList.contains(className)) {
-            prevBtn.classList.remove(className);
-          }
-          break;
+        if (prevBtn.classList.contains(className)) {
+          prevBtn.classList.remove(className);
+        }
+        break;
 
-        default:
-          if (prevBtn.classList.contains(className)) {
-            prevBtn.classList.remove(className);
-          }
+      default:
+        if (prevBtn.classList.contains(className)) {
+          prevBtn.classList.remove(className);
+        }
 
-          if (nextBtn.classList.contains(className)) {
-            nextBtn.classList.remove(className);
-          }
-      }
-    };
+        if (nextBtn.classList.contains(className)) {
+          nextBtn.classList.remove(className);
+        }
+    }
+  };
 
   /**
    * Animates slider motion.
