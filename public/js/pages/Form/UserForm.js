@@ -201,6 +201,10 @@ export class UserFormPage extends PageBuilder {
    */
   #hideModalHandler = (e) => {
     e.currentTarget.closest("dialog")
-      .close();
+    .close();
+    
+    if (location.href.includes("register")) {
+      location.href = "/";
+    }
   };
 }
