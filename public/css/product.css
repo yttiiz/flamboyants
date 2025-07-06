@@ -84,6 +84,49 @@
       font-weight: 500;
     }
 
+    & button {
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: center;
+      position: absolute;
+      width: calc(var(--base-size) * 5);
+      height: calc(var(--base-size) * 5);
+      border-radius: 50%;
+      opacity: 0.75;
+      transition: background var(--smooth), opacity var(--smooth);
+    }
+
+    & button:first-of-type {
+      left: calc(var(--base-size) * 1.5);
+    }
+    
+    & button:last-of-type {
+      right: calc(var(--base-size) * 1.5);
+    }
+
+    & button.hidden {
+      visibility: hidden;
+    }
+
+    & button span {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 35%;
+      height: 35%;
+      background: var(--light);
+    }
+
+    & button:first-of-type span {
+      left: 55%;
+      clip-path: polygon(0 0, 10% 0, 10% 90%, 100% 90%, 100% 100%, 0 100%);
+    }
+
+    & button:last-of-type span {
+      left: 45%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 90% 100%, 90% 10%, 0 10%);
+    }
+
     & ul,
     & dl,
     & #reviews > p {

@@ -24,7 +24,7 @@ export const ProductFigure: ComponentType<
   }: ParameterType) => (
     `
     <figure>
-      <figure
+      <div role="figure"
         style="width: ${product.pictures.length * 100}%;"
         class="figure-img-container"
       >
@@ -36,7 +36,7 @@ export const ProductFigure: ComponentType<
           />`
         )
       ).join("")}
-      </figure>
+      </div>
       <figcaption>
         <span>${legend}</span>
         <span>
@@ -46,6 +46,12 @@ export const ProductFigure: ComponentType<
       </figcaption>
       <div class="figcaption-shadow">
       </div>
+      <button type="button" class="hidden" aria-label="move slider left">
+        <span></span>
+      </button>
+      <button type="button" aria-label="move slider right">
+        <span></span>
+      </button>
     </figure>
     `
   ),

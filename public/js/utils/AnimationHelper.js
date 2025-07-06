@@ -39,7 +39,9 @@ export class AnimationHelper {
   handleProductSlider(sliderClassName) {
     if (document.querySelector(sliderClassName)) {
       const sliderContainer = document.querySelector(sliderClassName);
-      const slider = sliderContainer.querySelector("figure");
+      const slider = sliderContainer.querySelector("div[role=\"figure\"]");
+      const [prevBtn, nextBtn] = sliderContainer.querySelectorAll("button");
+
       const sliderLength = slider.children.length;
       let index = 0;
 
@@ -58,11 +60,13 @@ export class AnimationHelper {
 
           index++;
           this.#moveSlider(slider, sliderLength, index);
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
         } else {
           if (index <= 0) return;
-
+          
           index--;
           this.#moveSlider(slider, sliderLength, index);
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
         }
       };
 
@@ -70,14 +74,7 @@ export class AnimationHelper {
     }
   }
 
-  /**
-   * Animates slider motion.
-   * @param {string} sliderClassName
-   */
-  handleHomeSlider(sliderClassName) {
-    const sliders = document.querySelectorAll(sliderClassName);
-
-    /**
+      /**
      * @param {{
      *  prevBtn: HTMLButtonElement;
      *  nextBtn: HTMLButtonElement;
@@ -85,7 +82,7 @@ export class AnimationHelper {
      *  index: number;
      * }}
      */
-    const changeBtnsVisibility = ({
+    #changeBtnsVisibility = ({
       prevBtn,
       nextBtn,
       sliderLength,
@@ -120,6 +117,13 @@ export class AnimationHelper {
           }
       }
     };
+
+  /**
+   * Animates slider motion.
+   * @param {string} sliderClassName
+   */
+  handleHomeSlider(sliderClassName) {
+    const sliders = document.querySelectorAll(sliderClassName);
 
     /**
      * @param {HTMLUListElement} landmarks
@@ -176,7 +180,7 @@ export class AnimationHelper {
 
           index--;
           this.#moveSlider(slider, sliderLength, index);
-          changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
           switchActiveLandmark(landmarks, index);
         });
 
@@ -185,7 +189,7 @@ export class AnimationHelper {
 
           index++;
           this.#moveSlider(slider, sliderLength, index);
-          changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
           switchActiveLandmark(landmarks, index);
         });
       }
