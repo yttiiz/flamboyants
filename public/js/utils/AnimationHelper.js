@@ -39,7 +39,9 @@ export class AnimationHelper {
   handleProductSlider(sliderClassName) {
     if (document.querySelector(sliderClassName)) {
       const sliderContainer = document.querySelector(sliderClassName);
-      const slider = sliderContainer.querySelector("figure");
+      const slider = sliderContainer.querySelector('div[role="figure"]');
+      const [prevBtn, nextBtn] = sliderContainer.querySelectorAll("button");
+
       const sliderLength = slider.children.length;
       let index = 0;
 
@@ -58,11 +60,13 @@ export class AnimationHelper {
 
           index++;
           this.#moveSlider(slider, sliderLength, index);
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
         } else {
           if (index <= 0) return;
 
           index--;
           this.#moveSlider(slider, sliderLength, index);
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
         }
       };
 
@@ -71,55 +75,55 @@ export class AnimationHelper {
   }
 
   /**
+   * @param {{
+   *  prevBtn: HTMLButtonElement;
+   *  nextBtn: HTMLButtonElement;
+   *  sliderLength: number;
+   *  index: number;
+   * }}
+   */
+  #changeBtnsVisibility = ({
+    prevBtn,
+    nextBtn,
+    sliderLength,
+    index,
+  }) => {
+    const className = "hidden";
+
+    switch (index) {
+      case 0:
+        prevBtn.classList.add(className);
+
+        if (nextBtn.classList.contains(className)) {
+          nextBtn.classList.remove(className);
+        }
+        break;
+
+      case sliderLength - 1:
+        nextBtn.classList.add(className);
+
+        if (prevBtn.classList.contains(className)) {
+          prevBtn.classList.remove(className);
+        }
+        break;
+
+      default:
+        if (prevBtn.classList.contains(className)) {
+          prevBtn.classList.remove(className);
+        }
+
+        if (nextBtn.classList.contains(className)) {
+          nextBtn.classList.remove(className);
+        }
+    }
+  };
+
+  /**
    * Animates slider motion.
    * @param {string} sliderClassName
    */
   handleHomeSlider(sliderClassName) {
     const sliders = document.querySelectorAll(sliderClassName);
-
-    /**
-     * @param {{
-     *  prevBtn: HTMLButtonElement;
-     *  nextBtn: HTMLButtonElement;
-     *  sliderLength: number;
-     *  index: number;
-     * }}
-     */
-    const changeBtnsVisibility = ({
-      prevBtn,
-      nextBtn,
-      sliderLength,
-      index,
-    }) => {
-      const className = "hidden";
-
-      switch (index) {
-        case 0:
-          prevBtn.classList.add(className);
-
-          if (nextBtn.classList.contains(className)) {
-            nextBtn.classList.remove(className);
-          }
-          break;
-
-        case sliderLength - 1:
-          nextBtn.classList.add(className);
-
-          if (prevBtn.classList.contains(className)) {
-            prevBtn.classList.remove(className);
-          }
-          break;
-
-        default:
-          if (prevBtn.classList.contains(className)) {
-            prevBtn.classList.remove(className);
-          }
-
-          if (nextBtn.classList.contains(className)) {
-            nextBtn.classList.remove(className);
-          }
-      }
-    };
 
     /**
      * @param {HTMLUListElement} landmarks
@@ -176,7 +180,7 @@ export class AnimationHelper {
 
           index--;
           this.#moveSlider(slider, sliderLength, index);
-          changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
           switchActiveLandmark(landmarks, index);
         });
 
@@ -185,7 +189,7 @@ export class AnimationHelper {
 
           index++;
           this.#moveSlider(slider, sliderLength, index);
-          changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
+          this.#changeBtnsVisibility({ prevBtn, nextBtn, sliderLength, index });
           switchActiveLandmark(landmarks, index);
         });
       }
