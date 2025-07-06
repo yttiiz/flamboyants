@@ -377,6 +377,15 @@
 
   /*=====| BREAKPOINT |=====*/
 
+  @media screen and (max-width: 650px) {
+   .product {
+      & > figure,
+      & > figure img {
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+
   @media screen and (max-width: 950px) {
     .product {
       gap: unset;
