@@ -366,6 +366,7 @@
     & .booking form input[type="submit"] {
       margin-top: calc(var(--base-size) * 0.5);
       background: var(--primary-color);
+      height: calc(var(--base-size) * 3);
     }
   }
 
