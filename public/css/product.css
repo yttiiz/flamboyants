@@ -378,7 +378,7 @@
   /*=====| BREAKPOINT |=====*/
 
   @media screen and (max-width: 650px) {
-   .product {
+    .product {
       & > figure,
       & > figure img {
         aspect-ratio: 1 / 1;
