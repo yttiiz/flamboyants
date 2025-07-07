@@ -12,7 +12,6 @@ import {
   ProductController,
   ProfilController,
 } from "@controllers";
-import { DataController } from "./reset.ts";
 
 export const router = new oak.Router<AppState>();
 
@@ -29,4 +28,3 @@ new ApiController(
   router,
   Mongo.connectionTo,
 );
-new DataController(router);
