@@ -1,4 +1,4 @@
-# ![favicon](./public/img/logos/lf_logo.png) Yz web application
+# ![favicon](./public/img/logos/lf_logo.png) Les flamboyants
 
 This application is designed as a **craft-app**. The idea here, is to experiment
 the `deno` ecosystem.
