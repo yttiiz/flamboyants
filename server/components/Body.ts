@@ -54,7 +54,7 @@ export const Body: ComponentType<
             JavaScript est désactivé sur votre navigateur
           </h1>
           <h4>
-            Veuillez activer JavaScript de manière à pouvoir utiliser toutes les fonctionnalités de l'application.
+            Veuillez activer JavaScript de manière à pouvoir utiliser toutes les fonctionnalités de l'application
           </h4>
         </noscript>
         {{ application-content }}
