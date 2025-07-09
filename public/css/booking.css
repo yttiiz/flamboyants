@@ -159,12 +159,15 @@
   }
 
   @media screen and (max-width: 650px) {
-    & .card-content > figure {
-      width: 100%;
-    }
+    & .booking-card {
+      & .card-content > figure {
+        flex-direction: column;
+        width: 100%;
+      }
 
-    & .card-content > div {
-      gap: var(--base-size);
+      & .card-content > div {
+        gap: var(--base-size);
+      }
     }
   }
 }
