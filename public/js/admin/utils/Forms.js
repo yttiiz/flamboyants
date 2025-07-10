@@ -55,13 +55,33 @@ export class Forms {
       });
 
       if (res.ok) {
-        isDeleteForm
-          ? Forms.#displayDeleteMessage(e.target, await res.json())
-          : Forms.#displayMessage(e.target, await res.json());
+        if (isDeleteForm) {
+          Forms.#hideCurrentBookingCard(e.target);
+          Forms.#displayDeleteMessage(e.target, await res.json());
+        } else {
+          Forms.#displayMessage(e.target, await res.json());
+        }
       }
     } catch (error) {
       //TODO improve that block scope
       console.log(error);
+    }
+  };
+
+  /**
+   * @param {HTMLFormElement} form
+   */
+  static #hideCurrentBookingCard = (form) => {
+    const cards = document.querySelectorAll(".bookings-details span ul li");
+
+    for (const card of cards) {
+      const deleteButton = card.querySelector('button[data-action="delete"]');
+      const isCurrentCard = form.dataset["id"] === deleteButton.dataset["id"];
+
+      if (isCurrentCard) {
+        card.style.display = "none";
+        break;
+      }
     }
   };
 
