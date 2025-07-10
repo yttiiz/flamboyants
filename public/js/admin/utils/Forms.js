@@ -43,7 +43,7 @@ export class Forms {
     }
 
     const method = isDeleteForm ? "DELETE" : (isCreateForm ? "POST" : "PUT");
-
+    
     try {
       const res = await fetch(e.target.action, {
         method,
@@ -53,11 +53,12 @@ export class Forms {
         },
         mode: "cors",
       });
-
+      
       if (res.ok) {
         if (isDeleteForm) {
           Forms.#hideCurrentBookingCard(e.target);
           Forms.#displayDeleteMessage(e.target, await res.json());
+          await Forms.#rebootChart();
         } else {
           Forms.#displayMessage(e.target, await res.json());
         }
@@ -67,6 +68,30 @@ export class Forms {
       console.log(error);
     }
   };
+
+  static async #rebootChart() {
+    const { AdminContentHelper } = await import("./AdminContentHelper.js");
+    const { AdminChartsHelper } = await import("./AdminChartsHelper.js");
+    
+    // Retrieve all data from api.
+    const [users, bookings] = await (async function (...args) {
+      /** @type {[Types.Users, Types.Products]} */
+      const allData = [];
+
+      for (const arg of args) {
+        const data = await AdminContentHelper.getData(arg);
+        allData.push(data);
+      }
+
+      return allData;
+    })("users", "bookings");
+
+    // Set charts.
+    AdminChartsHelper.setCharts({
+      users,
+      bookings,
+    });
+  }
 
   /**
    * @param {HTMLFormElement} form

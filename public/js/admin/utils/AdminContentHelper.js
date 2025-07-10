@@ -60,7 +60,7 @@ export class AdminContentHelper extends DefaultFormHelper {
       const allData = [];
 
       for (const arg of args) {
-        const data = await AdminContentHelper.#getData(arg);
+        const data = await AdminContentHelper.getData(arg);
         allData.push(data);
       }
 
@@ -782,7 +782,7 @@ export class AdminContentHelper extends DefaultFormHelper {
    * @param {string} path
    * @param {number} [limit]
    */
-  static #getData = async (path, limit) => {
+  static getData = async (path, limit) => {
     try {
       const res = await fetch(
         AdminContentHelper.#host + path + getApiKey() +
