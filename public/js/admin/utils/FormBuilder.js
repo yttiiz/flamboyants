@@ -305,6 +305,6 @@ export class FormBuilder {
 
     return tag === "h2"
       ? `Suppression de ${dataType}`
-      : `Etes-vous vraiment sûr de vouloir supprimer ${dataType}.`;
+      : `Etes-vous vraiment sûr de vouloir supprimer ${dataType} ?`;
   };
 }

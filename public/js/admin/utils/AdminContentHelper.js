@@ -2,7 +2,7 @@
 import { DefaultFormHelper } from "../../utils/DefaultFormHelper.js";
 import { PageBuilder } from "../../pages/Builder.js";
 import { FormBuilder } from "./FormBuilder.js";
-import { getAge, getApiKey } from "../../utils/_commonFunctions.js";
+import { getApiKey } from "../../utils/_commonFunctions.js";
 import * as Types from "../../types/types.js";
 import { AdminChartsHelper } from "./AdminChartsHelper.js";
 
