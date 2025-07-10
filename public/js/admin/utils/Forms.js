@@ -43,7 +43,7 @@ export class Forms {
     }
 
     const method = isDeleteForm ? "DELETE" : (isCreateForm ? "POST" : "PUT");
-    
+
     try {
       const res = await fetch(e.target.action, {
         method,
@@ -53,7 +53,7 @@ export class Forms {
         },
         mode: "cors",
       });
-      
+
       if (res.ok) {
         if (isDeleteForm) {
           Forms.#hideCurrentBookingCard(e.target);
@@ -72,7 +72,7 @@ export class Forms {
   static async #rebootChart() {
     const { AdminContentHelper } = await import("./AdminContentHelper.js");
     const { AdminChartsHelper } = await import("./AdminChartsHelper.js");
-    
+
     // Retrieve all data from api.
     const [users, bookings] = await (async function (...args) {
       /** @type {[Types.Users, Types.Products]} */
