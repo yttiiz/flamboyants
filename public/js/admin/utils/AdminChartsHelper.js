@@ -1,5 +1,5 @@
 import { PageBuilder } from "../../pages/Builder.js";
-import { getAge, setLoadingAction } from "../../utils/_commonFunctions.js";
+import { setLoadingAction } from "../../utils/_commonFunctions.js";
 import * as Types from "../../types/types.js";
 
 export class AdminChartsHelper {
