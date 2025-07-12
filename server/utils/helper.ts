@@ -13,14 +13,14 @@ type DisplayDateType = {
 
 export class Helper {
   private static baseDateOpts: Intl.DateTimeFormatOptions = {
-    timeZone: "America/Martinique",
+    timeZone: "America/Guadeloupe",
     year: "numeric",
     month: "short",
     day: "numeric",
   };
 
   private static longDateOpts: Intl.DateTimeFormatOptions = {
-    timeZone: "America/Martinique",
+    timeZone: "America/Guadeloupe",
     year: "numeric",
     month: "short",
     day: "numeric",
@@ -29,7 +29,7 @@ export class Helper {
   };
 
   private static shortDateOpts: Intl.DateTimeFormatOptions = {
-    timeZone: "America/Martinique",
+    timeZone: "America/Guadeloupe",
     year: "2-digit",
     month: "numeric",
     day: "numeric",

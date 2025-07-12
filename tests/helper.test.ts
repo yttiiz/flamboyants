@@ -24,7 +24,7 @@ Deno.test({
     assertEquals(
       "24 juil. 1980",
       Helper.displayDate({
-        date: new Date("1980-7-24"),
+        date: new Date("1980-7-24").getTime() + new Date("1980-7-24").getTimezoneOffset(),
         style: "normal",
       }),
     );
