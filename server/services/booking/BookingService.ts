@@ -251,11 +251,13 @@ export class BookingService {
                 "Votre réservation du {{ start }} au {{ end }} a bien été enregistrée. Un e-mail de confirmation a été envoyé à l'adresse {{ email }}.",
               booking: {
                 start: Helper.displayDate({
-                  date: new Date(newBooking.startingDate).getTime() + Helper.getGMT(),
+                  date: new Date(newBooking.startingDate).getTime() +
+                    Helper.getGMT(),
                   style: "short",
                 }),
                 end: Helper.displayDate({
-                  date: new Date(newBooking.endingDate).getTime() + Helper.getGMT(),
+                  date: new Date(newBooking.endingDate).getTime() +
+                    Helper.getGMT(),
                   style: "short",
                 }),
               },
@@ -274,7 +276,8 @@ export class BookingService {
               "Le logement est occupé du {{ start }} au {{ end }}. Choisissez un autre créneau.",
             booking: {
               start: Helper.displayDate({
-                date: new Date(booking.startingDate).getTime() + Helper.getGMT(),
+                date: new Date(booking.startingDate).getTime() +
+                  Helper.getGMT(),
                 style: "short",
               }),
               end: Helper.displayDate({
