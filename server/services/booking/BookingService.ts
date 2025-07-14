@@ -193,11 +193,11 @@ export class BookingService {
             if (IS_DENO_DEPLOY) {
               const dates = {
                 starting: Helper.displayDate({
-                  date: new Date(startingDate),
+                  date: new Date(startingDate).getTime() + Helper.getGMT(),
                   style: "normal",
                 }),
                 ending: Helper.displayDate({
-                  date: new Date(endingDate),
+                  date: new Date(endingDate).getTime() + Helper.getGMT(),
                   style: "normal",
                 }),
               };
@@ -251,11 +251,11 @@ export class BookingService {
                 "Votre réservation du {{ start }} au {{ end }} a bien été enregistrée. Un e-mail de confirmation a été envoyé à l'adresse {{ email }}.",
               booking: {
                 start: Helper.displayDate({
-                  date: new Date(newBooking.startingDate),
+                  date: new Date(newBooking.startingDate).getTime() + Helper.getGMT(),
                   style: "short",
                 }),
                 end: Helper.displayDate({
-                  date: new Date(newBooking.endingDate),
+                  date: new Date(newBooking.endingDate).getTime() + Helper.getGMT(),
                   style: "short",
                 }),
               },
@@ -274,11 +274,11 @@ export class BookingService {
               "Le logement est occupé du {{ start }} au {{ end }}. Choisissez un autre créneau.",
             booking: {
               start: Helper.displayDate({
-                date: new Date(booking.startingDate),
+                date: new Date(booking.startingDate).getTime() + Helper.getGMT(),
                 style: "short",
               }),
               end: Helper.displayDate({
-                date: new Date(booking.endingDate),
+                date: new Date(booking.endingDate).getTime() + Helper.getGMT(),
                 style: "short",
               }),
             },

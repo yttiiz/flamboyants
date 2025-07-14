@@ -130,6 +130,10 @@ export class Helper {
       .replace(",", " à");
   }
 
+  public static getGMT(offset = 4) {
+    return offset * (1000 * 60 * 60);
+  }
+
   public static async removeEmptyOrUnchangedFields(
     data: Record<string, FormDataEntryValue>,
     user: UserSchemaWithIDType,

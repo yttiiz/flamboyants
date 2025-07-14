@@ -56,11 +56,11 @@ type ParameterType = {
           <h4>${periodTitle}</h4>
           <p>${
             Helper.displayDate({
-              date: new Date(startingDate),
+              date: new Date(startingDate).getTime() + Helper.getGMT(),
               style: "normal",
             })} au ${
             Helper.displayDate({
-              date: new Date(endingDate),
+              date: new Date(endingDate).getTime() + Helper.getGMT(),
               style: "normal",
           })}</p>
         </div>
