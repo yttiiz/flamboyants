@@ -56,7 +56,6 @@ main {
 
     & form[data-style] {
       margin: 0 auto;
-      border: var(--border-black-25-percent);
       border-radius: var(--base-size);
       overflow: hidden;
     }
