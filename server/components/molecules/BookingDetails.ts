@@ -40,7 +40,7 @@ export const BookingDetails: ComponentType<
         </span>
         <strong>
         ${
-          !isAvailable
+          isAvailable
           ? "disponible"
           : `disponible à partir du ${Helper.displayDate({
             date: (endingDate as number) + Helper.getGMT() + Helper.getGMT(24),
