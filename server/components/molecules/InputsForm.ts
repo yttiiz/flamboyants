@@ -111,7 +111,13 @@ export const InputsForm: ComponentType<
                 )
             )}
           ${(type === "password" && forgotPassword)
-              ? `<button data-forgot-password>Mot de passe oublié ?</button>`
+              ? `<button
+                  data-forgot-password
+                  type="button"
+                  aria-label="open forgot password dialog"
+                >
+                  Mot de passe oublié ?
+                </button>`
               : ""}
           </label>`;
 
