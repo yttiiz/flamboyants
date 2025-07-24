@@ -119,6 +119,10 @@ input[type="submit"] {
   font-weight: 500;
 }
 
+form button[data-forgot-password] {
+  text-align: right;
+}
+
 li {
   list-style-position: inside;
 }

@@ -30,6 +30,7 @@ export const InputsForm: ComponentType<
       maxLength,
       value,
       autocomplete,
+      forgotPassword,
       items,
     }) => { 
       if (type !== "submit" && type !== "radio" && name !== "photo") {
@@ -109,7 +110,9 @@ export const InputsForm: ComponentType<
                     : ""}`
                 )
             )}
-          ${type === "password" ? `<button data-forgot-password>Mot de passe oublié ?</button>` : ""}
+          ${(type === "password" && forgotPassword)
+              ? `<button data-forgot-password>Mot de passe oublié ?</button>`
+              : ""}
           </label>`;
 
       } else if (type === "radio") {

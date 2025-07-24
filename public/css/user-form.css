@@ -91,10 +91,6 @@ main {
     color: var(--danger);
   }
 
-  & form button[data-forgot-password] {
-    text-align: right;
-  }
-
   & form > span.none {
     display: none;
   }
