@@ -109,6 +109,7 @@ export const InputsForm: ComponentType<
                     : ""}`
                 )
             )}
+          ${type === "password" ? `<button data-forgot-password>Mot de passe oublié ?</button>` : ""}
           </label>`;
 
       } else if (type === "radio") {
