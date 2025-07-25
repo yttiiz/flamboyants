@@ -24,7 +24,8 @@ main {
     }
   }
 
-  & section form input {
+  & section form input,
+  & button[data-send-user-email] {
     height: calc(var(--base-size) * 3);
   }
 
@@ -32,7 +33,8 @@ main {
     width: 100%;
   }
 
-  & section form input[type="submit"] {
+  & section form input[type="submit"],
+  & button[data-send-user-email] {
     align-self: end;
     background: var(--primary-color);
   }
@@ -98,6 +100,8 @@ main {
   & form + p {
     text-align: center;
   }
+
+  & .send-user-email {}
 }
 
 #data-profil-form {

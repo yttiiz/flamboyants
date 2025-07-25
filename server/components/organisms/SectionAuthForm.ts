@@ -1,5 +1,5 @@
 import { Helper } from "@utils";
-import { Dialog, InputsForm } from "../mod.ts";
+import { Dialog, DialogForm, InputsForm } from "../mod.ts";
 import type { ComponentType, FormDataType, OrganismNameType } from "../mod.ts";
 
 export const SectionAuthForm: ComponentType<
@@ -39,6 +39,28 @@ export const SectionAuthForm: ComponentType<
         </form>
       </div>
     </section>
-    ${Dialog.html({})}`;
+    ${
+      path === "/register" ? Dialog.html({}) : Dialog.html({
+        component: `
+          <div class="send-user-email">
+            ${
+          InputsForm.html({
+            content: [{
+              type: "email",
+              label: "Email",
+              name: "email",
+              autocomplete: "current-password",
+            }],
+          })
+        }
+            <button
+              type="button"
+              data-send-user-email
+            >
+              Envoyer
+            </button>
+          </div>`,
+      })
+    }`;
   },
 };
