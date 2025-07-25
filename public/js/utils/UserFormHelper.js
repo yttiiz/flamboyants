@@ -24,6 +24,23 @@ export class UserFormHelper extends DefaultFormHelper {
     dialog.showModal();
   };
 
+  static displayDialogforgotPassword = () => {
+    const dialog = document.querySelector("#data-user-form > dialog");
+
+    if (!dialog.querySelector("h2").textContent) {
+      UserFormHelper.setUserDialogContent(
+        dialog,
+        {
+          title: "Mot de passe oublié ?",
+          paragraph:
+            "Saisissez votre adresse e-mail et nous vous enverrons des instructions pour réinitialiser votre mot de passe.",
+        },
+      );
+    }
+
+    dialog.showModal();
+  };
+
   /**
    * @param {Response} response
    */

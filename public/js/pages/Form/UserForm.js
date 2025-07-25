@@ -25,6 +25,10 @@ export class UserFormPage extends PageBuilder {
       image.classList.remove("loading-image");
     }
 
+    if (form.action.includes("/login")) {
+      this.#handleForgotPassword();
+    }
+
     form.addEventListener(
       "submit",
       (e) => this.#submitHandler(e),
@@ -87,6 +91,15 @@ export class UserFormPage extends PageBuilder {
         link.addEventListener("click", (e) => e.preventDefault());
       }
     }
+  };
+
+  #handleForgotPassword = () => {
+    const button = document.querySelector("button[data-forgot-password]");
+
+    button.addEventListener(
+      "click",
+      UserFormHelper.displayDialogforgotPassword,
+    );
   };
 
   /**
