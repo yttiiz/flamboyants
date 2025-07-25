@@ -42,6 +42,22 @@ export class UserFormHelper extends DefaultFormHelper {
   };
 
   /**
+   * @param {Event} e 
+   */
+  static sendNewPasswordToUser = (e) => {
+    let label = e.currentTarget.previousElementSibling;
+    const email = label.querySelector("input")?.value.trim();
+    
+    label = null;
+
+    if (!email) {
+      //TODO implement logic here;
+    } else {
+      //TODO implement logic here;
+    }
+  };
+
+  /**
    * @param {Response} response
    */
   static showLoginError = async (response) => {
