@@ -22,7 +22,7 @@ export class ForgotPasswordController extends DefaultController {
   private sendEmailToUserAndModifyUserPassword() {
     this.router?.post(
       "/send-forgot-password-email",
-      this.service.sendEmail,
+      this.service.sendEmailAndGetNewPassword,
     );
   }
 }

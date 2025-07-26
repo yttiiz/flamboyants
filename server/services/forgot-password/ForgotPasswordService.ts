@@ -37,7 +37,7 @@ export class ForgotPasswordService {
     }
   };
 
-  public sendEmail = async <T extends string>(
+  public sendEmailAndGetNewPassword = async <T extends string>(
     ctx: RouterContextAppType<T>,
   ) => {
     if (this.isNotAuthorized(ctx)) {
@@ -65,8 +65,11 @@ export class ForgotPasswordService {
       );
 
       if (!res.ok) {
-        console.log("status :", res.statusText);
-        console.log("response :", await res.json());
+        this.default.response(ctx, {
+          statusText: res.statusText,
+          message: await res.json(),
+        }, 401);
+
       } else {
         const { newPassword, message } = await res.json();
 
