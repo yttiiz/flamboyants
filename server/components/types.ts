@@ -147,6 +147,7 @@ export type InputDataType = CommonInputType & {
   minLength?: string;
   accept?: string;
   autocomplete?: string;
+  forgotPassword?: boolean;
   items?: string[] | CommonInputType[];
 };
 

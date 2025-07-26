@@ -1,5 +1,9 @@
 import { DefaultFormHelper } from "./DefaultFormHelper.js";
-import { handleInputFile, hydrateInput } from "./_commonFunctions.js";
+import {
+  getApiKey,
+  handleInputFile,
+  hydrateInput,
+} from "./_commonFunctions.js";
 
 export class UserFormHelper extends DefaultFormHelper {
   static id = (id) => `#data-${id}-form`;
@@ -24,6 +28,64 @@ export class UserFormHelper extends DefaultFormHelper {
     dialog.showModal();
   };
 
+  static displayDialogforgotPassword = () => {
+    const dialog = document.querySelector("#data-user-form > dialog");
+
+    if (!dialog.querySelector("h2").textContent) {
+      UserFormHelper.setUserDialogContent(
+        dialog,
+        {
+          title: "Mot de passe oublié ?",
+          paragraph:
+            "Saisissez votre adresse e-mail et nous vous enverrons des instructions pour réinitialiser votre mot de passe.",
+        },
+      );
+    }
+
+    dialog.showModal();
+  };
+
+  /**
+   * @param {Event} e
+   */
+  static sendNewPasswordToUser = async (e) => {
+    const label = e.currentTarget.previousElementSibling;
+    const email = label.querySelector("input")?.value.trim();
+
+    if (!email) {
+      //TODO implement logic here;
+    } else {
+      try {
+        const res = await fetch("/get-user-firstname" + getApiKey(), {
+          method: "POST",
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok && res.status === 200) {
+          const { firstname } = await res.json();
+
+          const response = await fetch(
+            "/send-forgot-password-email" + getApiKey(),
+            {
+              method: "POST",
+              body: JSON.stringify({ firstname, email }),
+            },
+          );
+
+          if (response.ok) {
+            const { message } = await response.json();
+            UserFormHelper.displaySendForgotPasswordEmailMessage(
+              label,
+              message,
+            );
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   /**
    * @param {Response} response
    */
@@ -36,6 +98,18 @@ export class UserFormHelper extends DefaultFormHelper {
     if (span.classList.contains("none")) {
       span.classList.remove("none");
     }
+  };
+
+  /**
+   * @param {HTMLDivElement} label
+   * @param {string} message
+   */
+  static displaySendForgotPasswordEmailMessage = (label, message) => {
+    const labelContainer = label.closest(".send-user-email");
+    const paragraph = labelContainer.closest("dialog").querySelector("p");
+
+    labelContainer.innerHTML = "";
+    paragraph.innerHTML = message;
   };
 
   static displayDialogToDeleteAccount = () => {

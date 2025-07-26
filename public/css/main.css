@@ -102,6 +102,7 @@ input[type="submit"] {
 }
 
 button[data-type="call-to-action"],
+button[data-send-user-email],
 textarea,
 fieldset,
 select,
@@ -112,11 +113,16 @@ input {
 }
 
 button[data-type="call-to-action"],
+button[data-send-user-email],
 input[type="submit"] {
   padding: var(--btn-padding);
   height: max-content;
   color: var(--light);
   font-weight: 500;
+}
+
+form button[data-forgot-password] {
+  text-align: right;
 }
 
 li {
@@ -610,12 +616,23 @@ main .container,
   gap: calc(var(--base-size) * 1.8);
 }
 
-form[data-style] label {
+form[data-style] label,
+.send-user-email,
+.send-user-email label {
   display: grid;
+}
+
+.send-user-email {
+  gap: 1rem;
+}
+
+form[data-style] label,
+.send-user-email label {
   gap: 0.5rem;
 }
 
 form[data-style] input:not(input[type="submit"]),
+.send-user-email input,
 form[data-style] textarea {
   padding: calc(var(--base-size) * 0.625);
   border: var(--border-black-25-percent);

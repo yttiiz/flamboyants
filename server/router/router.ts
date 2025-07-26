@@ -7,6 +7,7 @@ import {
   AuthController,
   BookingController,
   ContactController,
+  ForgotPasswordController,
   HomeController,
   LegalsController,
   ProductController,
@@ -24,6 +25,7 @@ new BookingController(router);
 new AdminController(router);
 new ContactController(router);
 new LegalsController(router);
+new ForgotPasswordController(router);
 new ApiController(
   router,
   Mongo.connectionTo,

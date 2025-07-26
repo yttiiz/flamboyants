@@ -1,11 +1,11 @@
 import { MongoClient, MongoStore, ObjectId } from "@deps";
 import type { Database, Document, Filter, UpdateFilter } from "@deps";
-import { Helper } from "@utils";
 import {
   CollectionType,
   CreateClusterParamerType,
   SelectFromDBType,
   UpdateItemIntoDBParameterType,
+  UpdateKeyIntoDBParameterType,
 } from "./types.ts";
 import console from "node:console";
 
@@ -53,6 +53,20 @@ export class Mongo {
       collection,
       filter: { _id: id },
       update: { $pull: { [key]: data } },
+    });
+  }
+
+  public static async updateKeyIntoDB({
+    collection,
+    key,
+    keyToChange,
+    identifier,
+    newValue,
+  }: UpdateKeyIntoDBParameterType) {
+    return await Mongo.update({
+      collection,
+      filter: { [key]: identifier },
+      update: { $set: { [keyToChange]: newValue } },
     });
   }
 

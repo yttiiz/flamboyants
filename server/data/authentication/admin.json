@@ -21,7 +21,8 @@
       "required": true,
       "minLength": 2,
       "maxLength": 40,
-      "autocomplete": "current-password"
+      "autocomplete": "current-password",
+      "forgotPassword": true
     },
     {
       "type": "submit",

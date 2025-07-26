@@ -30,6 +30,7 @@ export const InputsForm: ComponentType<
       maxLength,
       value,
       autocomplete,
+      forgotPassword,
       items,
     }) => { 
       if (type !== "submit" && type !== "radio" && name !== "photo") {
@@ -109,6 +110,15 @@ export const InputsForm: ComponentType<
                     : ""}`
                 )
             )}
+          ${(type === "password" && forgotPassword)
+              ? `<button
+                  data-forgot-password
+                  type="button"
+                  aria-label="open forgot password dialog"
+                >
+                  Mot de passe oublié ?
+                </button>`
+              : ""}
           </label>`;
 
       } else if (type === "radio") {
