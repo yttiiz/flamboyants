@@ -1,5 +1,5 @@
 import { Helper } from "@utils";
-import { Dialog, DialogForm, InputsForm } from "../mod.ts";
+import { Dialog, InputsForm } from "../mod.ts";
 import type { ComponentType, FormDataType, OrganismNameType } from "../mod.ts";
 
 export const SectionAuthForm: ComponentType<
@@ -60,6 +60,7 @@ export const SectionAuthForm: ComponentType<
               Envoyer
             </button>
           </div>`,
+        dataset: "reset-password",
       })
     }`;
   },

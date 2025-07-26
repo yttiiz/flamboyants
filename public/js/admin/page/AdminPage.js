@@ -31,8 +31,10 @@ export class AdminPage {
       Forms.init(); // Handle forms submission.
     } else {
       const { AdminLoginHelper } = await import("../utils/AdminLoginHelper.js");
+      const { UserFormPage } = await import("../../pages/Form/UserForm.js");
 
       AdminLoginHelper.handleShowPassword();
+      new UserFormPage().handleForgotPassword();
 
       document.querySelector("form")
         .addEventListener("submit", AdminLoginHelper.loginHandler);

@@ -7,6 +7,7 @@ import {
   Dialog,
   DialogForm,
   FormAdmin,
+  InputsForm,
 } from "../mod.ts";
 import type {
   ComponentType,
@@ -46,6 +47,28 @@ export const SectionAdmin: ComponentType<
       </div>
     </section>
     ${Dialog.html({ dataset: "profil" })}
+    ${isUserConnected ? "" : Dialog.html({
+      component: `
+        <div class="send-user-email">
+          ${
+        InputsForm.html({
+          content: [{
+            type: "email",
+            label: "Email",
+            name: "email",
+            autocomplete: "current-password",
+          }],
+        })
+      }
+          <button
+            type="button"
+            data-send-user-email
+          >
+            Envoyer
+          </button>
+        </div>`,
+        dataset: "reset-password"
+    })}
     ${isUserConnected
       ? (`
         ${Dialog.html({ dataset: "users", component: DialogForm.html(userFormContent) })}

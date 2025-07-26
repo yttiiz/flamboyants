@@ -102,7 +102,6 @@ input[type="submit"] {
 }
 
 button[data-type="call-to-action"],
-button[data-send-user-email],
 textarea,
 fieldset,
 select,
@@ -113,12 +112,21 @@ input {
 }
 
 button[data-type="call-to-action"],
-button[data-send-user-email],
 input[type="submit"] {
   padding: var(--btn-padding);
   height: max-content;
   color: var(--light);
   font-weight: 500;
+}
+
+button[data-send-user-email] {
+  padding: var(--btn-padding);
+  border-radius: var(--btn-border-radius);
+  height: calc(var(--base-size) * 3);
+  font-size: var(--base-size);
+  background: var(--primary-color);
+  font-weight: 500;
+  color: var(--light);
 }
 
 form button[data-forgot-password] {

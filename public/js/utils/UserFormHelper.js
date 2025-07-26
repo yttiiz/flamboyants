@@ -29,7 +29,7 @@ export class UserFormHelper extends DefaultFormHelper {
   };
 
   static displayDialogforgotPassword = () => {
-    const dialog = document.querySelector("#data-user-form > dialog");
+    const dialog = document.querySelector("dialog[data-reset-password]");
 
     if (!dialog.querySelector("h2").textContent) {
       UserFormHelper.setUserDialogContent(

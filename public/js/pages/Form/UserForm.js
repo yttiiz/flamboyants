@@ -26,7 +26,7 @@ export class UserFormPage extends PageBuilder {
     }
 
     if (form.action.includes("/login")) {
-      this.#handleForgotPassword();
+      this.handleForgotPassword();
     }
 
     form.addEventListener(
@@ -93,7 +93,7 @@ export class UserFormPage extends PageBuilder {
     }
   };
 
-  #handleForgotPassword = () => {
+  handleForgotPassword = () => {
     const forgotPasswordButton = document.querySelector(
       "button[data-forgot-password]",
     );
