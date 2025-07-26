@@ -1,5 +1,9 @@
 import { DefaultFormHelper } from "./DefaultFormHelper.js";
-import { handleInputFile, hydrateInput } from "./_commonFunctions.js";
+import {
+  getApiKey,
+  handleInputFile,
+  hydrateInput,
+} from "./_commonFunctions.js";
 
 export class UserFormHelper extends DefaultFormHelper {
   static id = (id) => `#data-${id}-form`;
@@ -42,18 +46,43 @@ export class UserFormHelper extends DefaultFormHelper {
   };
 
   /**
-   * @param {Event} e 
+   * @param {Event} e
    */
-  static sendNewPasswordToUser = (e) => {
+  static sendNewPasswordToUser = async (e) => {
     let label = e.currentTarget.previousElementSibling;
     const email = label.querySelector("input")?.value.trim();
-    
+
     label = null;
 
     if (!email) {
       //TODO implement logic here;
     } else {
-      //TODO implement logic here;
+      try {
+        const res = await fetch("/get-user-firstname" + getApiKey(), {
+          method: "POST",
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok && res.status === 200) {
+          const { firstname } = await res.json();
+
+          const response = await fetch(
+            "/send-forgot-password-email" + getApiKey(),
+            {
+              method: "POST",
+              body: JSON.stringify({ firstname, email }),
+            },
+          );
+
+          if (response.ok) {
+            const { message, newPassword } = await response.json();
+
+            console.log("message :", message, "newPassword :", newPassword);
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

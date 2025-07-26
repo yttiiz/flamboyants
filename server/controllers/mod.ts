@@ -4,6 +4,7 @@ export * from "./AuthController.ts";
 export * from "./ApiController.ts";
 export * from "./BookingController.ts";
 export * from "./DefaultController.ts";
+export * from "./ForgotPasswordController.ts";
 export * from "./HomeController.ts";
 export * from "./LegalsController.ts";
 export * from "./ProductController.ts";

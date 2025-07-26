@@ -94,7 +94,9 @@ export class UserFormPage extends PageBuilder {
   };
 
   #handleForgotPassword = () => {
-    const forgotPasswordButton = document.querySelector("button[data-forgot-password]");
+    const forgotPasswordButton = document.querySelector(
+      "button[data-forgot-password]",
+    );
     const dialogButton = document.querySelector("button[data-send-user-email]");
 
     forgotPasswordButton.addEventListener(

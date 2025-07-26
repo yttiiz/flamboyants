@@ -4,6 +4,7 @@ export * from "./api/fetchDataFromGuadeloupeIslandsWebsiteService.ts";
 export * from "./log/LogService.ts";
 export * from "./contact/ContactService.ts";
 export * from "./admin/AdminService.ts";
+export * from "./forgot-password/ForgotPasswordService.ts";
 export * from "./user/UserService.ts";
 export * from "./booking/BookingService.ts";
 export * from "./product/ProductService.ts";

@@ -128,7 +128,7 @@ export class ApiController {
         );
       }
 
-      const cursor = await this.collection(collection);
+      const cursor = this.collection(collection);
 
       try {
         if ("message" in cursor) {
