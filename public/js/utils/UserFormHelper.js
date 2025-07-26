@@ -53,7 +53,13 @@ export class UserFormHelper extends DefaultFormHelper {
     const email = label.querySelector("input")?.value.trim();
 
     if (!email) {
-      //TODO implement logic here;
+      if (!label.querySelector("p")) {
+        const alertParagraph = document.createElement("p");
+        alertParagraph.textContent = "Veuillez renseigner une adresse email !";
+        alertParagraph.style.color = "red";
+
+        label.appendChild(alertParagraph);
+      }
     } else {
       try {
         const res = await fetch("/get-user-firstname" + getApiKey(), {
