@@ -49,10 +49,8 @@ export class UserFormHelper extends DefaultFormHelper {
    * @param {Event} e
    */
   static sendNewPasswordToUser = async (e) => {
-    let label = e.currentTarget.previousElementSibling;
+    const label = e.currentTarget.previousElementSibling;
     const email = label.querySelector("input")?.value.trim();
-
-    label = null;
 
     if (!email) {
       //TODO implement logic here;
@@ -75,9 +73,11 @@ export class UserFormHelper extends DefaultFormHelper {
           );
 
           if (response.ok) {
-            const { message, newPassword } = await response.json();
-
-            console.log("message :", message, "newPassword :", newPassword);
+            const { message } = await response.json();
+            UserFormHelper.displaySendForgotPasswordEmailMessage(
+              label,
+              message,
+            );
           }
         }
       } catch (error) {
@@ -98,6 +98,18 @@ export class UserFormHelper extends DefaultFormHelper {
     if (span.classList.contains("none")) {
       span.classList.remove("none");
     }
+  };
+
+  /**
+   * @param {HTMLDivElement} label
+   * @param {string} message
+   */
+  static displaySendForgotPasswordEmailMessage = (label, message) => {
+    const labelContainer = label.closest(".send-user-email");
+    const paragraph = labelContainer.closest("dialog").querySelector("p");
+
+    labelContainer.innerHTML = "";
+    paragraph.innerHTML = message;
   };
 
   static displayDialogToDeleteAccount = () => {

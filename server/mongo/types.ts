@@ -13,6 +13,14 @@ export type CreateClusterParamerType = {
   env: string;
 };
 
+export type UpdateKeyIntoDBParameterType = {
+  collection: string;
+  key: string;
+  keyToChange: string;
+  identifier: string;
+  newValue: string;
+};
+
 export type UpdateItemIntoDBParameterType<T> = {
   data: T;
   collection: string;

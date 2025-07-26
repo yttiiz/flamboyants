@@ -1,5 +1,6 @@
 import { DefaultController, RouterContextAppType } from "@controllers";
 import { Mongo } from "@mongo";
+import { Auth } from "../../auth/Auth.ts";
 
 export class ForgotPasswordService {
   private default;
@@ -69,11 +70,27 @@ export class ForgotPasswordService {
           statusText: res.statusText,
           message: await res.json(),
         }, 401);
-
       } else {
-        const { newPassword, message } = await res.json();
+        const { newPassword } = await res.json();
+        const newPasswordHashed = await Auth.hashPassword(newPassword);
 
-        this.default.response(ctx, { newPassword, message }, 200);
+        Mongo.updateKeyIntoDB({
+          collection: "users",
+          key: "email",
+          identifier: email,
+          keyToChange: "hash",
+          newValue: newPasswordHashed,
+        });
+
+        this.default.response(
+          ctx,
+          {
+            message:
+              "Votre mot de passe a été réinitialisé. Un message à l'adresse <b>" +
+              email + "</b> vous a été envoyé.",
+          },
+          200,
+        );
       }
     } catch (error) {
       console.log("error :", error);
