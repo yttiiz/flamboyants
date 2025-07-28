@@ -84,8 +84,6 @@ export class UserFormHelper extends DefaultFormHelper {
               label,
               message,
             );
-          } else {
-            console.log("error :", await response.json());
           }
         }
       } catch (error) {

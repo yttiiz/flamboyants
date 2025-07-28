@@ -72,7 +72,11 @@ export class ForgotPasswordService {
         }, 401);
       } else {
         const { newPassword } = await res.json();
-        const newPasswordHashed = await Auth.hashPassword(newPassword);
+        const isRunningInDenoDeploy = !!(Deno.env.get("IS_DENO_DEPLOY"));
+        const newPasswordHashed = await Auth.hashPassword(
+          newPassword,
+          isRunningInDenoDeploy,
+        );
 
         Mongo.updateKeyIntoDB({
           collection: "users",
