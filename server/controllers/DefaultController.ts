@@ -153,7 +153,7 @@ export class DefaultController {
 				: id.includes("admin")
 				? `<script type="module" src="./js/admin/index.js"></script>
               <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>`
-				: `<script type="module" src="./js/index.js"></script>`,
+				: `<script type="module" src="./js-minify/index.js"></script>`,
 		);
 	}
 
