@@ -1,6 +1,40 @@
 #!/bin/bash
 
-minify_dir="js-minify"
-minify_dir_path="$PWD/public/$minify_dir"
+base_folder="js"
+dest_folder="js-minify"
+base_folder_path="$PWD/public/$base_folder"
+dest_folder_path="$PWD/public/$dest_folder"
+opts="--minify --platform=browser"
 
-rm -rf "$minify_dir_path/*"
+declare -a folders=("utils" "pages")
+declare -a subfolders=("Form" "Home")
+
+deno_bundle() {
+  if [[ $3 = "Builder.js" ]] ; then
+    deno bundle $opts public/$1/pages/$3 -o public/$2/pages/$3
+  else
+    deno bundle $opts public/$1/$3/* --outdir public/$2/$3/
+  fi
+}
+
+if [[ $dest_folder_path ]] ; then
+  rm -rf "$dest_folder_path/*" && cp -rf "$base_folder_path/*" "$dest_folder_path"
+else
+  mkdir $dest_folder_path && cp -rf "$base_folder_path/*" "$dest_folder_path"
+fi
+
+for index in "${!folders[@]}" ; do
+  # cannot bundle 'pages' files cause there subfolder in it.
+  if [[ ${folders[$index]} != "pages" ]] ; then
+	  deno_bundle $base_folder $dest_folder ${folders[$index]}      
+  fi
+
+  # handle 'pages' subfolders.
+  if [[ ${folders[$index]} = "pages" ]] ; then
+    for key in "${!subfolders[@]}" ; do
+	    deno_bundle $base_folder $dest_folder ${folders[$index]}/${subfolders[$key]}      
+    done
+  fi
+done
+
+deno_bundle $base_folder $dest_folder "Builder.js"      
