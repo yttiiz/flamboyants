@@ -52,7 +52,7 @@ header[data-header="site"] {
 
 header[data-header="site"].with-bg {
   background: var(--white);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-lg);
 
   & #logo > a {
     & > svg {

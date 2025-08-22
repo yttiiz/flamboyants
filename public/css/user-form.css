@@ -1,5 +1,10 @@
 main {
   min-height: calc(100dvh - 7rem);
+  background: var(--light-clear);
+}
+
+form {
+  background: var(--white);
 }
 
 #data-user-form,
@@ -11,6 +16,10 @@ main {
 
   & h1 {
     text-align: center;
+  }
+
+  & section form {
+    border-radius: var(--base-size);
   }
 
   & section form label span:has(> div),
@@ -47,10 +56,6 @@ main {
 }
 
 #data-user-form {
-  & form {
-    border-radius: var(--base-size);
-  }
-
   & form[data-style="user-login"],
   & form[data-style="user-register"] {
     margin: 0 auto;
@@ -103,8 +108,13 @@ main {
 }
 
 #data-profil-form {
+  & form[data-style="user-profil"] {
+    padding: calc(var(--base-size) * 2);
+    box-shadow: var(--box-shadow);
+  }
+
   & .loading-text {
-    color: #ddd;
+    color: var(--grey-dark);
   }
 
   & section form {

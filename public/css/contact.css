@@ -1,9 +1,24 @@
 main {
   min-height: calc(100dvh - 7rem);
+  background: var(--light-clear);
+}
+
+form {
+  background: var(--white);
 }
 
 #data-contact {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+
   & section {
+    & h1,
+    & p {
+      text-align: center;
+    }
+    
     & form {
       margin: auto;
       width: clamp(
