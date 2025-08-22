@@ -22,9 +22,10 @@
     "singleQuote": false,
     "proseWrap": "preserve",
     "include": ["server/", "public/", "tests/"],
-    "exclude": ["README.md", "server/email/*"]
+    "exclude": ["README.md", "server/email/*", "public/js-minify/*"]
   },
   "lint": {
+    "exclude": ["public/js-minify/*"],
     "rules": {
       "exclude": ["no-unused-vars"]
     }
