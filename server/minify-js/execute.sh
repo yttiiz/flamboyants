@@ -17,10 +17,15 @@ deno_bundle() {
   fi
 }
 
+copy_files_from_base_folder() {
+  cp -rf $base_folder_path/* $dest_folder_path
+  rm -rf $dest_folder_path/admin
+}
+
 if [[ $dest_folder_path ]] ; then
-  rm -rf "$dest_folder_path/*" && cp -rf "$base_folder_path/*" "$dest_folder_path"
+  rm -rf $dest_folder_path/* && copy_files_from_base_folder
 else
-  mkdir $dest_folder_path && cp -rf "$base_folder_path/*" "$dest_folder_path"
+  mkdir $dest_folder_path && copy_files_from_base_folder
 fi
 
 for index in "${!folders[@]}" ; do
