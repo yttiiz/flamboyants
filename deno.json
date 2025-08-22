@@ -22,9 +22,10 @@
     "singleQuote": false,
     "proseWrap": "preserve",
     "include": ["server/", "public/", "tests/"],
-    "exclude": ["README.md", "server/email/*"]
+    "exclude": ["README.md", "server/email/*", "public/js-minify/*"]
   },
   "lint": {
+    "exclude": ["public/js-minify/*"],
     "rules": {
       "exclude": ["no-unused-vars"]
     }
@@ -40,6 +41,7 @@
     "launch-container": "docker desktop start && cd docker && make up",
     "test": "deno test --no-check -A ./tests/*.test.ts",
     "check-bc": "deno task fmt && deno task test",
-    "generate-email": "deno -A server/email/script/execute.ts && deno task fmt"
+    "generate-email": "deno -A server/email/script/execute.ts && deno task fmt",
+    "minify": "server/minify-js/execute.sh"
   }
 }
