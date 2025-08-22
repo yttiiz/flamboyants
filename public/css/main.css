@@ -29,6 +29,7 @@
   --base-size: clamp(1.4rem, 2vw, 1.6rem);
   --btn-border-radius: 0.5rem;
   --btn-padding: calc(var(--base-size) * 0.35) calc(var(--base-size) * 0.875);
+  --btn-padding-lg: calc(var(--base-size) * 0.5) calc(var(--base-size) * 1.15);
   --burger-height: calc(var(--base-size) * 1.5);
   --container-width: clamp(30rem, 85%, 96rem);
   --basic-dialog-width: clamp(30rem, 85%, calc(var(--base-size) * 31.25));
