@@ -12,10 +12,17 @@ export class UserFormHelper extends DefaultFormHelper {
 
   /**
    * @param {Response} response
+   * @param {number} [status]
    */
   static displayDialogRegisterDetails = async (response) => {
     const { message, title } = await response.json();
     const dialog = document.querySelector("#data-user-form > dialog");
+
+    if (response.status < 300) {
+      dialog
+        .querySelector("button[data-close]")
+        .addEventListener("click", () => location.href = "/");
+    }
 
     UserFormHelper.setUserDialogContent(
       dialog,

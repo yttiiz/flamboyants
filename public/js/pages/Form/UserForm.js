@@ -213,6 +213,10 @@ export class UserFormPage extends PageBuilder {
         }
       }
     } else {
+      if (res.status < 500 && location.href.includes("register")) {
+        return UserFormHelper.displayDialogRegisterDetails(res);
+      }
+
       UserFormHelper.showErrorMsg(res, location.pathname);
     }
   };
@@ -223,9 +227,5 @@ export class UserFormPage extends PageBuilder {
   #hideModalHandler = (e) => {
     e.currentTarget.closest("dialog")
       .close();
-
-    if (location.href.includes("register")) {
-      location.href = "/";
-    }
   };
 }
