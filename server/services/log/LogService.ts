@@ -155,7 +155,7 @@ export class LogService {
           {
             title: "Avertissement",
             message:
-              `L'adresse email <b>${email}</b> déjà utilisée. Veuillez en utiliser une autre.`,
+              `L'adresse email <b>${email}</b> est déjà utilisée. Veuillez en utiliser une autre.`,
           },
           401,
         );
