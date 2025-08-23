@@ -21,7 +21,7 @@ export class DefaultFormHelper {
     },
   ) => {
     dialog.querySelector("h2").textContent = title;
-    dialog.querySelector("p").textContent = paragraph;
+    dialog.querySelector("p").innerHTML = paragraph;
   };
 
   /**

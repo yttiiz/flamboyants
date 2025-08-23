@@ -1,7 +1,9 @@
 import { AnimationHelper, Router } from "./pages/mod.js";
 
+// Router
 new Router();
 
+// Animation
 const animationHelper = new AnimationHelper();
 
 // Home page

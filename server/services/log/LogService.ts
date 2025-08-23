@@ -7,8 +7,9 @@ import {
   SessionType,
 } from "@controllers";
 import { Auth } from "@auth";
-import { Mongo } from "@mongo";
+import { Mongo, NotFoundMessageType } from "@mongo";
 import type { FormDataType } from "@components";
+import { Document } from "@deps";
 
 export class LogService {
   default;
@@ -137,6 +138,33 @@ export class LogService {
 
     const { lastname, firstname, email, password, photo } = dataParsed
       .data as FormDataAppType;
+
+    // Check if email already exist in db.
+    try {
+      let user: Document | NotFoundMessageType | null = await Mongo
+        .selectFromDB(
+          "users",
+          email,
+          "email",
+        );
+
+      if ("_id" in user) {
+        user = null;
+        return this.default.response(
+          ctx,
+          {
+            title: "Avertissement",
+            message:
+              `L'adresse email <b>${email}</b> déjà utilisée. Veuillez en utiliser une autre.`,
+          },
+          401,
+        );
+      }
+
+      user = null;
+    } catch (error) {
+      console.log("error :", error);
+    }
 
     photo
       ? (picPath = await Helper.writeUserPicFile(
