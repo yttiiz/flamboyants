@@ -167,10 +167,10 @@ noscript {
 }
 
 .container,
-  .header-container {
-    margin: auto;
-    width: var(--container-width);
-  }
+.header-container {
+  margin: auto;
+  width: var(--container-width);
+}
 
 .container {
   padding: calc(var(--base-size) * 2) 0;

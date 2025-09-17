@@ -387,7 +387,7 @@
       margin-top: calc(var(--base-size) * 0.175);
       width: calc(var(--base-size) * 1.25);
       height: auto;
-      color: var(--primary-color)
+      color: var(--primary-color);
     }
   }
 
