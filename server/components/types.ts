@@ -57,6 +57,9 @@ export type AtomNameType =
   | "EyeOpenSvg"
   | "EyeShutSvg"
   | "CircleSvg"
+  | "EuroCurrencySvg"
+  | "CleanUpSvg"
+  | "BookingSvg"
   | "OnOffSvg";
 
 export type ComponentType<
@@ -277,7 +280,7 @@ export type ProductDataType = {
   };
   conditions: {
     title: string;
-    items: { content: string; }[];
+    items: { content: string; icon: string }[];
   };
   reviewForm: FormDataType;
 };

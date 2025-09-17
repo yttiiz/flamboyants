@@ -149,7 +149,7 @@ b {
   font-weight: 600;
 }
 
-p {
+p, p span {
   line-height: calc(var(--base-size) * 1.75);
   color: var(--grey-dark);
 }

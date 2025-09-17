@@ -372,12 +372,22 @@
 
   .conditions {
     & p {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: calc(var(--base-size) * 0.5);
       font-size: calc(var(--base-size) * 1.125);
       font-weight: 300;
     }
 
     & p:not(:last-of-type) {
       margin-bottom: var(--base-size);
+    }
+
+    & p svg {
+      margin-top: calc(var(--base-size) * 0.175);
+      width: calc(var(--base-size) * 1.25);
+      height: auto;
+      color: var(--primary-color)
     }
   }
 

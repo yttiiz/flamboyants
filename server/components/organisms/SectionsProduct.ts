@@ -17,6 +17,13 @@ import {
   ProductFigure,
   LoginRegister,
 } from "../mod.ts";
+import { EuroCurrencySvg, CleanUpSvg, BookingSvg } from "@components";
+
+const icons = {
+  EuroCurrencySvg: EuroCurrencySvg.html,
+  CleanUpSvg: CleanUpSvg.html,
+  BookingSvg: BookingSvg.html,
+};
 
 const {
   images,
@@ -108,7 +115,7 @@ export const SectionsProduct: ComponentType<
         <div class="conditions">
           <h1>${conditions.title}</h1>
           ${conditions.items.map((item) => (
-            `<p>${item.content}</p>`
+            `<p>${icons[item.icon as keyof typeof icons]}<span>${item.content}<span></p>`
           )).join("")}
         </div>
       </div>
