@@ -11,7 +11,17 @@
     "@dynamic-routes": "./server/router/mod.ts",
     "@utils": "./server/utils/mod.ts",
     "@auth": "./server/auth/mod.ts",
-    "@services": "./server/services/mod.ts"
+    "@services": "./server/services/mod.ts",
+    "@std/assert": "jsr:@std/assert@^1.0.14",
+    "cors": "jsr:@tajpouria/cors@^1.2.1",
+    "oak": "jsr:@oak/oak@^17.1.6",
+    "oak/sessions": "https://deno.land/x/oak_sessions/mod.ts",
+    "dotenv": "jsr:@std/dotenv",
+    "findcursor": "https://deno.land/x/mongo@v0.31.2/src/collection/commands/find.ts",
+    "mongo": "https://deno.land/x/mongo@v0.31.2/mod.ts",
+    "bcrypt": "https://deno.land/x/bcrypt@v0.4.1/mod.ts",
+    "cheerio": "npm:cheerio",
+    "nodemailer": "npm:nodemailer"
   },
   "lock": false,
   "fmt": {

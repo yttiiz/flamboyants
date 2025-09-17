@@ -1,8 +1,8 @@
 //====================================| Deno imports |====================================//
-import * as oak from "https://deno.land/x/oak/mod.ts";
-import { oakCors } from "https://deno.land/x/cors/mod.ts";
-import { MongoStore, Session } from "https://deno.land/x/oak_sessions/mod.ts";
-import { load } from "https://deno.land/std@0.202.0/dotenv/mod.ts";
+import * as oak from "oak";
+import { oakCors } from "cors";
+import { MongoStore, Session } from "oak/sessions";
+import { load } from "dotenv";
 import {
   Bson,
   Collection,
@@ -13,11 +13,11 @@ import {
   MongoClient,
   ObjectId,
   UpdateFilter,
-} from "https://deno.land/x/mongo@v0.31.2/mod.ts";
-import { FindCursor } from "https://deno.land/x/mongo@v0.31.2/src/collection/commands/find.ts";
-import * as bcrypt from "https://deno.land/x/bcrypt@v0.4.1/mod.ts";
-import * as nodemailer from "npm:nodemailer";
-import * as cheerio from "npm:cheerio";
+} from "mongo";
+import { FindCursor } from "findcursor";
+import * as bcrypt from "bcrypt";
+import * as nodemailer from "nodemailer";
+import * as cheerio from "cheerio";
 
 export {
   bcrypt,
