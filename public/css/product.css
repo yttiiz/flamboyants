@@ -372,7 +372,12 @@
 
   .conditions {
     & p {
+      font-size: calc(var(--base-size) * 1.125);
       font-weight: 300;
+    }
+
+    & p:not(:last-of-type) {
+      margin-bottom: var(--base-size);
     }
   }
 

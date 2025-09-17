@@ -107,7 +107,9 @@ export const SectionsProduct: ComponentType<
       <div class="container">
         <div class="conditions">
           <h1>${conditions.title}</h1>
-          <p>${conditions.content}</p>
+          ${conditions.items.map((item) => (
+            `<p>${item.content}</p>`
+          )).join("")}
         </div>
       </div>
     </section>

@@ -277,7 +277,7 @@ export type ProductDataType = {
   };
   conditions: {
     title: string;
-    content: string;
+    items: { content: string; }[];
   };
   reviewForm: FormDataType;
 };

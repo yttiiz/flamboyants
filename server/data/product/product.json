@@ -95,6 +95,16 @@
   },
   "conditions": {
     "title": "Conditions à respecter",
-    "content": "<b>Nettoyage</b> : Assurez-vous de quitter le logement dans le même état que vous l'avez trouvée, c'est-à-dire propre et en bon état.<br /><b>Utilisation des équipements</b> : Utilisez les équipements de l'appartement (salle de bain, cuisine, etc.) de manière raisonnable et respectueuse."
+    "items": [
+      {
+        "content": "<b>Paiement</b> : Le paiement doit être effectué en totalité avant l'arrivée. Nous acceptons les paiements par carte de crédit, virement bancaire, chèques et espèces."
+      },
+      {
+        "content": "<b>Réservations</b> : Les réservations doivent être faites via ce site. En cas d'annulation, veuillez nous informer au moins 7 jours à l'avance pour un remboursement complet. Les arrhes non remboursables sont possibles d’être reportés sur un autre séjour. En revanche, les arrhes seront conservées en cas d'annulations tardives."
+      },
+      {
+        "content": "<b>Nettoyage et entretien</b> : Assurez-vous de quitter le logement dans le même état que vous l'avez trouvée, c'est-à-dire propre et en bon état. Utilisez les équipements de l'appartement (salle de bain, cuisine, etc.) de manière raisonnable et respectueuse."
+      }
+    ]
   }
 }
