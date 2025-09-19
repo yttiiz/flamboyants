@@ -98,7 +98,7 @@
     "items": [
       {
         "icon": "EuroCurrencySvg",
-        "content": "<b>Paiement</b> : Le paiement doit être effectué en totalité avant l'arrivée. Nous acceptons les paiements par carte de crédit, virement bancaire, chèques et espèces."
+        "content": "<b>Paiement</b> : Le paiement doit être effectué en totalité avant l'arrivée. Nous acceptons les paiements par carte de crédit, virement bancaire, chèques et espèces. La caution est de 250€. Elle pourra être payée sur le site ou par chèque à votre arrivée sur place. La taxe de séjour est comprise."
       },
       {
         "icon": "BookingSvg",
@@ -106,7 +106,7 @@
       },
       {
         "icon": "CleanUpSvg",
-        "content": "<b>Nettoyage et entretien</b> : Assurez-vous de quitter le logement dans le même état que vous l'avez trouvée, c'est-à-dire propre et en bon état. Utilisez les équipements de l'appartement (salle de bain, cuisine, etc.) de manière raisonnable et respectueuse."
+        "content": "<b>Nettoyage et entretien</b> : Assurez-vous de quitter le logement dans le même état que vous l'avez trouvée, c'est-à-dire propre et en bon état. Si ce n'est pas le cas, des frais de ménage à hauteur de 50€ seront ajoutés au tarif final. Utilisez les équipements de l'appartement (salle de bain, cuisine, etc.) de manière raisonnable et respectueuse."
       }
     ]
   }
