@@ -80,7 +80,7 @@
 
 // Visits (www.lesilesdeguadeloupe.com) ///////////////////////////
 
-/** 
+/**
  * @typedef {Object} ImageType
  * @property {string} src
  * @property {string} alt

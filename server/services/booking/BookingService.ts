@@ -189,44 +189,44 @@ export class BookingService {
           const { price } = product.details;
 
           try {
-              const dates = {
-                starting: Helper.displayDate({
-                  date: new Date(startingDate).getTime() + Helper.getGMT(),
-                  style: "normal",
+            const dates = {
+              starting: Helper.displayDate({
+                date: new Date(startingDate).getTime() + Helper.getGMT(),
+                style: "normal",
+              }),
+              ending: Helper.displayDate({
+                date: new Date(endingDate).getTime() + Helper.getGMT(),
+                style: "normal",
+              }),
+            };
+            const apartment = {
+              type: product.details.type,
+              name: product.name,
+            };
+
+            const { MAILER_API_KEY, MAILER_BOOKING_URL } = Deno.env
+              .toObject();
+
+            const res = await fetch(
+              `${MAILER_BOOKING_URL}?apiKey=${MAILER_API_KEY}`,
+              {
+                method: "POST",
+                body: JSON.stringify({
+                  email,
+                  fullname,
+                  firstname,
+                  dates,
+                  apartment,
+                  price,
+                  numberOfDays,
                 }),
-                ending: Helper.displayDate({
-                  date: new Date(endingDate).getTime() + Helper.getGMT(),
-                  style: "normal",
-                }),
-              };
-              const apartment = {
-                type: product.details.type,
-                name: product.name,
-              };
+              },
+            );
 
-              const { MAILER_API_KEY, MAILER_BOOKING_URL } = Deno.env
-                .toObject();
-
-              const res = await fetch(
-                `${MAILER_BOOKING_URL}?apiKey=${MAILER_API_KEY}`,
-                {
-                  method: "POST",
-                  body: JSON.stringify({
-                    email,
-                    fullname,
-                    firstname,
-                    dates,
-                    apartment,
-                    price,
-                    numberOfDays,
-                  }),
-                },
-              );
-
-              if (!res.ok) {
-                console.log("status :", res.statusText);
-                console.log("response :", await res.json());
-              }
+            if (!res.ok) {
+              console.log("status :", res.statusText);
+              console.log("response :", await res.json());
+            }
           } catch (error) {
             console.log("error :", error);
           }

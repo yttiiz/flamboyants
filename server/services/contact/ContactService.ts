@@ -54,21 +54,21 @@ export class ContactService {
         message,
       };
 
-        const { MAILER_API_KEY, MAILER_CONTACT_URL } = Deno.env
-          .toObject();
+      const { MAILER_API_KEY, MAILER_CONTACT_URL } = Deno.env
+        .toObject();
 
-        const res = await fetch(
-          `${MAILER_CONTACT_URL}?apiKey=${MAILER_API_KEY}`,
-          {
-            method: "POST",
-            body: JSON.stringify({ email, firstname, lastname, message }),
-          },
-        );
+      const res = await fetch(
+        `${MAILER_CONTACT_URL}?apiKey=${MAILER_API_KEY}`,
+        {
+          method: "POST",
+          body: JSON.stringify({ email, firstname, lastname, message }),
+        },
+      );
 
-        if (!res.ok) {
-          console.log("status :", res.statusText);
-          console.log("response :", await res.json());
-        }
+      if (!res.ok) {
+        console.log("status :", res.statusText);
+        console.log("response :", await res.json());
+      }
 
       this.default.response(
         ctx,

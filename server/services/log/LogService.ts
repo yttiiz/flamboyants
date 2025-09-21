@@ -209,20 +209,20 @@ export class LogService {
     );
 
     try {
-        const { MAILER_API_KEY, MAILER_REGISTER_URL } = Deno.env
-          .toObject();
-        const res = await fetch(
-          `${MAILER_REGISTER_URL}?apiKey=${MAILER_API_KEY}`,
-          {
-            method: "POST",
-            body: JSON.stringify({ email, firstname }),
-          },
-        );
+      const { MAILER_API_KEY, MAILER_REGISTER_URL } = Deno.env
+        .toObject();
+      const res = await fetch(
+        `${MAILER_REGISTER_URL}?apiKey=${MAILER_API_KEY}`,
+        {
+          method: "POST",
+          body: JSON.stringify({ email, firstname }),
+        },
+      );
 
-        if (!res.ok) {
-          console.log("status :", res.statusText);
-          console.log("response :", await res.json());
-        }
+      if (!res.ok) {
+        console.log("status :", res.statusText);
+        console.log("response :", await res.json());
+      }
     } catch (error) {
       console.log("error :", error);
     }

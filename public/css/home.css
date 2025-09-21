@@ -534,6 +534,7 @@ header[data-header="site"].with-bg {
 
     & > li figure {
       border-radius: var(--base-size);
+      position: relative;
       overflow: hidden;
     }
 
@@ -544,9 +545,20 @@ header[data-header="site"].with-bg {
       width: 100%;
     }
 
+    & > li figure figcaption {
+      position: absolute;
+      bottom: var(--base-size);
+      right: var(--base-size);
+      background: rgb(var(--black-rvb) / 0.5);
+      color: var(--light);
+      font-size: calc(var(--base-size) * 0.75);
+      border-radius: calc(infinity * 1px);
+      padding: calc(var(--base-size) * 0.25) calc(var(--base-size) * 0.5);
+    }
+
     & > li div {
       display: grid;
-      gap: calc(var(--base-size) * .5);
+      gap: calc(var(--base-size) * 0.5);
     }
 
     & > li p {
@@ -556,7 +568,7 @@ header[data-header="site"].with-bg {
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      margin-bottom: calc(var(--base-size) * .5);
+      margin-bottom: calc(var(--base-size) * 0.5);
     }
 
     & > li div a {

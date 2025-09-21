@@ -97,24 +97,27 @@ export class HomePage extends PageBuilder {
 
     for (const { image, paragraph, href, location, title } of visits.items) {
       /** @type {[HTMLLIElement, HTMLDivElement, HTMLImageElement]} */
-      const [container, figure, img] = this.createHTMLElements(
+      const [container, figure, img, figcaption] = this.createHTMLElements(
         "li",
         "figure",
         "img",
+        "figcaption",
       );
 
       /** @type {[HTMLDivElement, HTMLHeadingElement, HTMLHeadingElement, HTMLParagraphElement, HTMLAnchorElement]} */
-      const [content, subtitle, locationElement, icon, paragraphElement, link] = this.createHTMLElements(
-        "div",
-        "h2",
-        "h3",
-        "img",
-        "p",
-        "a",
-      );
+      const [content, subtitle, locationElement, icon, paragraphElement, link] =
+        this.createHTMLElements(
+          "div",
+          "h2",
+          "h3",
+          "img",
+          "p",
+          "a",
+        );
 
       img.src = image.src;
       img.alt = image.alt;
+      figcaption.textContent = `© ${image.author}`;
       subtitle.textContent = title;
       icon.src = "/img/icons/location.svg";
       paragraphElement.textContent = paragraph;
@@ -122,12 +125,22 @@ export class HomePage extends PageBuilder {
       link.target = "_blank";
       link.textContent = "En savoir plus";
 
-      this.insertChildren(locationElement, icon, document.createTextNode(location));
+      this.insertChildren(
+        locationElement,
+        icon,
+        document.createTextNode(location),
+      );
 
       visitsList.className = "visits-cards";
 
-      this.insertChildren(figure, img);
-      this.insertChildren(content, subtitle, locationElement, paragraphElement, link);
+      this.insertChildren(figure, img, figcaption);
+      this.insertChildren(
+        content,
+        subtitle,
+        locationElement,
+        paragraphElement,
+        link,
+      );
       this.insertChildren(container, figure, content);
       this.insertChildren(visitsList, container);
     }
