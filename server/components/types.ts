@@ -107,6 +107,11 @@ export type ButtonType = {
   btnLink?: string;
 };
 
+export type ImageType = {
+  src: string;
+  alt: string;
+};
+
 export type InformativeContentAndButtonType =
   & ButtonType
   & TitleAndDescriptionType;
@@ -205,6 +210,14 @@ export type FooterDataType = {
 export type FooterItemDataType = {
   title: string;
   items: ItemDataType[];
+};
+
+export type VisitsDataType = {
+  image: ImageType;
+  href: string;
+  location: string;
+  title: string;
+  paragraph: string;
 };
 
 export type DialogDataType = {

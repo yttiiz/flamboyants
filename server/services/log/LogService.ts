@@ -1,4 +1,4 @@
-import { FormDataAppType, Helper, Mailer, Validator } from "@utils";
+import { FormDataAppType, Helper, Validator } from "@utils";
 import {
   AdminController,
   AuthController,
@@ -9,7 +9,7 @@ import {
 import { Auth } from "@auth";
 import { Mongo, NotFoundMessageType } from "@mongo";
 import type { FormDataType } from "@components";
-import { Document } from "@deps";
+import { Document } from "@mongo/orm";
 
 export class LogService {
   default;
@@ -119,7 +119,6 @@ export class LogService {
   public registerHandler = async <T extends PathAppType>(
     ctx: RouterContextAppType<T>,
   ) => {
-    const { IS_DENO_DEPLOY } = Deno.env.toObject();
     const dataModel = await Helper.convertJsonToObject<FormDataType>(
       `/server/data/authentication${ctx.request.url.pathname}.json`,
     );
@@ -210,7 +209,6 @@ export class LogService {
     );
 
     try {
-      if (IS_DENO_DEPLOY) {
         const { MAILER_API_KEY, MAILER_REGISTER_URL } = Deno.env
           .toObject();
         const res = await fetch(
@@ -225,13 +223,6 @@ export class LogService {
           console.log("status :", res.statusText);
           console.log("response :", await res.json());
         }
-      } else {
-        await Mailer.send({
-          to: email,
-          receiver: firstname,
-          type: "register",
-        });
-      }
     } catch (error) {
       console.log("error :", error);
     }

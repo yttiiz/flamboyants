@@ -1,4 +1,4 @@
-import { oak } from "@deps";
+import * as oak from "@oak";
 import { Mongo } from "@mongo";
 import { AppState } from "@utils";
 import {

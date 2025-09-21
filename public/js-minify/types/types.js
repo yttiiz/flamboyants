@@ -80,15 +80,23 @@
 
 // Visits (www.lesilesdeguadeloupe.com) ///////////////////////////
 
+/** 
+ * @typedef {Object} ImageType
+ * @property {string} src
+ * @property {string} alt
+ * @property {string} author
+ */
+
 /**
  * @typedef {Object} Visit
- * @property {string} image
+ * @property {ImageType} image
+ * @property {string} location
  * @property {string} href
- * @property {string} text
+ * @property {string} paragraph
  * @property {string} title
  */
 
-/** @typedef {Record<string, Visit} Visits Bookings list */
+/** @typedef {{ items: Visit[] }} Visits Bookings list */
 
 /*=================================================| FUNCTIONS |=================================================*/
 

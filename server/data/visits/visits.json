@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "title": "Mémorial ACTe",
+      "location": "Pointe-à-Pitre",
+      "href": "https://www.lesilesdeguadeloupe.com/patrimoine-culturel/memorial-acte/",
+      "paragraph": "Plongez au cœur de l’histoire au Mémorial ACTe, un centre caribéen d’expressions et de mémoire de la traite et de l’esclavage. Ce lieu immersif, situé sur le site d’une ancienne usine sucrière à Pointe-à-Pitre, vous invite à comprendre les tragédies du passé à travers une muséographie poignante, des expositions permanentes et temporaires, des œuvres d’art et des outils multimédias. Véritable hommage aux peuples opprimés, le Mémorial ACTe est aussi un espace de réflexion sur les droits humains et la mémoire collective caribéenne.",
+      "image": {
+        "src": "public/img/visits/memorial-acte-pointe-a-pitre-guadeloupe-guillaume-aricique1-min-600x400-f50_50.webp",
+        "alt": "photo du Mémorial ACte",
+        "author": "Guillaume Aricique"
+      }
+    },
+    {
+      "title": "Musée Edgar Clerc",
+      "location": "Le Moule",
+      "href": "https://www.lesilesdeguadeloupe.com/patrimoine-culturel/musee-de-la-prehistoire-amerindienne-edgar-clerc/",
+      "paragraph": "Le musée Edgar Clerc, situé au Moule, vous transporte à l’époque des premiers habitants de la Guadeloupe : les Amérindiens. Ce musée archéologique dévoile des objets issus de fouilles locales — poteries, outils, ornements — qui illustrent le quotidien, les croyances et les traditions de ces peuples autochtones. Un parcours éducatif et passionnant qui permet de mieux comprendre les racines précolombiennes de l’île et l’évolution de sa population avant l’arrivée des colons européens.",
+      "image": {
+        "src": "public/img/visits/musee-edgar-clerc-1-600x400-f50_50.webp",
+        "alt": "photo du musée Edgar Clerc",
+        "author": "Conseil Départemental"
+      }
+    },
+    {
+      "title": "Fort Delgrès",
+      "location": "Basse-Terre",
+      "href": "https://www.lesilesdeguadeloupe.com/patrimoine-culturel/fort-delgres/",
+      "paragraph": "Surplombant la ville de Basse-Terre, le Fort Delgrès est un impressionnant édifice militaire du XVIIe siècle, témoin des luttes contre l’oppression. Construit à flanc de montagne, il offre une vue imprenable sur la mer des Caraïbes et raconte à travers ses bastions, ses canons et ses expositions l’histoire de la résistance guadeloupéenne. C’est ici que Louis Delgrès, figure emblématique de la lutte contre le rétablissement de l’esclavage, a mené son ultime combat en 1802. Un lieu de mémoire chargé d’émotion.",
+      "image": {
+        "src": "public/img/visits/fort-delgres-basse-terre-guadeloupe-guillaume-aricique2-1-600x400-f50_50.webp",
+        "alt": "photo du Fort Delgrès",
+        "author": "Guillaume Aricique"
+      }
+    },
+    {
+      "title": "Habitation Murat",
+      "location": "Marie-Galante",
+      "href": "https://www.lesilesdeguadeloupe.com/patrimoine-culturel/fort-delgres/",
+      "paragraph": "Située sur l’île de Marie-Galante, l’Habitation Murat est l’un des plus grands domaines sucriers du XIXe siècle. Transformée en écomusée, elle retrace l’histoire de la production de sucre à travers ses bâtiments restaurés : maison de maître, moulin, usine. On y découvre aussi la vie quotidienne des esclaves et des travailleurs agricoles de l’époque. Ce site patrimonial, au cœur d’un magnifique jardin botanique, est un véritable témoignage de l’histoire économique et sociale de l’île.",
+      "image": {
+        "src": "public/img/visits/ecomusee-murat-grand-bourg-marie-galante-guadeloupe-conversationnel02-min-600x400-f50_50.webp",
+        "alt": "photo de l'habitation Murat",
+        "author": "Conversationnel"
+      }
+    },
+    {
+      "title": "Parc National et Volcan",
+      "location": "Basse-Terre",
+      "href": "https://www.lesilesdeguadeloupe.com/decouvrir/espaces-naturels/le-parc-national-de-la-guadeloupe/",
+      "paragraph": "Vivez l’ascension mythique de la Soufrière, surnommée « La Vieille Dame », au cœur du Parc National de la Guadeloupe. Cette randonnée emblématique vous conduit à travers une forêt tropicale luxuriante, des sources chaudes et des paysages lunaires jusqu’au sommet fumant du volcan. Une aventure nature et sportive offrant des vues spectaculaires sur l’île et l’océan.",
+      "image": {
+        "src": "public/img/visits/guadeloupe-208-aurelien-brusini-600x400-f50_50.webp",
+        "alt": "photo de la Soufrière",
+        "author": "Aurélien Brusini"
+      }
+    },
+    {
+      "title": "Chutes du Carbet",
+      "location": "Capesterre-Belle-Eau",
+      "href": "https://www.lesilesdeguadeloupe.com/decouvrir/espaces-naturels/les-chutes-du-carbet/",
+      "paragraph": "Découvrez l’un des joyaux naturels de la Basse-Terre avec les Chutes du Carbet, trois impressionnantes cascades nichées dans une forêt tropicale dense. Faciles d’accès, elles offrent des panoramas époustouflants et une immersion totale dans un décor sauvage et luxuriant. Une escapade rafraîchissante idéale pour les amoureux de nature et de randonnée.",
+      "image": {
+        "src": "public/img/visits/guadeloupe-22020-aurelien-brusini-1-600x400-f50_50.webp",
+        "alt": "photo des chutes du carbet",
+        "author": "Aurélien Brusini"
+      }
+    },
+    {
+      "title": "La Pointe des Châteaux",
+      "location": "Saint-François",
+      "href": "https://www.lesilesdeguadeloupe.com/decouvrir/espaces-naturels/la-pointe-des-chateaux/",
+      "paragraph": "À l’extrême est de Grande-Terre, la Pointe des Châteaux est un site naturel spectaculaire où se rencontrent falaises, plages sauvages et vents marins. Offrant un panorama saisissant sur l’océan Atlantique et les îles alentours, ce lieu à l’allure mystique invite à la contemplation et à la photographie. Une promenade inoubliable entre terre, mer et horizon infini.",
+      "image": {
+        "src": "public/img/visits/pointe-des-chateaux-plage-pointe-des-colibris-saint-francois-grande-terre-guadeloupe-27004-aurelien-brusini-2-1-600x400-f50_50.webp",
+        "alt": "photo de la Pointe des châteaux",
+        "author": "Aurélien Brusini"
+      }
+    },
+    {
+      "title": "Jardin botanique",
+      "location": "Deshaies",
+      "href": "https://www.lesilesdeguadeloupe.com/patrimoine-culturel/jardin-botanique-de-deshaies/",
+      "paragraph": "Ancienne propriété de l’humoriste Coluche, le Jardin Botanique de Deshaies est aujourd’hui un écrin de verdure exceptionnel. On y flâne entre plantes tropicales, cascades, bassins et volières, dans une atmosphère paisible et colorée. Ce havre de biodiversité offre une parenthèse enchantée pour petits et grands, au cœur de la flore guadeloupéenne.",
+      "image": {
+        "src": "public/img/visits/guadeloupe-1880-aurelien-brusini-1-600x400-f50_50.webp",
+        "alt": "photo du Jardin botanique",
+        "author": "Aurélien Brusini"
+      }
+    },
+    {
+      "title": "Sentier de la Gueule Grand Gouffre",
+      "location": "Marie-Galante",
+      "href": "https://www.lesilesdeguadeloupe.com/decouvrir/espaces-naturels/gueule-grand-gouffre/",
+      "paragraph": "Située à Marie-Galante, la Gueule Grand Gouffre est une impressionnante arche naturelle creusée par la mer dans la roche calcaire. Accessible par une courte randonnée, ce site spectaculaire offre un décor sauvage et une vue vertigineuse sur l’Atlantique. Un lieu puissant et saisissant, idéal pour les amateurs de paysages insolites.",
+      "image": {
+        "src": "public/img/visits/guadeloupe-3291-aurelien-brusini-1-scaled-e1745507616733-600x400-f50_50.webp",
+        "alt": "photo de la Gueule grand gouffre",
+        "author": "Aurélien Brusini"
+      }
+    }
+  ]
+}

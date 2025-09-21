@@ -1,4 +1,4 @@
-import { oak } from "@deps";
+import * as oak from "@oak";
 import { NotFoundController } from "@controllers";
 
 export const notFoundMiddleware = async (

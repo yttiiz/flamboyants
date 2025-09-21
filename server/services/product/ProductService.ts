@@ -14,7 +14,7 @@ import {
   ProductSchemaWithIDType,
   ReviewsProductSchemaWithIDType,
 } from "@mongo";
-import { Document, ObjectId } from "@deps";
+import { Document, ObjectId } from "@mongo/orm";
 
 export class ProductService {
   private default;

@@ -1,5 +1,5 @@
 // deno-fmt-ignore-file
-import { oak } from "@deps";
+import * as oak from "@oak";
 import * as layout from "@components";
 import { Http } from "@utils";
 import {

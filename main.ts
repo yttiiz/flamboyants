@@ -1,4 +1,8 @@
-import { load, oak, oakCors, Session } from "@deps";
+import * as oak from "@oak";
+import { oakCors } from "@cors";
+import { load } from "@dotenv";
+import { Session } from "@oak/sessions";
+
 import { notFoundMiddleware, staticsFilesMiddleware } from "@middlewares";
 import { Mongo } from "@mongo";
 import { router } from "@router";

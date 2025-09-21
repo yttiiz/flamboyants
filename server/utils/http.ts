@@ -1,4 +1,4 @@
-import { oak } from "@deps";
+import * as oak from "@oak";
 import type { ContentHeadersType } from "./mod.ts";
 import type { RouterContextAppType } from "@controllers";
 

@@ -1,5 +1,6 @@
-import { Document, FindCursor } from "@deps";
+import { Document } from "@mongo/orm";
 import { RouterContextAppType, UserDataType } from "@controllers";
+import { FindCursor } from "@findcursor";
 
 const queryDocuments = async ({
   limit,

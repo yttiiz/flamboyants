@@ -3,7 +3,7 @@ import {
   DefaultController,
   RouterContextAppType,
 } from "@controllers";
-import { Helper, Mailer, Validator } from "@utils";
+import { Helper, Validator } from "@utils";
 import { FormDataType } from "@components";
 import console from "node:console";
 
@@ -25,8 +25,6 @@ export class ContactService {
   };
 
   public post = async <T extends string>(ctx: RouterContextAppType<T>) => {
-    const { IS_DENO_DEPLOY } = Deno.env.toObject();
-
     try {
       const formData = await ctx.request.body.formData();
       const dataModel = await Helper.convertJsonToObject<FormDataType>(
@@ -56,7 +54,6 @@ export class ContactService {
         message,
       };
 
-      if (IS_DENO_DEPLOY) {
         const { MAILER_API_KEY, MAILER_CONTACT_URL } = Deno.env
           .toObject();
 
@@ -72,9 +69,6 @@ export class ContactService {
           console.log("status :", res.statusText);
           console.log("response :", await res.json());
         }
-      } else {
-        Mailer.receive({ content });
-      }
 
       this.default.response(
         ctx,

@@ -1,4 +1,4 @@
-import { Session } from "@deps";
+import { Session } from "@oak/sessions";
 import { BookingsType } from "@mongo";
 
 export type AppState = {

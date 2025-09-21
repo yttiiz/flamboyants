@@ -95,7 +95,7 @@ export class HomePage extends PageBuilder {
     // Remove loading content
     visitsList.innerHTML = "";
 
-    for (const key of Object.keys(visits)) {
+    for (const { image, paragraph, href, location, title } of visits.items) {
       /** @type {[HTMLLIElement, HTMLDivElement, HTMLImageElement]} */
       const [container, figure, img] = this.createHTMLElements(
         "li",
@@ -103,26 +103,31 @@ export class HomePage extends PageBuilder {
         "img",
       );
 
-      /** @type {[HTMLDivElement, HTMLHeadingElement, HTMLParagraphElement, HTMLAnchorElement]} */
-      const [content, subtitle, paragraph, link] = this.createHTMLElements(
+      /** @type {[HTMLDivElement, HTMLHeadingElement, HTMLHeadingElement, HTMLParagraphElement, HTMLAnchorElement]} */
+      const [content, subtitle, locationElement, icon, paragraphElement, link] = this.createHTMLElements(
         "div",
         "h2",
+        "h3",
+        "img",
         "p",
         "a",
       );
 
-      img.src = visits[key].image;
-      img.alt = visits[key].title;
-      subtitle.textContent = visits[key].title;
-      paragraph.textContent = visits[key].text;
-      link.href = visits[key].href;
+      img.src = image.src;
+      img.alt = image.alt;
+      subtitle.textContent = title;
+      icon.src = "/img/icons/location.svg";
+      paragraphElement.textContent = paragraph;
+      link.href = href;
       link.target = "_blank";
       link.textContent = "En savoir plus";
+
+      this.insertChildren(locationElement, icon, document.createTextNode(location));
 
       visitsList.className = "visits-cards";
 
       this.insertChildren(figure, img);
-      this.insertChildren(content, subtitle, paragraph, link);
+      this.insertChildren(content, subtitle, locationElement, paragraphElement, link);
       this.insertChildren(container, figure, content);
       this.insertChildren(visitsList, container);
     }

@@ -3,7 +3,7 @@ import {
   RouterContextAppType,
   SessionType,
 } from "@controllers";
-import { ObjectId } from "@deps";
+import { ObjectId } from "@mongo/orm";
 import { FormDataType } from "@components";
 import { FormDataAppType, Helper, Validator } from "@utils";
 import {

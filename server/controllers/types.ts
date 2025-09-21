@@ -1,4 +1,5 @@
-import { Document, oak, ObjectId } from "@deps";
+import { Document, ObjectId } from "@mongo/orm";
+import * as oak from "@oak";
 import type {
   CollectionType,
   NotFoundMessageType,

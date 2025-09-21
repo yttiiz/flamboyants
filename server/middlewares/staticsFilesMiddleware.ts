@@ -1,4 +1,4 @@
-import { oak } from "@deps";
+import * as oak from "@oak";
 import { dynamicRoutes } from "@dynamic-routes";
 
 export const staticsFilesMiddleware = async (

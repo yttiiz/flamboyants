@@ -1,4 +1,4 @@
-import { oak } from "@deps";
+import * as oak from "@oak";
 import { DefaultController } from "./DefaultController.ts";
 
 export class NotFoundController extends DefaultController {

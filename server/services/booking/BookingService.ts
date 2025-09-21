@@ -14,9 +14,9 @@ import {
   ProductSchemaWithIDType,
   ReviewsProductSchemaWithIDType,
 } from "@mongo";
-import { Handler, Helper, Mailer, Validator } from "@utils";
+import { Handler, Helper, Validator } from "@utils";
 import { FormDataType, ProductDataType } from "@components";
-import { ObjectId } from "@deps";
+import { ObjectId } from "@mongo/orm";
 import { ProductService, UserService } from "@services";
 
 export class BookingService {
@@ -128,7 +128,6 @@ export class BookingService {
   public postHandler = async <T extends string>(
     ctx: RouterContextAppType<T>,
   ) => {
-    const { IS_DENO_DEPLOY } = Deno.env.toObject();
     const formData = await ctx.request.body.formData();
     const { booking } = await Helper.convertJsonToObject<ProductDataType>(
       `/server/data/product/product.json`,
@@ -190,7 +189,6 @@ export class BookingService {
           const { price } = product.details;
 
           try {
-            if (IS_DENO_DEPLOY) {
               const dates = {
                 starting: Helper.displayDate({
                   date: new Date(startingDate).getTime() + Helper.getGMT(),
@@ -229,13 +227,6 @@ export class BookingService {
                 console.log("status :", res.statusText);
                 console.log("response :", await res.json());
               }
-            } else {
-              await Mailer.send({
-                to: email,
-                receiver: fullname,
-                type: "booking",
-              });
-            }
           } catch (error) {
             console.log("error :", error);
           }

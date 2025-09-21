@@ -1,7 +1,7 @@
 import { DefaultController, RouterContextAppType } from "@controllers";
 import { Helper, Validator } from "@utils";
 import { ProductDataType } from "@components";
-import { ObjectId } from "@deps";
+import { ObjectId } from "@mongo/orm";
 import { ProductService, UserService } from "@services";
 import { Mongo, ProductSchemaWithIDType } from "@mongo";
 

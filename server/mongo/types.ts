@@ -1,4 +1,5 @@
-import { Collection, Document, FindCursor, ObjectId } from "@deps";
+import { Collection, Document, ObjectId } from "@mongo/orm";
+import { FindCursor } from "@findcursor";
 
 type SchemaWithID<T> = T & {
   _id: ObjectId;

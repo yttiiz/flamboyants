@@ -5,7 +5,7 @@ import {
   RouterContextAppType,
   SessionType,
 } from "@controllers";
-import { ObjectId } from "@deps";
+import { ObjectId } from "@mongo/orm";
 import { Helper } from "@utils";
 import { Mongo } from "@mongo";
 
