@@ -86,7 +86,7 @@ export class ReviewService {
         ctx,
         {
           message:
-            "Le produit pour lequel vous souhaitez laisser un avis, est momentanément inaccessible.",
+            "L'appartement pour lequel vous souhaitez laisser un avis, est momentanément inaccessible.",
         },
         503,
       );
