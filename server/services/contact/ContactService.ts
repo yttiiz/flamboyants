@@ -61,7 +61,7 @@ export class ContactService {
         `${MAILER_CONTACT_URL}?apiKey=${MAILER_API_KEY}`,
         {
           method: "POST",
-          body: JSON.stringify({ email, firstname, lastname, message }),
+          body: JSON.stringify(content),
         },
       );
 
