@@ -49,6 +49,6 @@
     "test": "deno test --no-check -A ./tests/*.test.ts",
     "check-bc": "deno task fmt && deno task test",
     "generate-email": "deno -A server/email/script/execute.ts && deno task fmt",
-    "minify": "server/minify-js/execute.sh"
+    "minify": "server/minify-js/script.sh"
   }
 }
